@@ -137,6 +137,8 @@
     position: absolute;
     top: 0;
     left: -1px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .kf-editor-ui-area .kf-editor-ui-box {

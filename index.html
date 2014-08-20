@@ -7,17 +7,17 @@
     <script src="dev-lib/jquery-1.11.0.min.js"></script>
     <script src="dev-lib/kitygraph.all.js"></script>
     <script src="dev-lib/kity-formula-render.all.js"></script>
-    <script src="dev-lib/kity-formula-parser.all.js"></script>
-    <!--<script src="dev-lib/dev-define.js"></script>-->
-    <!--<script>-->
-        <!--inc.config({-->
-            <!--base: './src'-->
-        <!--});-->
-    <!--</script>-->
-    <!--<script src="dev-lib/exports.js"></script>-->
-    <!--<script src="dev-lib/start.js"></script>-->
-    <!--<script src="dev-lib/dev-start.js"></script>-->
-    <script src="dist/kityformula-editor.all.min.js"></script>
+    <script src="dev-lib/kity-formula-parser.all.min.js"></script>
+    <script src="dev-lib/dev-define.js"></script>
+    <script>
+        inc.config({
+            base: './src'
+        });
+    </script>
+    <script src="dev-lib/exports.js"></script>
+    <script src="dev-lib/start.js"></script>
+    <script src="dev-lib/dev-start.js"></script>
+    <!--<script src="dist/kityformula-editor.all.min.js"></script>-->
     <script>
         jQuery( function ($) {
 
@@ -26,7 +26,7 @@
                     fontsize: 40
                 },
                 resource: {
-                    path: "http://172.22.65.30/kityformula/src/resource/"
+                    path: "resource/"
                 }
             } );
 
@@ -34,7 +34,7 @@
 
                 // this指向KFEditor
 
-                this.execCommand( "render", "abcdeafdapoiuoiuomassdfasdfasdfasjkljpoijdf" );
+                this.execCommand( "render", "\\placeholder" );
                 this.execCommand( "focus" );
 
                 window.kfe = this;

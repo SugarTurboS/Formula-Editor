@@ -34,7 +34,6 @@ define( function ( require ) {
             // 就绪状态
             this._readyState = false;
             this._callbacks = [];
-            this._readyCount = 0;
 
             this.container = container;
             this.services = {};

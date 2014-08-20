@@ -115,9 +115,9 @@ define( function ( require ) {
 
             initEvent: function () {
 
-                Utils.addEvent( this.container, 'mousewheel', function ( e ) {
-                    e.preventDefault();
-                } );
+//                Utils.addEvent( this.container, 'mousewheel', function ( e ) {
+//                    e.preventDefault();
+//                } );
 
             },
 

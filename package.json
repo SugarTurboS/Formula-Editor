@@ -29,7 +29,9 @@
             "url": "https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"
         }
     ],
-    "dependencies": {},
+    "dependencies": {
+        "@types/chai": "^4.2.11"
+    },
     "devDependencies": {
         "grunt": "~0.4.1",
         "grunt-contrib-concat": "~0.4.0",
@@ -38,5 +40,4 @@
         "grunt-module-dependence": "~0.1.1",
         "grunt-contrib-jshint": "~0.10.0"
     }
-
 }

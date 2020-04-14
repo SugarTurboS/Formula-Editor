@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Mocha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="test/mocha.css" />
+  </head>
+  <body>
+    <!-- mocha\editor锚点 -->
+    <div id="mocha"></div>
+    <div id="kfEditorContainer" class="kf-editor" style="width: 780px; height: 502px;"></div>
+    <!-- end -->
+    <script src="dev-lib/jquery-1.11.0.min.js"></script>
+    <script src="dev-lib/kitygraph.all.js"></script>
+    <script src="dev-lib/kity-formula-render.all.js"></script>
+    <script src="dev-lib/kity-formula-parser.all.min.js"></script>
+    <script src="dev-lib/dev-define.js"></script>
+    <script>
+      inc.config({
+        base: 'src',
+      });
+    </script>
+    <script src="dev-lib/exports.js"></script>
+    <script src="dev-lib/start.js"></script>
+    <script src="dev-lib/dev-start.js"></script>
+    <script src="test/chai.js"></script>
+    <script src="test/mocha.js"></script>
+    <script>
+      mocha.setup('bdd');
+    </script>
+
+    <!-- 待测试代码 -->
+    <script src="test/project/factory.js"></script>
+    <!-- end -->
+
+    <!-- mocha测试代码 -->
+    <script src="test/unit/test.js"></script>
+    <!-- end -->
+
+    <script>
+      mocha.run();
+    </script>
+
+    <link rel="stylesheet" href="assets/styles/page.css" />
+    <link rel="stylesheet" href="assets/styles/base.css" />
+    <link rel="stylesheet" href="assets/styles/ui.css" />
+    <link rel="stylesheet" href="assets/styles/scrollbar.css" />
+  </body>
+</html>

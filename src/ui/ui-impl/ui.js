@@ -8,8 +8,8 @@ define( function ( require ) {
 
         DrapdownBox: require( "ui/ui-impl/drapdown-box" ),
         Delimiter: require( "ui/ui-impl/delimiter" ),
-        Area: require( "ui/ui-impl/area" )
-
+        Area: require( "ui/ui-impl/area" ),
+        Keyboard: require("ui/ui-impl/keyboard/keyboard")
     };
 
 } );

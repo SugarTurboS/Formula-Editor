@@ -21,6 +21,8 @@ define( function ( require ) {
 
         ELEMENT_LIST = require( "ui/toolbar-ele-list" ),
 
+        Keyboard = require( "ui/keyboard/keyboard" ),
+
         UIComponent = kity.createClass( 'UIComponent', {
 
             constructor: function ( kfEditor, options ) {
@@ -46,12 +48,14 @@ define( function ( require ) {
                 this.editArea = createEditArea( currentDocument );
                 this.canvasContainer = createCanvasContainer( currentDocument );
                 this.scrollbarContainer = createScrollbarContainer( currentDocument );
+                this.keyboardContainer = createKeyboardContainer( currentDocument );
 
                 this.toolbarWrap.appendChild( this.toolbarContainer );
                 this.container.appendChild( this.toolbarWrap );
                 this.editArea.appendChild( this.canvasContainer );
                 this.container.appendChild( this.editArea );
                 this.container.appendChild( this.scrollbarContainer );
+                this.container.appendChild( this.keyboardContainer );
 
                 this.initComponents();
 
@@ -59,7 +63,7 @@ define( function ( require ) {
 
                 this.initEvent();
 
-                this.updateContainerSize( this.container, this.toolbarWrap, this.editArea, this.canvasContainer );
+                this.updateContainerSize( this.container, this.toolbarWrap, this.editArea, this.canvasContainer, this.keyboardContainer );
 
                 this.initScrollEvent();
 
@@ -81,15 +85,20 @@ define( function ( require ) {
                 }
                 this.components.scrollbar = new Scrollbar( this, this.kfEditor );
 
+                // 软件盘
+                this.components.keyboard = new Keyboard( this, this.kfEditor );
+
             },
 
-            updateContainerSize: function ( container, toolbar, editArea ) {
+            updateContainerSize: function ( container, toolbar, editArea, canvas, keyboard ) {
 
                 var containerBox = container.getBoundingClientRect(),
-                    toolbarBox = toolbar.getBoundingClientRect();
+                    toolbarBox = toolbar.getBoundingClientRect(),
+                    keyboardBox = keyboard.getBoundingClientRect();
+
 
                 editArea.style.width = containerBox.width + "px";
-                editArea.style.height = containerBox.bottom - toolbarBox.bottom + "px";
+                editArea.style.height = containerBox.bottom - toolbarBox.bottom - keyboardBox.height + "px";
 
             },
 
@@ -237,6 +246,12 @@ define( function ( require ) {
     function createScrollbarContainer ( doc ) {
         var container = doc.createElement( "div" );
         container.className = "kf-editor-edit-scrollbar";
+        return container;
+    }
+
+    function createKeyboardContainer ( doc ) {
+        var container = doc.createElement('div');
+        container.className = 'kf-editor-edit-keyboard';
         return container;
     }
 

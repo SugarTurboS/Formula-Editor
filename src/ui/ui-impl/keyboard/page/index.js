@@ -1,23 +1,20 @@
 /*
  * @Author: Demian
- * @Date: 2020-04-16 16:11:27
+ * @Date: 2020-04-16 20:03:47
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-16 20:07:21
+ * @LastEditTime: 2020-04-16 20:12:34
  */
 define(function (require) {
   const kity = require('kity');
   const $$ = require('ui/ui-impl/ui-utils');
-  const Menu = kity.createClass('Menu', {
+  const Page = kity.createClass('Page', {
     constructor(parentNode, parentProps) {
       this.parentNode = parentNode;
       this.props = parentProps;
-      this.prefix = parentProps.prefix + 'keyboard-menu';
+      this.prefix = parentProps.prefix + 'keyboard-page';
       this.elementList = [
-        { type: 'common', title: '常用', index: 0 },
-        { type: 'algebra', title: '代数', index: 1 },
-        { type: 'geometry', title: '几何', index: 2 },
-        { type: 'unit', title: '单位', index: 3 },
-        { type: 'other', title: '其他', index: 4 },
+        { type: 'prev', title: '上一页', index: 0 },
+        { type: 'next', title: '下一页', index: 1 },
       ];
 
       this.containerClassName = this.prefix;
@@ -51,8 +48,12 @@ define(function (require) {
     },
     onClick: function (e) {
       const val = e.target.dataset.value;
-      this.props.onClick(val);
+      if (val === 'next') {
+        this.props.onNextPage();
+      } else {
+        this.props.onPrevPage();
+      }
     },
   });
-  return Menu;
+  return Page;
 });

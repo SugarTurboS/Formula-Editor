@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-16 19:58:15
+ * @LastEditTime: 2020-04-16 20:13:32
  */
 define(function (require) {
   const kity = require('kity');
@@ -27,7 +27,6 @@ define(function (require) {
       this.onClick = this.onClick.bind(this);
     },
     render: function () {
-      console.log(this.props);
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `
@@ -44,15 +43,14 @@ define(function (require) {
       });
     },
     mount: function () {
-      const panelNode = this.render();
+      const node = this.render();
       $$.delegate(this.parentNode, '.' + this.itemClassName, 'click', this.onClick);
-      this.parentNode.appendChild(panelNode);
+      this.parentNode.appendChild(node);
     },
     update: function (nextProps) {
       this.props = { ...this.props, ...nextProps };
-      const panelNode = this.render();
-
-      $('.' + this.prefix).html(panelNode);
+      const node = this.render();
+      $('.' + this.prefix).html(node);
     },
     destroy: function () {
       $(this.parentNode).find(this.prefix).remove();

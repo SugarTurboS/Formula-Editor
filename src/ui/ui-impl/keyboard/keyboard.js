@@ -9,12 +9,14 @@ define(function (require) {
     $$ = require('ui/ui-impl/ui-utils'),
     Menu = require('ui/ui-impl/keyboard/menu/index'),
     Panel = require('ui/ui-impl/keyboard/panel/index'),
+    Page = require('ui/ui-impl/keyboard/page/index'),
     Constant = require('ui/ui-impl/keyboard/const'),
     Keyboard = kity.createClass('Keyboard', {
       constructor: function (doc) {
         this.doc = doc;
         this.state = {
           currentType: Constant.Type.Common,
+          page: 0,
         };
 
         this.element = this.render();
@@ -32,13 +34,20 @@ define(function (require) {
           doc: this.doc,
           onClick: this.onPanelClick.bind(this),
         });
+        this.pageChild = new Page(this.element, {
+          ...this.state,
+          prefix: PREFIX,
+          doc: this.doc,
+          onPrevPage: this.onPrevPage.bind(this),
+          onNextPage: this.onNextPage.bind(this),
+        });
         this.renderKeyboard();
       },
 
       renderKeyboard: function () {
         this.menuChild.mount();
         this.panelChild.mount();
-        this.renderPage();
+        this.pageChild.mount();
       },
 
       renderPage: function () {
@@ -55,7 +64,18 @@ define(function (require) {
       onPanelClick: function (val) {
         $$.publish('panel.select', val);
       },
-      onPageClick: function () {},
+      onPrevPage: function () {
+        const prevPage = this.state.page;
+        this.setState({
+          page: prevPage - 1,
+        });
+      },
+      onNextPage: function () {
+        const prevPage = this.state.page;
+        this.setState({
+          page: prevPage + 1,
+        });
+      },
       render: function () {
         const keyboardNode = $$.ele(this.doc, 'div', {
           className: PREFIX + 'keyboard',
@@ -64,6 +84,7 @@ define(function (require) {
         return keyboardNode;
       },
       setState: function (nextState) {
+        console.log(nextState);
         this.state = {
           ...this.state,
           ...nextState,

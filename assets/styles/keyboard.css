@@ -41,7 +41,7 @@
 .kf-editor-ui-keyboard .kf-editor-ui-keyboard-panel .kf-editor-ui-keyboard-panel-list {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: auto;
 }
 .kf-editor-ui-keyboard
   .kf-editor-ui-keyboard-panel

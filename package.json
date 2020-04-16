@@ -1,43 +1,49 @@
 {
-    "name": "kityformula-editor",
-    "title": "Kity Formula Editor",
-    "description": "HTML(SVG) Formula display solutions",
-    "version": "1.0.0",
-    "homepage": "https://github.com/kitygraph/formula",
-    "author": {
-        "name": "Baidu Kity Group",
-        "url": "http://ueditor.baidu.com"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/kitygraph/formula.git"
-    },
-    "keywords": [
-        "formula",
-        "kity",
-        "svg",
-        "graphic",
-        "javascript",
-        "library"
-    ],
-    "bugs": {
-        "url": "http://www.ueditorbbs.com/forum.php"
-    },
-    "licenses": [
-        {
-            "type": "MIT",
-            "url": "https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"
-        }
-    ],
-    "dependencies": {
-        "@types/chai": "^4.2.11"
-    },
-    "devDependencies": {
-        "grunt": "~0.4.1",
-        "grunt-contrib-concat": "~0.4.0",
-        "grunt-contrib-uglify": "~0.2.6",
-        "grunt-contrib-clean": "~0.5.0",
-        "grunt-module-dependence": "~0.1.1",
-        "grunt-contrib-jshint": "~0.10.0"
+  "name": "kityformula-editor",
+  "title": "Kity Formula Editor",
+  "description": "HTML(SVG) Formula display solutions",
+  "version": "1.0.0",
+  "homepage": "https://github.com/kitygraph/formula",
+  "author": {
+    "name": "Baidu Kity Group",
+    "url": "http://ueditor.baidu.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kitygraph/formula.git"
+  },
+  "keywords": [
+    "formula",
+    "kity",
+    "svg",
+    "graphic",
+    "javascript",
+    "library"
+  ],
+  "bugs": {
+    "url": "http://www.ueditorbbs.com/forum.php"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"
     }
+  ],
+  "dependencies": {
+    "@types/chai": "^4.2.11"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-transform-typeof-symbol": "^7.8.4",
+    "@babel/preset-env": "^7.9.5",
+    "babel-plugin-transform-remove-strict-mode": "^0.0.2",
+    "babel-preset-es2015": "^6.24.1",
+    "grunt": "~0.4.1",
+    "grunt-babel": "^8.0.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-uglify": "~0.2.6",
+    "grunt-module-dependence": "~0.1.1"
+  }
 }

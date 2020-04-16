@@ -117,11 +117,6 @@ define( function ( require ) {
         },
 
         requestService: function ( serviceName, args ) {
-            // 服务日志打印
-            function filterService( serviceName, reg = /\s*\S*/i ) {
-              return reg.test(serviceName);
-            }
-            // filterService(serviceName) && console.log('requestService', serviceName);
             var serviceObject =  getService.call( this, serviceName );
 
             return serviceObject.service[ serviceObject.key ].apply( serviceObject.provider, [].slice.call( arguments, 1 ) );

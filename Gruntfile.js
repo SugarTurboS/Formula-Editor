@@ -90,7 +90,7 @@ module.exports = function (grunt) {
     // hint检查
     jshint: {
       options: {
-        ignores: ['.tmp_build/src/base/*.js', '.tmp_build/src/parse/*.js'],
+        ignores: ['.tmp_build/src/base/*.js', '.tmp_build/src/parse/*.js', '.tmp_build/src/ui/ui-impl/**/*.js'],
         jshintrc: '.jshintrc',
       },
       check: ['.tmp_build/**/*.js'],

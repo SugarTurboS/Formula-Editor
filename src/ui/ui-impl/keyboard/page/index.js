@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 20:03:47
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-16 20:12:34
+ * @LastEditTime: 2020-04-17 10:31:57
  */
 define(function (require) {
   const kity = require('kity');
@@ -17,12 +17,18 @@ define(function (require) {
         { type: 'next', title: '下一页', index: 1 },
       ];
 
+      this.state = {
+        page: this.props.page,
+        totalPage: this.props.page,
+      };
+
       this.containerClassName = this.prefix;
       this.listClassName = `${this.prefix}-list`;
       this.itemClassName = `${this.prefix}-list-item`;
-      this.onClick = this.onClick.bind(this);
+      this._onClick = this._onClick.bind(this);
     },
-    render: function () {
+    _render: function () {
+      console.log('page render');
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `
@@ -35,24 +41,42 @@ define(function (require) {
       });
     },
     mount: function () {
-      const node = this.render();
-      $$.delegate(this.parentNode, '.' + this.itemClassName, 'click', this.onClick);
+      const node = this._render();
+      $$.delegate(this.parentNode, '.' + this.itemClassName, 'click', this._onClick);
       this.parentNode.appendChild(node);
     },
-    destroy: function () {
-      $(this.parentNode).find(this.prefix).remove();
-    },
     update: function (nextProps) {
-      this.props = { ...this.props, ...nextProps };
-      this.render();
+      if (!this._shouldUpdate(nextProps)) return;
+      Object.keys(nextProps)
+        .filter((x) => x in this.state)
+        .forEach((x) =>
+          this._setState({
+            [x]: nextProps[x],
+          })
+        );
+      const node = this._render();
+      $('.' + this.prefix).html(node);
     },
-    onClick: function (e) {
+    _shouldUpdate: function (nextProps) {
+      const isSame = Object.keys(this.state).every((x) => nextProps[x] === this.state[x]);
+      if (isSame) {
+        return false;
+      }
+      return true;
+    },
+    _onClick: function (e) {
       const val = e.target.dataset.value;
       if (val === 'next') {
         this.props.onNextPage();
       } else {
         this.props.onPrevPage();
       }
+    },
+    _setState: function (nextState) {
+      this.state = {
+        ...this.state,
+        ...nextState,
+      };
     },
   });
   return Page;

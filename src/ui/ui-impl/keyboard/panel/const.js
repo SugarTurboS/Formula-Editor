@@ -2,21 +2,19 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-16 20:01:24
+ * @LastEditTime: 2020-04-17 09:30:03
  */
 
 define(function (require) {
   const kity = require('kity'),
     CHAR_POSITION = require('ui/char-position.data'),
-    Constant = {
-      Panel: [
-        { type: 'common', title: '常用', index: 0, items: [] },
-        { type: 'algebra', title: '代数', index: 1, items: [] },
-        { type: 'geometry', title: '几何', index: 2, items: [] },
-        { type: 'unit', title: '单位', index: 3, items: [] },
-        { type: 'other', title: '其他', index: 4, items: [] },
-      ],
-    };
+    Constant = [
+      { type: 'common', title: '常用', index: 0, items: [] },
+      { type: 'algebra', title: '代数', index: 1, items: [] },
+      { type: 'geometry', title: '几何', index: 2, items: [] },
+      { type: 'unit', title: '单位', index: 3, items: [] },
+      { type: 'other', title: '其他', index: 4, items: [] },
+    ];
 
   // ----------------------------取雪碧图icon
   // 常用
@@ -70,7 +68,7 @@ define(function (require) {
       'blacksquare',
     ];
 
-    Constant.Panel[0].items = getIconContents(list, 'assets/images/toolbar/char.png');
+    Constant[0].items = getIconContents(list, 'assets/images/toolbar/char.png');
   })();
 
   // 希腊字符配置
@@ -140,7 +138,7 @@ define(function (require) {
       },
     ];
 
-    Constant.Panel[1].items = getIconContents(greekList[0].values, 'assets/images/toolbar/char.png');
+    Constant[1].items = getIconContents(greekList[0].values, 'assets/images/toolbar/char.png');
   })();
 
   function getIconContents(keySet, imgSrc) {

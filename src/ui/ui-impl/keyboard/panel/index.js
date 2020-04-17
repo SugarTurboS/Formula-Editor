@@ -2,36 +2,38 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-16 20:13:32
+ * @LastEditTime: 2020-04-17 10:29:52
  */
 define(function (require) {
   const kity = require('kity');
   const $$ = require('ui/ui-impl/ui-utils');
-  const Constant = require('ui/ui-impl/keyboard/panel/const');
+  const PanelConstant = require('ui/ui-impl/keyboard/panel/const');
+  const Constant = require('ui/ui-impl/keyboard/const');
   const Panel = kity.createClass('Panel', {
     constructor(parentNode, parentProps) {
       this.parentNode = parentNode;
       this.props = parentProps;
       this.prefix = parentProps.prefix + 'keyboard-panel';
-      this.elementList = [
-        { type: 'common', title: '常用', index: 0 },
-        { type: 'algebra', title: '代数', index: 1 },
-        { type: 'geometry', title: '几何', index: 2 },
-        { type: 'unit', title: '单位', index: 3 },
-        { type: 'other', title: '其他', index: 4 },
-      ];
+
+      // 初始化状态
+      this.state = {
+        currentType: this.props.currentType,
+        page: this.props.page,
+      };
+
       this.containerClassName = this.prefix;
       this.listClassName = `${this.prefix}-list`;
       this.itemClassName = `${this.prefix}-list-item`;
 
-      this.onClick = this.onClick.bind(this);
+      this._onClick = this._onClick.bind(this);
     },
-    render: function () {
+    _render: function () {
+      console.log('panel render');
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `
         <ul id="${this.prefix}" class="${this.listClassName}">
-          ${Constant.Panel.find((x) => x.type === this.props.currentType)
+          ${PanelConstant.find((x) => x.type === this.state.currentType)
             .items.map(
               (x) => `<li class='${this.itemClassName}' style="background: url(${x.img});background-position: ${-x.pos
                 .x}px ${-x.pos.y}px" data-value="${x.key}">
@@ -43,21 +45,38 @@ define(function (require) {
       });
     },
     mount: function () {
-      const node = this.render();
-      $$.delegate(this.parentNode, '.' + this.itemClassName, 'click', this.onClick);
+      const node = this._render();
+      $$.delegate(this.parentNode, '.' + this.itemClassName, 'click', this._onClick);
       this.parentNode.appendChild(node);
     },
     update: function (nextProps) {
-      this.props = { ...this.props, ...nextProps };
-      const node = this.render();
+      if (!this._shouldUpdate(nextProps)) return;
+      Object.keys(nextProps)
+        .filter((x) => x in this.state)
+        .forEach((x) =>
+          this._setState({
+            [x]: nextProps[x],
+          })
+        );
+      const node = this._render();
       $('.' + this.prefix).html(node);
     },
-    destroy: function () {
-      $(this.parentNode).find(this.prefix).remove();
+    _shouldUpdate: function (nextProps) {
+      const isSame = Object.keys(this.state).every((x) => nextProps[x] === this.state[x]);
+      if (isSame) {
+        return false;
+      }
+      return true;
     },
-    onClick: function (e) {
+    _onClick: function (e) {
       const val = e.target.dataset.value;
       this.props.onClick(val);
+    },
+    _setState: function (nextState) {
+      this.state = {
+        ...this.state,
+        ...nextState,
+      };
     },
   });
   return Panel;

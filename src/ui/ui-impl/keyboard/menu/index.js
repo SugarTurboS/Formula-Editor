@@ -2,30 +2,36 @@
  * @Author: Demian
  * @Date: 2020-04-16 16:11:27
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-16 20:07:21
+ * @LastEditTime: 2020-04-17 10:32:09
  */
 define(function (require) {
   const kity = require('kity');
   const $$ = require('ui/ui-impl/ui-utils');
+  const Constant = require('ui/ui-impl/keyboard/const');
   const Menu = kity.createClass('Menu', {
     constructor(parentNode, parentProps) {
       this.parentNode = parentNode;
       this.props = parentProps;
       this.prefix = parentProps.prefix + 'keyboard-menu';
       this.elementList = [
-        { type: 'common', title: '常用', index: 0 },
-        { type: 'algebra', title: '代数', index: 1 },
-        { type: 'geometry', title: '几何', index: 2 },
-        { type: 'unit', title: '单位', index: 3 },
-        { type: 'other', title: '其他', index: 4 },
+        { type: Constant.Type.Common, title: '常用', index: 0 },
+        { type: Constant.Type.Algebra, title: '代数', index: 1 },
+        { type: Constant.Type.Geometry, title: '几何', index: 2 },
+        { type: Constant.Type.Unit, title: '单位', index: 3 },
+        { type: Constant.Type.Other, title: '其他', index: 4 },
       ];
+
+      this.state = {
+        currentType: Constant.Type.Common,
+      };
 
       this.containerClassName = this.prefix;
       this.listClassName = `${this.prefix}-list`;
       this.itemClassName = `${this.prefix}-list-item`;
-      this.onClick = this.onClick.bind(this);
+      this._onClick = this._onClick.bind(this);
     },
-    render: function () {
+    _render: function () {
+      console.log('menu render');
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `
@@ -38,20 +44,42 @@ define(function (require) {
       });
     },
     mount: function () {
-      const node = this.render();
-      $$.delegate(this.parentNode, '.' + this.itemClassName, 'click', this.onClick);
+      const node = this._render();
+      $$.delegate(this.parentNode, '.' + this.itemClassName, 'click', this._onClick);
       this.parentNode.appendChild(node);
     },
     destroy: function () {
       $(this.parentNode).find(this.prefix).remove();
     },
     update: function (nextProps) {
-      this.props = { ...this.props, ...nextProps };
-      this.render();
+      if (!this._shouldUpdate(nextProps)) return;
+      Object.keys(nextProps)
+        .filter((x) => x in this.props)
+        .forEach((x) =>
+          this._setState({
+            [x]: nextProps[x],
+          })
+        );
+      const node = this._render();
+      $('.' + this.prefix).html(node);
     },
-    onClick: function (e) {
+    _shouldUpdate: function (nextProps) {
+      console.log(nextProps, this.props);
+      const isSame = Object.keys(this.state).every((x) => nextProps[x] === this.state[x]);
+      if (isSame) {
+        return false;
+      }
+      return true;
+    },
+    _onClick: function (e) {
       const val = e.target.dataset.value;
       this.props.onClick(val);
+    },
+    _setState: function (nextState) {
+      this.state = {
+        ...this.state,
+        ...nextState,
+      };
     },
   });
   return Menu;

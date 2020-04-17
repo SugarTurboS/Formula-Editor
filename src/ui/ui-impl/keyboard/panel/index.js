@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-17 10:29:52
+ * @LastEditTime: 2020-04-17 10:43:01
  */
 define(function (require) {
   const kity = require('kity');
@@ -17,7 +17,7 @@ define(function (require) {
 
       // 初始化状态
       this.state = {
-        currentType: this.props.currentType,
+        type: this.props.type,
         page: this.props.page,
       };
 
@@ -33,7 +33,7 @@ define(function (require) {
         className: this.containerClassName,
         content: `
         <ul id="${this.prefix}" class="${this.listClassName}">
-          ${PanelConstant.find((x) => x.type === this.state.currentType)
+          ${PanelConstant.find((x) => x.type === this.state.type)
             .items.map(
               (x) => `<li class='${this.itemClassName}' style="background: url(${x.img});background-position: ${-x.pos
                 .x}px ${-x.pos.y}px" data-value="${x.key}">

@@ -17,7 +17,7 @@ define(function (require) {
         this.doc = doc;
         this.pageSize = 36;
         this.state = {
-          currentType: Constant.Type.Common,
+          type: Constant.Type.Common,
           page: 0,
           totalPage: this.getTotalPage(PanelConstant[0].items.length),
         };
@@ -26,13 +26,13 @@ define(function (require) {
 
         // 完成组件渲染
         this.menuChild = new Menu(this.element, {
-          currentType: this.state.currentType,
+          type: this.state.type,
           prefix: PREFIX,
           doc: this.doc,
           onClick: this.onMenuClick.bind(this),
         });
         this.panelChild = new Panel(this.element, {
-          currentType: this.state.currentType,
+          type: this.state.type,
           page: this.state.page,
           prefix: PREFIX,
           doc: this.doc,
@@ -59,7 +59,8 @@ define(function (require) {
         const charCollection = PanelConstant.find((x) => x.type === val) || {};
         const len = charCollection.items ? charCollection.items.length : 0;
         this.setState({
-          currentType: val,
+          type: val,
+          page: 0,
           totalPage: this.getTotalPage(len),
         });
       },
@@ -70,12 +71,14 @@ define(function (require) {
 
       onPrevPage: function () {
         const prevPage = this.state.page;
+        if (prevPage === 0) return;
         this.setState({
           page: prevPage - 1,
         });
       },
       onNextPage: function () {
         const prevPage = this.state.page;
+        if (prevPage === this.state.totalPage - 1) return;
         this.setState({
           page: prevPage + 1,
         });
@@ -100,7 +103,7 @@ define(function (require) {
       },
 
       getTotalPage: function (len) {
-        return Math.ceil(len / this.pageSize);
+        return Math.ceil(len / this.pageSize) || 1;
       },
 
       attachTo: function (container) {

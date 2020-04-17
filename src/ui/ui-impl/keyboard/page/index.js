@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 20:03:47
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-17 10:31:57
+ * @LastEditTime: 2020-04-17 11:01:43
  */
 define(function (require) {
   const kity = require('kity');
@@ -19,7 +19,7 @@ define(function (require) {
 
       this.state = {
         page: this.props.page,
-        totalPage: this.props.page,
+        totalPage: this.props.totalPage,
       };
 
       this.containerClassName = this.prefix;
@@ -34,11 +34,23 @@ define(function (require) {
         content: `
           <ul id="${this.prefix}" class="${this.listClassName}">
             ${this.elementList
-              .map((x) => `<li class="${this.itemClassName}" data-value="${x.type}">${x.title}</li>`)
+              .map(
+                (x) =>
+                  `<li class="${this.itemClassName} ${
+                    isDisabled.call(this, x.type) ? this.itemClassName + '-disabled' : ''
+                  }" data-value="${x.type}">${x.title}</li>`
+              )
               .join('')}
           </ul>
         `,
       });
+      function isDisabled(type) {
+        if (type === 'prev') {
+          return this.state.page === 0;
+        } else {
+          return this.state.page === this.state.totalPage - 1;
+        }
+      }
     },
     mount: function () {
       const node = this._render();

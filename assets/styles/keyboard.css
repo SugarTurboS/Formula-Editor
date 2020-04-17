@@ -32,6 +32,12 @@
   .kf-editor-ui-keyboard-menu-list-item {
   cursor: pointer;
 }
+.kf-editor-ui-keyboard
+  .kf-editor-ui-keyboard-menu
+  .kf-editor-ui-keyboard-menu-list
+  .kf-editor-ui-keyboard-menu-list-item-active {
+  background: grey;
+}
 .kf-editor-ui-keyboard .kf-editor-ui-keyboard-panel {
   width: 400px;
   height: 100%;
@@ -59,4 +65,18 @@
   width: 100px;
   height: 100%;
   float: left;
+}
+.kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list {
+}
+.kf-editor-ui-keyboard
+  .kf-editor-ui-keyboard-page
+  .kf-editor-ui-keyboard-page-list
+  .kf-editor-ui-keyboard-page-list-item {
+}
+
+.kf-editor-ui-keyboard
+  .kf-editor-ui-keyboard-page
+  .kf-editor-ui-keyboard-page-list
+  .kf-editor-ui-keyboard-page-list-item-disabled {
+  background: grey;
 }

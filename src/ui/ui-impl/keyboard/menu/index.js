@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 16:11:27
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-17 10:32:09
+ * @LastEditTime: 2020-04-17 11:06:00
  */
 define(function (require) {
   const kity = require('kity');
@@ -22,7 +22,7 @@ define(function (require) {
       ];
 
       this.state = {
-        currentType: Constant.Type.Common,
+        type: Constant.Type.Common,
       };
 
       this.containerClassName = this.prefix;
@@ -37,11 +37,20 @@ define(function (require) {
         content: `
           <ul id="${this.prefix}" class="${this.listClassName}">
             ${this.elementList
-              .map((x) => `<li class="${this.itemClassName}" data-value="${x.type}">${x.title}</li>`)
+              .map(
+                (x) =>
+                  `<li class="${this.itemClassName} ${
+                    isActive.call(this, x.type) ? this.itemClassName + '-active' : ''
+                  }" data-value="${x.type}">${x.title}</li>`
+              )
               .join('')}
           </ul>
         `,
       });
+      function isActive(type) {
+        console.log(type, this.state.type);
+        return type === this.state.type;
+      }
     },
     mount: function () {
       const node = this._render();
@@ -64,7 +73,6 @@ define(function (require) {
       $('.' + this.prefix).html(node);
     },
     _shouldUpdate: function (nextProps) {
-      console.log(nextProps, this.props);
       const isSame = Object.keys(this.state).every((x) => nextProps[x] === this.state[x]);
       if (isSame) {
         return false;

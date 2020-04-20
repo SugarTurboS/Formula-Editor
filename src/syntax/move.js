@@ -191,7 +191,6 @@ define( function ( require, exports, module ) {
 
     // 左移内部定位
     function locateLeftIndex ( moveComponent, groupNode ) {
-
         var syntaxComponent = moveComponent.parentComponent,
             groupInfo = null,
             groupElement = null;

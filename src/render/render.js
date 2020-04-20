@@ -30,7 +30,7 @@ define( function ( require ) {
                 this.formula = null;
 
                 // 是否禁用重定位
-                this.relDisabled = false;
+                this.relDisabled = true;
                 this.canvasZoom = 1;
 
                 this.record = {
@@ -191,7 +191,6 @@ define( function ( require ) {
             },
 
             relocationToCenter: function () {
-
                 var formulaSpace = this.formula.container.getRenderBox();
 
                 this.formula.container.setTranslate( -formulaSpace.width / 2, -formulaSpace.height / 2);
@@ -383,11 +382,11 @@ define( function ( require ) {
             },
 
             enableRelocation: function () {
-                this.relDisabled = false;
+                // this.relDisabled = false;
             },
 
             disableRelocation: function () {
-                this.relDisabled = true;
+                // this.relDisabled = true;
             },
 
             setCanvasZoom: function ( zoom ) {

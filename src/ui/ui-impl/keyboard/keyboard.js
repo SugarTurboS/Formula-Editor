@@ -12,6 +12,7 @@ define(function (require) {
     Page = require('ui/ui-impl/keyboard/page/index'),
     Constant = require('ui/ui-impl/keyboard/const'),
     PanelConstant = require('ui/ui-impl/keyboard/panel/const'),
+    Footer = require('ui/ui-impl/keyboard/footer/index'),
     Keyboard = kity.createClass('Keyboard', {
       constructor: function (doc) {
         this.doc = doc;
@@ -46,6 +47,12 @@ define(function (require) {
           onPrevPage: this.onPrevPage.bind(this),
           onNextPage: this.onNextPage.bind(this),
         });
+        this.footerChild = new Footer(this.element, {
+          prefix: PREFIX,
+          doc: this.doc,
+          onSubmit: this.onSubmit.bind(this),
+          onCancel: this.onCancel.bind(this),
+        });
         this.renderKeyboard();
       },
 
@@ -53,6 +60,7 @@ define(function (require) {
         this.menuChild.mount();
         this.panelChild.mount();
         this.pageChild.mount();
+        this.footerChild.mount();
       },
 
       onMenuClick: function (val) {
@@ -83,6 +91,9 @@ define(function (require) {
           page: prevPage + 1,
         });
       },
+
+      onSubmit: function () {},
+      onCancel: function () {},
 
       render: function () {
         const keyboardNode = $$.ele(this.doc, 'div', {

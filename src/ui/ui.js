@@ -43,15 +43,11 @@ define( function ( require ) {
 
                 this.kfEditor = kfEditor;
 
-                this.toolbarWrap = createToolbarWrap( currentDocument );
-                this.toolbarContainer = createToolbarContainer( currentDocument );
                 this.editArea = createEditArea( currentDocument );
                 this.canvasContainer = createCanvasContainer( currentDocument );
                 this.scrollbarContainer = createScrollbarContainer( currentDocument );
                 this.keyboardContainer = createKeyboardContainer( currentDocument );
 
-                this.toolbarWrap.appendChild( this.toolbarContainer );
-                this.container.appendChild( this.toolbarWrap );
                 this.editArea.appendChild( this.canvasContainer );
                 this.container.appendChild( this.editArea );
                 this.container.appendChild( this.scrollbarContainer );
@@ -63,7 +59,7 @@ define( function ( require ) {
 
                 this.initEvent();
 
-                this.updateContainerSize( this.container, this.toolbarWrap, this.editArea, this.canvasContainer, this.keyboardContainer );
+                this.updateContainerSize( this.container, this.editArea, this.canvasContainer, this.keyboardContainer );
 
                 this.initScrollEvent();
 
@@ -71,9 +67,6 @@ define( function ( require ) {
 
             // 组件实例化
             initComponents: function () {
-
-                // 工具栏组件
-                this.components.toolbar = new Toolbar( this, this.kfEditor, ELEMENT_LIST );
 
                 // TODO 禁用缩放, 留待后面再重新开启
                 if ( false ) {
@@ -90,15 +83,14 @@ define( function ( require ) {
 
             },
 
-            updateContainerSize: function ( container, toolbar, editArea, canvas, keyboard ) {
+            updateContainerSize: function ( container, editArea, canvas, keyboard ) {
 
                 var containerBox = container.getBoundingClientRect(),
-                    toolbarBox = toolbar.getBoundingClientRect(),
                     keyboardBox = keyboard.getBoundingClientRect();
 
 
                 editArea.style.width = containerBox.width + "px";
-                editArea.style.height = containerBox.bottom - toolbarBox.bottom - keyboardBox.height + "px";
+                editArea.style.height = containerBox.bottom - keyboardBox.height + "px";
 
             },
 

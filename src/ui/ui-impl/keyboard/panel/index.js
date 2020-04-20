@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-17 10:43:01
+ * @LastEditTime: 2020-04-20 10:04:22
  */
 define(function (require) {
   const kity = require('kity');
@@ -14,7 +14,7 @@ define(function (require) {
       this.parentNode = parentNode;
       this.props = parentProps;
       this.prefix = parentProps.prefix + 'keyboard-panel';
-
+      this.panelHeight = 100;
       // 初始化状态
       this.state = {
         type: this.props.type,
@@ -32,11 +32,14 @@ define(function (require) {
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `
-        <ul id="${this.prefix}" class="${this.listClassName}">
+        <ul id="${this.prefix}" class="${this.listClassName}" style="top: -${
+          this.state.page * this.panelHeight
+        }px">
           ${PanelConstant.find((x) => x.type === this.state.type)
             .items.map(
-              (x) => `<li class='${this.itemClassName}' style="background: url(${x.img});background-position: ${-x.pos
-                .x}px ${-x.pos.y}px" data-value="${x.key}">
+              (x) => `<li class='${this.itemClassName}' style="background: url(${
+                x.img
+              });background-position: ${-x.pos.x}px ${-x.pos.y}px" data-value="${x.key}">
             </li>`
             )
             .join('')}

@@ -88,9 +88,8 @@ define( function ( require ) {
                 var containerBox = container.getBoundingClientRect(),
                     keyboardBox = keyboard.getBoundingClientRect();
 
-
                 editArea.style.width = containerBox.width + "px";
-                editArea.style.height = containerBox.bottom - keyboardBox.height + "px";
+                editArea.style.height = containerBox.height - keyboardBox.height + "px";
 
             },
 

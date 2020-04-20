@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 16:11:27
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-17 11:06:00
+ * @LastEditTime: 2020-04-20 14:37:50
  */
 define(function (require) {
   const kity = require('kity');
@@ -48,7 +48,6 @@ define(function (require) {
         `,
       });
       function isActive(type) {
-        console.log(type, this.state.type);
         return type === this.state.type;
       }
     },

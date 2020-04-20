@@ -51,7 +51,7 @@ define( function ( require, exports, modules ) {
     function generateOpShape ( operator, label ) {
 
         if ( label !== null ) {
-            return createRootPlaceholder( operator, label );
+            return createCursor( operator, label );
         } else {
             return createCommonShape( operator );
         }
@@ -72,6 +72,18 @@ define( function ( require, exports, modules ) {
         operator.addOperatorShape( shape );
 
         return shape;
+
+      }
+
+      function createCursor ( operator, label) {
+        
+        var cursorShape = new kity.Rect( 1, 50, 0, 0 ).fill( "#000" );
+        
+        cursorShape.setAttr( "style", "display: block" );
+
+        operator.addOperatorShape( cursorShape );
+
+        return cursorShape;
 
     }
 

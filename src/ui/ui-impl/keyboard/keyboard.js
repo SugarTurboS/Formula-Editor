@@ -98,7 +98,11 @@ define(function (require) {
       onDelete: function () {
         this.kfEditor.requestService('control.delete.string');
       },
-      onSubmit: function () {},
+      onSubmit: function () {
+        const res = this.kfEditor.execCommand('get.source');
+        //TODO:导出res值
+        console.log(res);
+      },
       onCancel: function () {},
 
       render: function () {

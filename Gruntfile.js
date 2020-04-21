@@ -4,6 +4,21 @@ module.exports = function (grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
 
+    copy: {
+      image: {
+        files: [
+          {
+            expand: true,
+            src: [
+              'assets/images/**/*.{png,jpg,jpeg,gif}',
+              'assets/images/*.{png,jpg,jpeg,gif}',
+            ],
+            dest: 'dist/',
+          },
+        ],
+      },
+    },
+
     babel: {
       dev: {
         options: {
@@ -36,8 +51,7 @@ module.exports = function (grunt) {
         files: [
           {
             expand: true,
-            cwd: 'assets/styles',
-            src: ['**/*.less'],
+            src: ['assets/styles/**/*.less'],
             dest: 'dist/',
             ext: '.css',
           },
@@ -52,7 +66,7 @@ module.exports = function (grunt) {
           '<%=grunt.template.today("yyyy-mm-dd") %> */\n',
       },
       build: {
-        src: 'dist/*.css', //压缩
+        src: 'dist/assets/styles/*.css', //压缩
         dest: 'dist/index.min.css', //dest 是目的地输出
       },
     },
@@ -140,7 +154,12 @@ module.exports = function (grunt) {
 
     // 临时目录清理
     clean: {
-      files: ['.tmp_build'],
+      temp: {
+        src: ['.tmp_build'],
+      },
+      dist: {
+        src: ['dist'],
+      },
     },
   });
 
@@ -167,9 +186,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-module-dependence');
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   // task list.
-  grunt.registerTask('default', ['less', 'cssmin']);
+  grunt.registerTask('default', ['clean:dist', 'less', 'cssmin']);
   grunt.registerTask('build', [
     'less',
     'cssmin',
@@ -178,6 +198,6 @@ module.exports = function (grunt) {
     'dependence:replace',
     'concat:full',
     'uglify:minimize',
-    'clean',
+    'clean: temp',
   ]);
 };

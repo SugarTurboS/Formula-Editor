@@ -7,7 +7,7 @@ define( function ( require ) {
     var kity = require( "kity"),
 
         // UiUitls
-        $$ = require( "ui/ui-impl/ui-utils" ),
+        // $$ = require( "ui/ui-impl/ui-utils" ),
 
         Utils = require( "base/utils" ),
 
@@ -15,11 +15,11 @@ define( function ( require ) {
 
         Scrollbar = require( "ui/ui-impl/scrollbar/scrollbar" ),
 
-        Toolbar = require( "ui/toolbar/toolbar" ),
+        // Toolbar = require( "ui/toolbar/toolbar" ),
         // 控制组件
         ScrollZoom = require( "ui/control/zoom" ),
 
-        ELEMENT_LIST = require( "ui/toolbar-ele-list" ),
+        // ELEMENT_LIST = require( "ui/toolbar-ele-list" ),
 
         Keyboard = require( "ui/keyboard/keyboard" ),
 
@@ -214,21 +214,21 @@ define( function ( require ) {
 
         } );
 
-    function createToolbarWrap ( doc ) {
+    // function createToolbarWrap ( doc ) {
 
-        return $$.ele( doc, "div", {
-            className: "kf-editor-toolbar"
-        } );
+    //     return $$.ele( doc, "div", {
+    //         className: "kf-editor-toolbar"
+    //     } );
 
-    }
+    // }
 
-    function createToolbarContainer ( doc ) {
+    // function createToolbarContainer ( doc ) {
 
-        return $$.ele( doc, "div", {
-            className: "kf-editor-inner-toolbar"
-        } );
+    //     return $$.ele( doc, "div", {
+    //         className: "kf-editor-inner-toolbar"
+    //     } );
 
-    }
+    // }
 
     function createEditArea ( doc ) {
         var container = doc.createElement( "div" );

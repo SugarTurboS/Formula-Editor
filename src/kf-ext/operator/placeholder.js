@@ -5,7 +5,7 @@
 define( function ( require, exports, modules ) {
 
     var kity = require( "kity" ),
-        FILL_COLOR = require( "sysconf" ).rootPlaceholder.color,
+        // FILL_COLOR = require( "sysconf" ).rootPlaceholder.color,
         SELECT_COLOR = require( "kf-ext/def" ).selectColor,
         ALL_SELECT_COLOR = require( "kf-ext/def" ).allSelectColor;
 
@@ -88,38 +88,38 @@ define( function ( require, exports, modules ) {
     }
 
     // 创建根占位符图形
-    function createRootPlaceholder ( operator, label ) {
+    // function createRootPlaceholder ( operator, label ) {
 
-        var textShape = new kity.Text( label ).fill( FILL_COLOR ),
-            shapeGroup = new kity.Group(),
-            padding = 20,
-            radius = 7,
-            borderBoxShape = new kity.Rect( 0, 0, 0, 0, radius ).stroke( FILL_COLOR ).fill( "transparent" ),
-            textBox = null;
+    //     var textShape = new kity.Text( label ).fill( FILL_COLOR ),
+    //         shapeGroup = new kity.Group(),
+    //         padding = 20,
+    //         radius = 7,
+    //         borderBoxShape = new kity.Rect( 0, 0, 0, 0, radius ).stroke( FILL_COLOR ).fill( "transparent" ),
+    //         textBox = null;
 
-        textShape.setFontSize( 40 );
-        shapeGroup.addShape( borderBoxShape );
-        shapeGroup.addShape( textShape );
-        operator.addOperatorShape( shapeGroup );
+    //     textShape.setFontSize( 40 );
+    //     shapeGroup.addShape( borderBoxShape );
+    //     shapeGroup.addShape( textShape );
+    //     operator.addOperatorShape( shapeGroup );
 
-        textBox = textShape.getFixRenderBox();
+    //     textBox = textShape.getFixRenderBox();
 
-        // 宽度要加上padding
-        borderBoxShape.stroke( FILL_COLOR ).fill( "transparent" );
-        borderBoxShape.setSize( textBox.width + padding * 2, textBox.height + padding * 2 );
-        borderBoxShape.setRadius( radius );
-        borderBoxShape.setAttr( "stroke-dasharray", "5, 5" );
+    //     // 宽度要加上padding
+    //     borderBoxShape.stroke( FILL_COLOR ).fill( "transparent" );
+    //     borderBoxShape.setSize( textBox.width + padding * 2, textBox.height + padding * 2 );
+    //     borderBoxShape.setRadius( radius );
+    //     borderBoxShape.setAttr( "stroke-dasharray", "5, 5" );
 
-        textShape.setAttr( {
-            dx: 0-textBox.x,
-            dy: 0-textBox.y
-        } );
+    //     textShape.setAttr( {
+    //         dx: 0-textBox.x,
+    //         dy: 0-textBox.y
+    //     } );
 
-        textShape.translate( padding, padding );
+    //     textShape.translate( padding, padding );
 
-        // 对于根占位符， 返回的不是组， 而是组容器内部的虚线框。 以方便选中变色
-        return borderBoxShape;
+    //     // 对于根占位符， 返回的不是组， 而是组容器内部的虚线框。 以方便选中变色
+    //     return borderBoxShape;
 
-    }
+    // }
 
 } );

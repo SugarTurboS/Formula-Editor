@@ -33,14 +33,14 @@
         if (!device) {
           console.log('没有读取到设备类型');
         } else {
-          console.log('读取到当前设备类型为：', device[1])
+          console.log('读取到当前设备类型为：', device[1]);
         }
         var factory = kf.EditorFactory.create($('#kfEditorContainer')[0], {
           render: {
             fontsize: 40,
           },
           ui: {
-            device: device ? device[1] : 'pc'
+            device: device ? device[1] : 'pc',
           },
           resource: {
             path: 'resource/',
@@ -57,11 +57,7 @@
         });
       });
     </script>
-    <link rel="stylesheet" href="assets/styles/page.css" />
-    <link rel="stylesheet" href="assets/styles/base.css" />
-    <link rel="stylesheet" href="assets/styles/ui.css" />
-    <link rel="stylesheet" href="assets/styles/scrollbar.css" />
-    <link rel="stylesheet" href="assets/styles/keyboard.css" />
+    <link rel="stylesheet" href="dist/index.min.css" />
   </head>
   <body>
     <div

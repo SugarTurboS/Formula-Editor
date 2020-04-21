@@ -5,10 +5,10 @@ module.exports = function (grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     babel: {
-      options: {
-        // sourceMap: true,
-      },
-      dist: {
+      dev: {
+        options: {
+          sourceMap: true,
+        },
         files: [
           {
             expand: true,
@@ -16,6 +16,44 @@ module.exports = function (grunt) {
             dest: '.tmp_build/', //输出到此临时目录下
           },
         ],
+      },
+      prod: {
+        options: {
+          // sourceMap: true,
+        },
+        files: [
+          {
+            expand: true,
+            src: ['src/**/*.js'], //所有js文件
+            dest: '.tmp_build/', //输出到此临时目录下
+          },
+        ],
+      },
+    },
+
+    less: {
+      compile: {
+        files: [
+          {
+            expand: true,
+            cwd: 'assets/styles',
+            src: ['**/*.less'],
+            dest: 'dist/',
+            ext: '.css',
+          },
+        ],
+      },
+    },
+    cssmin: {
+      options: {
+        stripBanners: true, //合并时允许输出头部信息
+        banner:
+          '/*!<%= pkg.file %> - <%= pkg.version %>-' +
+          '<%=grunt.template.today("yyyy-mm-dd") %> */\n',
+      },
+      build: {
+        src: 'dist/*.css', //压缩
+        dest: 'dist/index.min.css', //dest 是目的地输出
       },
     },
 
@@ -90,7 +128,11 @@ module.exports = function (grunt) {
     // hint检查
     jshint: {
       options: {
-        ignores: ['.tmp_build/src/base/*.js', '.tmp_build/src/parse/*.js', '.tmp_build/src/ui/ui-impl/**/*.js'],
+        ignores: [
+          '.tmp_build/src/base/*.js',
+          '.tmp_build/src/parse/*.js',
+          '.tmp_build/src/ui/ui-impl/**/*.js',
+        ],
         jshintrc: '.jshintrc',
       },
       check: ['.tmp_build/**/*.js'],
@@ -123,8 +165,19 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-module-dependence');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
 
   // task list.
-  grunt.registerTask('default', ['babel', 'jshint']);
-  grunt.registerTask('build', ['babel', 'jshint', 'dependence:replace', 'concat:full', 'uglify:minimize', 'clean']);
+  grunt.registerTask('default', ['less', 'cssmin']);
+  grunt.registerTask('build', [
+    'less',
+    'cssmin',
+    'babel',
+    'jshint',
+    'dependence:replace',
+    'concat:full',
+    'uglify:minimize',
+    'clean',
+  ]);
 };

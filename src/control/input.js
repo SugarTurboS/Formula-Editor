@@ -41,6 +41,10 @@ define( function ( require, exports, module ) {
                 insertStr: this.insertStr
             } );
 
+            // 删除元素
+            this.kfEditor.registerService("control.delete.string", this, {
+                deleteStr: this.deleteStr
+            })
         },
 
         initCommands: function () {
@@ -322,6 +326,10 @@ define( function ( require, exports, module ) {
             this.updateInput();
             this.kfEditor.requestService( "control.reselect" );
 
+        },
+        
+        deleteStr: function () {
+            this.delete();
         }
 
     } );

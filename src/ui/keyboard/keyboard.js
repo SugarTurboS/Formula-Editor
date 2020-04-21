@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-14 16:31:36
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-15 15:46:59
+ * @LastEditTime: 2020-04-21 17:25:16
  */
 define(function (require) {
   var kity = require('kity'),
@@ -102,7 +102,7 @@ define(function (require) {
       initKeyboardElements: function () {
         var doc = this.uiComponent.keyboardContainer.ownerDocument;
 
-        var ele = createKeyboard(doc);
+        var ele = createKeyboard(doc, this.kfEditor);
         this.appendElement(ele);
       },
 
@@ -111,8 +111,8 @@ define(function (require) {
       },
     });
 
-  function createKeyboard(doc) {
-    return new UiImpl.Keyboard(doc);
+  function createKeyboard(doc, kfEditor) {
+    return new UiImpl.Keyboard(doc, kfEditor);
   }
 
   return Keyboard;

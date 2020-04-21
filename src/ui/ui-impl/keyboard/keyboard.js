@@ -14,8 +14,9 @@ define(function (require) {
     PanelConstant = require('ui/ui-impl/keyboard/panel/const'),
     Footer = require('ui/ui-impl/keyboard/footer/index'),
     Keyboard = kity.createClass('Keyboard', {
-      constructor: function (doc) {
+      constructor: function (doc, kfEditor) {
         this.doc = doc;
+        this.kfEditor = kfEditor;
         this.pageSize = 36;
         this.state = {
           type: Constant.Type.Common,
@@ -46,6 +47,8 @@ define(function (require) {
           doc: this.doc,
           onPrevPage: this.onPrevPage.bind(this),
           onNextPage: this.onNextPage.bind(this),
+          onDelete: this.onDelete.bind(this),
+          onSubmit: this.onSubmit.bind(this),
         });
         this.footerChild = new Footer(this.element, {
           prefix: PREFIX,
@@ -92,6 +95,9 @@ define(function (require) {
         });
       },
 
+      onDelete: function () {
+        this.kfEditor.requestService('control.delete.string');
+      },
       onSubmit: function () {},
       onCancel: function () {},
 

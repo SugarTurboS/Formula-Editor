@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 20:03:47
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-20 10:03:23
+ * @LastEditTime: 2020-04-21 17:06:42
  */
 define(function (require) {
   const kity = require('kity');
@@ -33,6 +33,9 @@ define(function (require) {
         className: this.containerClassName,
         content: `
           <ul id="${this.prefix}" class="${this.listClassName}">
+            <li class="${this.itemClassName} ${
+          this.itemClassName
+        }-delete" data-value="delete">删除</li>
             ${this.elementList
               .map(
                 (x) =>
@@ -41,13 +44,16 @@ define(function (require) {
                   }" data-value="${x.type}">${x.title}</li>`
               )
               .join('')}
+            <li class="${this.itemClassName} ${
+          this.itemClassName
+        }-ok" data-value="submit">完成</li>
           </ul>
         `,
       });
       function isDisabled(type) {
         if (type === 'prev') {
           return this.state.page === 0;
-        } else {
+        } else if (type === 'next') {
           return this.state.page === this.state.totalPage - 1;
         }
       }
@@ -78,10 +84,17 @@ define(function (require) {
     },
     _onClick: function (e) {
       const val = e.target.dataset.value;
-      if (val === 'next') {
-        this.props.onNextPage();
-      } else {
-        this.props.onPrevPage();
+      switch (val) {
+        case 'next':
+          this.props.onNextPage();
+          break;
+        case 'prev':
+          this.props.onPrevPage();
+          break;
+        case 'delete':
+          this.props.onDelete();
+        case 'submit':
+          this.props.onSubmit();
       }
     },
     _setState: function (nextState) {

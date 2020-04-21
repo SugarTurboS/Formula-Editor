@@ -46,11 +46,13 @@ define( function ( require ) {
                 this.kfEditor = kfEditor;
 
                 this.editArea = createEditArea( currentDocument );
+                this.okButton = createOkButton( currentDocument );
                 this.canvasContainer = createCanvasContainer( currentDocument );
                 this.scrollbarContainer = createScrollbarContainer( currentDocument );
                 this.keyboardContainer = createKeyboardContainer( currentDocument );
 
                 this.editArea.appendChild( this.canvasContainer );
+                this.editArea.appendChild( this.okButton );
                 this.container.appendChild( this.editArea );
                 this.container.appendChild( this.scrollbarContainer );
                 this.container.appendChild( this.keyboardContainer );
@@ -229,6 +231,13 @@ define( function ( require ) {
     //     } );
 
     // }
+
+    function createOkButton ( doc ) {
+      var container = doc.createElement( "div" );
+      container.className = "kf-editor-ok";
+      container.innerText = "确定";
+      return container;
+    }
 
     function createEditArea ( doc ) {
         var container = doc.createElement( "div" );

@@ -66,7 +66,7 @@ module.exports = function (grunt) {
           '<%=grunt.template.today("yyyy-mm-dd") %> */\n',
       },
       build: {
-        src: 'dist/assets/styles/*.css', //压缩
+        src: 'dist/assets/styles/**/*.css', //压缩
         dest: 'dist/index.min.css', //dest 是目的地输出
       },
     },

@@ -1,0 +1,94 @@
+.android {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .kf-editor-edit-area {
+  }
+  .kf-editor-edit-scrollbar {
+  }
+  .kf-editor-edit-keyboard,
+  .kf-editor-edit-keyboard {
+    height: 615px;
+    background: #eceff1;
+    .kf-editor-ui-keyboard-menu {
+      width: 274px;
+      height: 100%;
+      float: left;
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      .kf-editor-ui-keyboard-menu-list {
+        width: 100%;
+        height: 100%;
+        padding: 26px;
+        background: #eceff1;
+        overflow: hidden;
+        .kf-editor-ui-keyboard-menu-list-item {
+          width: 183px;
+          height: 75px;
+          margin: 19px;
+          text-align: center;
+          line-height: 75px;
+          font-size: 16px;
+          color: #49494d;
+          cursor: pointer;
+          float: left;
+          font-size: 34px;
+        }
+        .kf-editor-ui-keyboard-menu-list-item-active {
+          background: #ffab30;
+          border-radius: 8px;
+          color: #ffffff;
+        }
+      }
+    }
+    .kf-editor-ui-keyboard-panel {
+      width: 1425px;
+      height: 100%;
+      float: left;
+      .kf-editor-ui-keyboard-panel-list {
+        width: 100%;
+        height: 100%;
+        padding: 26px 0 0 33px;
+        overflow: hidden;
+        .kf-editor-ui-keyboard-panel-list-item {
+          width: 148px;
+          height: 122px;
+          margin: 12px;
+          text-align: center;
+          line-height: 121px;
+          font-size: 16px;
+          color: #49494d;
+          cursor: pointer;
+          float: left;
+        }
+      }
+    }
+
+    .kf-editor-ui-keyboard-page {
+      width: 191px;
+      height: 100%;
+      float: left;
+      .kf-editor-ui-keyboard-page-list {
+        width: 100%;
+        height: 100%;
+        padding: 26px 0px 26px 0;
+        overflow: hidden;
+        .kf-editor-ui-keyboard-page-list-item {
+          width: 191px;
+          height: 122px;
+          margin: 12px;
+          float: left;
+          font-size: 46px;
+          color: #ff9800;
+          text-align: center;
+          line-height: 122px;
+        }
+      }
+    }
+    .kf-editor-ui-keyboard-footer {
+      display: none;
+    }
+  }
+}

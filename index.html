@@ -28,9 +28,19 @@
     <!-- end -->
     <script>
       jQuery(function ($) {
+        const device = /device=(android|pc)/.exec(location.search);
+
+        if (!device) {
+          console.log('没有读取到设备类型');
+        } else {
+          console.log('读取到当前设备类型为：', device[1])
+        }
         var factory = kf.EditorFactory.create($('#kfEditorContainer')[0], {
           render: {
             fontsize: 40,
+          },
+          ui: {
+            device: device ? device[1] : 'pc'
           },
           resource: {
             path: 'resource/',

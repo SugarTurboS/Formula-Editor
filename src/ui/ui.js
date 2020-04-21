@@ -32,6 +32,8 @@ define( function ( require ) {
                 this.options = options;
 
                 this.container = kfEditor.getContainer();
+                
+                this.switchThemeByDeviceType();
 
                 currentDocument = this.container.ownerDocument;
 
@@ -63,6 +65,14 @@ define( function ( require ) {
 
                 this.initScrollEvent();
 
+            },
+
+            switchThemeByDeviceType: function () {
+              if (this.options.device === 'android') {
+                this.container.className += ' android';
+              } else {
+                this.container.className += ' pc';
+              }
             },
 
             // 组件实例化

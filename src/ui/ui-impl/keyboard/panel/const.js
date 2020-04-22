@@ -2,12 +2,12 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-17 09:30:03
+ * @LastEditTime: 2020-04-22 16:18:22
  */
 
 define(function (require) {
   const kity = require('kity'),
-    CHAR_POSITION = require('ui/char-position.data'),
+    CHAR_POSITION = require('ui/ui-impl/keyboard/panel/position.data'),
     Constant = [
       { type: 'common', title: '常用', index: 0, items: [] },
       { type: 'algebra', title: '代数', index: 1, items: [] },
@@ -20,55 +20,72 @@ define(function (require) {
   // 常用
   (function () {
     const list = [
-      'pm',
-      'infty',
-      '=',
-      'sim',
-      'times',
-      'div',
-      '!',
       '<',
-      'll',
-      '>',
-      'gg',
-      'leq',
-      'geq',
-      'mp',
-      'cong',
-      'equiv',
-      'propto',
-      'approx',
-      'forall',
-      'partial',
-      'surd',
-      'cup',
-      'cap',
-      'varnothing',
-      '%',
-      'circ',
-      'exists',
-      'nexists',
-      'in',
-      'ni',
-      'gets',
-      'uparrow',
-      'to',
-      'downarrow',
-      'leftrightarrow',
-      'therefore',
-      'because',
+      '\\frac \\placeholder\\placeholder',
+      '\\sqrt \\placeholder',
+      'a',
       '+',
+      '7',
+      '8',
+      '9',
+      '>',
+      '||',
+      '\\placeholder^2',
+      'b',
       '-',
-      'neg',
-      'ast',
-      'cdot',
-      'vdots',
-      /* "ddots",*/ 'aleph',
-      'beth',
-      'blacksquare',
+      '4',
+      '5',
+      '6',
+      '\\leq',
+      '\\left(\\placeholder\\right)',
+      '\\sqrt [3] \\placeholder',
+      'x',
+      '\\pm',
+      '1',
+      '2',
+      '3',
+      '\\geq',
+      '%',
+      '\\placeholder^3',
+      'y',
+      ',',
+      '0',
+      '.',
+      '=',
+      '\\times',
+      '\\div',
+      '%0',
+      '\\approx',
+      '\\neq',
+      '\\sqrt [\\placeholder] \\placeholder',
+      '\\pi',
+      '\\sigma',
+      '\\left[\\placeholder\\right]',
+      '\\placeholder^\\placeholder',
+      '\\placeholder_\\placeholder',
+      '{^\\placeholder_\\placeholder\\placeholder}',
+      '\\placeholder^\\placeholder_\\placeholder',
+      '排',
+      '组',
+      '\\sum\\placeholder',
+      '\\sum_\\placeholder\\placeholder',
+      '\\sum^\\placeholder_\\placeholder\\placeholder',
+      '\\int \\placeholder',
+      '\\int^\\placeholder_\\placeholder\\placeholder',
+      '\\iint\\placeholder',
+      '\\iint^\\placeholder_\\placeholder\\placeholder',
+      '\\iiint\\placeholder',
+      '\\iiint^\\placeholder_\\placeholder\\placeholder',
+      'log',
+      'ln',
+      '\\to',
+      '\\cup',
+      '\\neg',
+      '\\forall',
+      '\\exists',
     ];
 
-    Constant[0].items = getIconContents(list, 'assets/images/toolbar/char.png');
+    Constant[0].items = getIconContents(list, 'assets/images/keyboard.png');
   })();
 
   // 希腊字符配置
@@ -134,25 +151,33 @@ define(function (require) {
       },
       {
         title: '变体',
-        values: ['digamma', 'varepsilon', 'varkappa', 'varphi', 'varpi', 'varrho', 'varsigma', 'vartheta'],
+        values: [
+          'digamma',
+          'varepsilon',
+          'varkappa',
+          'varphi',
+          'varpi',
+          'varrho',
+          'varsigma',
+          'vartheta',
+        ],
       },
     ];
 
-    Constant[1].items = getIconContents(greekList[0].values, 'assets/images/toolbar/char.png');
+    Constant[1].items = getIconContents(
+      greekList[0].values,
+      'assets/images/keyboard.png'
+    );
   })();
 
   function getIconContents(keySet, imgSrc) {
     const result = [];
 
     kity.Utils.each(keySet, function (key) {
-      if (key.length > 1) {
-        key = '\\' + key;
-      }
-
       result.push({
         key: key,
         img: imgSrc,
-        pos: CHAR_POSITION[key],
+        pos: CHAR_POSITION[key] || { x: 0, y: 0 },
       });
     });
 

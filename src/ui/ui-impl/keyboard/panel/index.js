@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-21 18:08:27
+ * @LastEditTime: 2020-04-22 14:08:49
  */
 define(function (require) {
   const kity = require('kity');
@@ -14,7 +14,7 @@ define(function (require) {
       this.parentNode = parentNode;
       this.props = parentProps;
       this.prefix = parentProps.prefix + 'keyboard-panel';
-      this.panelHeight = 617;
+      this.scrollHeight = 320;
       // 初始化状态
       this.state = {
         type: this.props.type,
@@ -29,21 +29,38 @@ define(function (require) {
     },
     _render: function () {
       console.log('panel render');
+      const list = PanelConstant.find((x) => x.type === this.state.type).items || [];
+      const table = list.reduce((acc, cur, index) => {
+        const row = Math.floor(index / 8);
+        const col = Math.floor(index % 8);
+        if (!acc[row]) acc[row] = [];
+        acc[row][col] = cur;
+        return acc;
+      }, []);
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `
-        <ul id="${this.prefix}" class="${this.listClassName}" style="top: -${
-          this.state.page * this.panelHeight
-        }px">
-          ${PanelConstant.find((x) => x.type === this.state.type)
-            .items.map(
-              (x) => `<li class='${this.itemClassName}' style="background: url(${
-                x.img
-              });background-position: ${-x.pos.x}px ${-x.pos.y}px" data-value="${x.key}">
-            </li>`
+        <table id="${this.prefix}" class="${this.listClassName}" style="top: -${
+          this.state.page * this.scrollHeight
+        }px" cellspacing="0" cellpadding="0">
+          ${table
+            .map(
+              (row) =>
+                '<tr>' +
+                row
+                  .map(
+                    (x) =>
+                      `<td class='${this.itemClassName}' style="background: url(${
+                        x.img
+                      });background-position: ${-x.pos.x}px ${-x.pos.y}px" data-value="${
+                        x.key
+                      }" />`
+                  )
+                  .join('') +
+                '</tr>'
             )
             .join('')}
-        </ul>
+        </table>
       `,
       });
     },

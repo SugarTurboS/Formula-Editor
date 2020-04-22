@@ -22,6 +22,7 @@ define( function ( require ) {
         // ELEMENT_LIST = require( "ui/toolbar-ele-list" ),
 
         Keyboard = require( "ui/keyboard/keyboard" ),
+        Header = require("ui/header/header");
 
         UIComponent = kity.createClass( 'UIComponent', {
 
@@ -45,12 +46,14 @@ define( function ( require ) {
 
                 this.kfEditor = kfEditor;
 
+                this.header = createHeader( currentDocument );
                 this.editArea = createEditArea( currentDocument );
                 this.okButton = createOkButton( currentDocument );
                 this.canvasContainer = createCanvasContainer( currentDocument );
                 this.scrollbarContainer = createScrollbarContainer( currentDocument );
                 this.keyboardContainer = createKeyboardContainer( currentDocument );
-
+                
+                this.editArea.appendChild( this.header );
                 this.editArea.appendChild( this.canvasContainer );
                 this.editArea.appendChild( this.okButton );
                 this.container.appendChild( this.editArea );
@@ -69,8 +72,12 @@ define( function ( require ) {
 
             },
 
+            isAndroid: function () {
+              return this.options.device === 'android';
+            },
+
             switchThemeByDeviceType: function () {
-              if (this.options.device === 'android') {
+              if (this.isAndroid()) {
                 this.container.className += ' android';
               } else {
                 this.container.className += ' pc';
@@ -88,6 +95,8 @@ define( function ( require ) {
                         min: this.options.minzoom
                     } );
                 }
+
+                this.components.header = new Header( this, this.kfEditor );
                 this.components.scrollbar = new Scrollbar( this, this.kfEditor );
 
                 // 软件盘
@@ -231,7 +240,12 @@ define( function ( require ) {
     //     } );
 
     // }
-
+    function createHeader ( doc ) {
+      var container = doc.createElement('div');
+      container.className = "kf-editor-header";
+      return container;
+    }
+    
     function createOkButton ( doc ) {
       var container = doc.createElement( "div" );
       container.className = "kf-editor-ok";

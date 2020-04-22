@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 20:03:47
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-22 14:26:39
+ * @LastEditTime: 2020-04-22 16:27:47
  */
 define(function (require) {
   const kity = require('kity');
@@ -39,9 +39,9 @@ define(function (require) {
             ${this.elementList
               .map(
                 (x) =>
-                  `<li class="${this.itemClassName} ${
+                  `<li class="${this.itemClassName} ${this.itemClassName}-${x.type} ${
                     isDisabled.call(this, x.type) ? this.itemClassName + '-disabled' : ''
-                  }" data-value="${x.type}">${x.title}</li>`
+                  }" data-value="${x.type}"></li>`
               )
               .join('')}
             <li class="${this.itemClassName} ${

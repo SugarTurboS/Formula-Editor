@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 09:53:01
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-22 10:34:43
+ * @LastEditTime: 2020-04-22 17:11:05
  */
 /*
  * @Author: Demian
@@ -39,7 +39,7 @@ define(function (require) {
           className: this.prefix,
           content: `
                 <div class="${this.prefix}-title">插入字符</div>
-                <div class="${this.prefix}-close">xxx</div>
+                <div class="${this.prefix}-close"></div>
               `,
         });
       },

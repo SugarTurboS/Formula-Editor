@@ -22,6 +22,18 @@
       height: 48px;
       float: right;
       cursor: pointer;
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        background: url('../../images/ic_close.png') center no-repeat;
+        background-size: 100%;
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 16px;
+        right: 16px;
+      }
     }
   }
   .kf-editor-edit-area {
@@ -87,7 +99,7 @@
       }
     }
     .kf-editor-ui-keyboard-panel {
-      width: 665px;
+      width: 664px;
       height: 347px;
       float: left;
       overflow: hidden;
@@ -109,20 +121,46 @@
       width: 81px;
       height: 347px;
       float: left;
+      margin-left: -1px;
+      border-left: 1px solid #e4e4e4;
       .kf-editor-ui-keyboard-page-list {
         .kf-editor-ui-keyboard-page-list-item {
           width: 81px;
-          height: 129px;
-
+          height: 128px;
           cursor: pointer;
         }
         .kf-editor-ui-keyboard-page-list-item-delete {
           width: 81px;
           height: 64px;
-          background-image: url('../../images/keyboard.png');
+          background: url('../../images/delete.svg') center no-repeat;
+          background-size: initial;
+          border-bottom: 1px solid #e4e4e4;
         }
-        .kf-editor-ui-keyboard-page-list-item-disabled {
-          background: grey;
+        .kf-editor-ui-keyboard-page-list-item-prev {
+          border-bottom: 1px solid #e4e4e4;
+          position: relative;
+          &::before {
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url('../../images/up.svg') center no-repeat;
+            background-size: initial;
+          }
+        }
+        .kf-editor-ui-keyboard-page-list-item-next {
+          position: relative;
+          &::before {
+            content: ' ';
+            display: block;
+            width: 100%;
+            height: 100%;
+            background: url('../../images/down.svg') center no-repeat;
+            background-size: initial;
+          }
+        }
+        .kf-editor-ui-keyboard-page-list-item-disabled::before {
+          opacity: 0.5;
         }
         .kf-editor-ui-keyboard-page-list-item-ok {
           display: none;
@@ -134,6 +172,7 @@
       height: 64px;
       padding: 14px 0;
       float: left;
+      border-top: 1px solid #e4e4e4;
       #kf-editor-ui-keyboard-footer-button-cancel {
         width: 120px;
         height: 36px;

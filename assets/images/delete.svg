@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="43px" height="43px" viewBox="0 0 43 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>delete</title>
+    <desc>Created with Sketch.</desc>
+    <g id="delete" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="删除">
+            <rect id="key-boarder" fill="#313C42" opacity="0" x="0.518987342" y="0.507692308" width="42" height="42" rx="2"></rect>
+            <path d="M31,13 L16.1,13 C15.4,13 14.8,13.3 14.4,13.9 L9,22 L14.4,30.1 C14.8,30.6 15.4,31 16.1,31 L31,31 C32.1,31 33,30.1 33,29 L33,15 C33,13.9 32.1,13 31,13 L31,13 Z M28,25.6 L26.6,27 L23,23.4 L19.4,27 L18,25.6 L21.6,22 L18,18.4 L19.4,17 L23,20.6 L26.6,17 L28,18.4 L24.4,22 L28,25.6 L28,25.6 Z" id="delete" fill-opacity="0.8" fill="#616266"></path>
+        </g>
+    </g>
+</svg>

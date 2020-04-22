@@ -10,8 +10,8 @@ module.exports = function (grunt) {
           {
             expand: true,
             src: [
-              'assets/images/**/*.{png,jpg,jpeg,gif}',
-              'assets/images/*.{png,jpg,jpeg,gif}',
+              'assets/images/**/*.{png,jpg,jpeg,gif,svg}',
+              'assets/images/*.{png,jpg,jpeg,gif,svg}',
             ],
             dest: 'dist/',
           },

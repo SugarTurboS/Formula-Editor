@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 20:03:47
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-22 16:27:47
+ * @LastEditTime: 2020-04-22 17:29:25
  */
 define(function (require) {
   const kity = require('kity');

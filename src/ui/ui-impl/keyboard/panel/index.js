@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-22 14:08:49
+ * @LastEditTime: 2020-04-22 17:42:22
  */
 define(function (require) {
   const kity = require('kity');
@@ -40,7 +40,7 @@ define(function (require) {
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `
-        <table id="${this.prefix}" class="${this.listClassName}" style="top: -${
+        <table id="${this.listClassName}" class="${this.listClassName}" style="top: -${
           this.state.page * this.scrollHeight
         }px" cellspacing="0" cellpadding="0">
           ${table
@@ -71,6 +71,7 @@ define(function (require) {
     },
     update: function (nextProps) {
       if (!this._shouldUpdate(nextProps)) return;
+      if (this._justPageChange(nextProps)) return;
       Object.keys(nextProps)
         .filter((x) => x in this.state)
         .forEach((x) =>
@@ -87,6 +88,19 @@ define(function (require) {
         return false;
       }
       return true;
+    },
+    _justPageChange: function (nextProps) {
+      const justPageChange = Object.keys(this.state)
+        .filter((k) => k !== 'page')
+        .every((v) => this.state[v] === nextProps[v]);
+      console.log(justPageChange, this.state, nextProps);
+      if (justPageChange) {
+        $('#' + this.listClassName).css('top', - nextProps.page * this.scrollHeight + 'px');
+        this._setState({
+          page: nextProps.page,
+        });
+      }
+      return justPageChange;
     },
     _onClick: function (e) {
       const val = e.target.dataset.value;

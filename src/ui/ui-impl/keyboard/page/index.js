@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 20:03:47
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-21 17:06:42
+ * @LastEditTime: 2020-04-22 14:26:39
  */
 define(function (require) {
   const kity = require('kity');
@@ -35,7 +35,7 @@ define(function (require) {
           <ul id="${this.prefix}" class="${this.listClassName}">
             <li class="${this.itemClassName} ${
           this.itemClassName
-        }-delete" data-value="delete">删除</li>
+        }-delete" data-value="delete"></li>
             ${this.elementList
               .map(
                 (x) =>

@@ -67,7 +67,7 @@ module.exports = function (grunt) {
       },
       build: {
         src: 'dist/assets/styles/**/*.css', //压缩
-        dest: 'dist/index.min.css', //dest 是目的地输出
+        dest: 'dist/assets/styles/theme/index.min.css', //dest 是目的地输出
       },
     },
 
@@ -189,7 +189,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // task list.
-  grunt.registerTask('default', ['clean:dist', 'less', 'cssmin']);
+  grunt.registerTask('default', ['clean:dist', 'copy', 'less', 'cssmin']);
   grunt.registerTask('build', [
     'less',
     'cssmin',

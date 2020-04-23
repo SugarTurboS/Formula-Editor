@@ -88,6 +88,17 @@
           color: #49494d;
           cursor: pointer;
           float: left;
+          position: relative;
+          &:active {
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              background-color: rgba(64, 75, 80, 0.15);
+            }
+          }
         }
       }
     }
@@ -115,8 +126,11 @@
         .kf-editor-ui-keyboard-page-list-item-delete {
           width: 191px;
           height: 122px;
-          background: url('../../images/delete.svg') center no-repeat;
+          background: url('../../images/android/delete.svg') center no-repeat;
           background-size: initial;
+          &:active {
+            background-color: rgba(64, 75, 80, 0.15);
+          }
         }
         .kf-editor-ui-keyboard-page-list-item-prev {
           position: relative;
@@ -125,8 +139,11 @@
             display: block;
             width: 100%;
             height: 100%;
-            background: url('../../images/up.svg') center no-repeat;
+            background: url('../../images/android/up.svg') center no-repeat;
             background-size: initial;
+          }
+          &:not(.kf-editor-ui-keyboard-page-list-item-disabled):active {
+            background-color: rgba(64, 75, 80, 0.15);
           }
         }
         .kf-editor-ui-keyboard-page-list-item-next {
@@ -136,8 +153,11 @@
             display: block;
             width: 100%;
             height: 100%;
-            background: url('../../images/down.svg') center no-repeat;
+            background: url('../../images/android/down.svg') center no-repeat;
             background-size: initial;
+          }
+          &:not(.kf-editor-ui-keyboard-page-list-item-disabled):active {
+            background-color: rgba(64, 75, 80, 0.15);
           }
         }
         .kf-editor-ui-keyboard-page-list-item-disabled::before {

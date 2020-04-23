@@ -20,6 +20,17 @@ define(function (require) {
         this.kfEditor = kfEditor;
         this.pageSize = 36;
         this.panelConstant = this.getConstant();
+        this.typeEnum = {
+          [Constant.Type.Common]: 0,
+          [Constant.Type.Algebra]: 1,
+          [Constant.Type.Geometry]: 2,
+          [Constant.Type.Other]: 3,
+          0: Constant.Type.Common,
+          1: Constant.Type.Algebra,
+          2: Constant.Type.Geometry,
+          3: Constant.Type.Other,
+        };
+
         this.state = {
           type: Constant.Type.Common,
           page: 0,
@@ -44,6 +55,7 @@ define(function (require) {
           onClick: this.onPanelClick.bind(this),
         });
         this.pageChild = new Page(this.element, {
+          type: this.state.type,
           page: this.state.page,
           totalPage: this.state.totalPage,
           prefix: PREFIX,
@@ -70,7 +82,7 @@ define(function (require) {
       },
 
       onMenuClick: function (val) {
-        const charCollection =  this.panelConstant.find((x) => x.type === val) || {};
+        const charCollection = this.panelConstant.find((x) => x.type === val) || {};
         const len = charCollection.items ? charCollection.items.length : 0;
         this.setState({
           type: val,
@@ -84,17 +96,31 @@ define(function (require) {
       },
 
       onPrevPage: function () {
-        const prevPage = this.state.page;
-        if (prevPage === 0) return;
+        const { page, type } = this.state;
+        // 如果已到第一页，则自动切换至上一个模式，若已到最顶部模式，则禁止翻页
+        if (page === 0 && type === Constant.Type.Common) {
+          return;
+        }
+        if (page === 0) {
+          this._prevMode(type);
+          return;
+        }
         this.setState({
-          page: prevPage - 1,
+          page: page - 1,
         });
       },
       onNextPage: function () {
-        const prevPage = this.state.page;
-        if (prevPage === this.state.totalPage - 1) return;
+        const { page, type, totalPage } = this.state;
+        // 如果已到最后一页，则自动切换至下一个模式，若已到最底部模式，则禁止翻页
+        if (page === totalPage - 1 && type === Constant.Type.Other) {
+          return;
+        }
+        if (page === totalPage - 1) {
+          this._nextMode(type);
+          return;
+        }
         this.setState({
-          page: prevPage + 1,
+          page: page + 1,
         });
       },
 
@@ -146,6 +172,29 @@ define(function (require) {
 
       attachTo: function (container) {
         container.appendChild(this.element);
+      },
+
+      _prevMode: function (curType) {
+        const prevType = this.typeEnum[this.typeEnum[curType] - 1];
+        const charCollection = this.panelConstant.find((x) => x.type === prevType) || {};
+        const len = charCollection.items ? charCollection.items.length : 0;
+        this.setState({
+          type: prevType,
+          page: 0,
+          totalPage: this.getTotalPage(len),
+        });
+        return;
+      },
+      _nextMode: function (curType) {
+        const nextType = this.typeEnum[this.typeEnum[curType] + 1];
+        const charCollection = this.panelConstant.find((x) => x.type === nextType) || {};
+        const len = charCollection.items ? charCollection.items.length : 0;
+        this.setState({
+          type: nextType,
+          page: 0,
+          totalPage: this.getTotalPage(len),
+        });
+        return;
       },
     });
 

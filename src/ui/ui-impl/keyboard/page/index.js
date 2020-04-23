@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 20:03:47
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-22 17:29:25
+ * @LastEditTime: 2020-04-23 17:58:04
  */
 define(function (require) {
   const kity = require('kity');
@@ -18,6 +18,7 @@ define(function (require) {
       ];
 
       this.state = {
+        type: this.props.type,
         page: this.props.page,
         totalPage: this.props.totalPage,
       };
@@ -52,9 +53,9 @@ define(function (require) {
       });
       function isDisabled(type) {
         if (type === 'prev') {
-          return this.state.page === 0;
+          return this.state.page === 0 && this.state.type === 'common';
         } else if (type === 'next') {
-          return this.state.page === this.state.totalPage - 1;
+          return this.state.page === this.state.totalPage - 1 && this.state.type === 'other';
         }
       }
     },

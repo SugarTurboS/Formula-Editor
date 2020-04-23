@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 09:55:13
+ * @LastEditTime: 2020-04-23 10:51:47
  */
 define(function (require) {
   const kity = require('kity');
@@ -48,7 +48,7 @@ define(function (require) {
                 row
                   .map(
                     (x) =>
-                      `<td class='${this.itemClassName}' style="background: url(${
+                      `<td class='${this.itemClassName}' style="background-image: url(${
                         x.img
                       });background-position: ${-x.pos.x}px ${-x.pos.y}px" data-value="${
                         x.key

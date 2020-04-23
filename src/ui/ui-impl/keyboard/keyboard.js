@@ -11,17 +11,19 @@ define(function (require) {
     Panel = require('ui/ui-impl/keyboard/panel/index'),
     Page = require('ui/ui-impl/keyboard/page/index'),
     Constant = require('ui/ui-impl/keyboard/const'),
-    PanelConstant = require('ui/ui-impl/keyboard/panel/const'),
+    PcPanelConstant = require('ui/ui-impl/keyboard/panel/pcConst'),
+    AndroidPanelConstant = require('ui/ui-impl/keyboard/panel/androidConst'),
     Footer = require('ui/ui-impl/keyboard/footer/index'),
     Keyboard = kity.createClass('Keyboard', {
       constructor: function (doc, kfEditor) {
         this.doc = doc;
         this.kfEditor = kfEditor;
         this.pageSize = 36;
+        this.panelConstant = this.getConstant();
         this.state = {
           type: Constant.Type.Common,
           page: 0,
-          totalPage: this.getTotalPage(PanelConstant[0].items.length),
+          totalPage: this.getTotalPage(this.panelConstant[0].items.length),
         };
 
         this.element = this.render();
@@ -38,6 +40,7 @@ define(function (require) {
           page: this.state.page,
           prefix: PREFIX,
           doc: this.doc,
+          panelConstant: this.panelConstant,
           onClick: this.onPanelClick.bind(this),
         });
         this.pageChild = new Page(this.element, {
@@ -67,7 +70,7 @@ define(function (require) {
       },
 
       onMenuClick: function (val) {
-        const charCollection = PanelConstant.find((x) => x.type === val) || {};
+        const charCollection =  this.panelConstant.find((x) => x.type === val) || {};
         const len = charCollection.items ? charCollection.items.length : 0;
         this.setState({
           type: val,
@@ -125,6 +128,20 @@ define(function (require) {
 
       getTotalPage: function (len) {
         return Math.ceil(len / this.pageSize) || 1;
+      },
+
+      getDeviceType: function () {
+        return this.kfEditor.options.ui.device;
+      },
+
+      getConstant: function () {
+        const deviceType = this.getDeviceType();
+        switch (deviceType) {
+          case 'android':
+            return AndroidPanelConstant;
+          case 'pc':
+            return PcPanelConstant;
+        }
       },
 
       attachTo: function (container) {

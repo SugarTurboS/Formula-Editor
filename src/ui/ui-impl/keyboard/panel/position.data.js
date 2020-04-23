@@ -2,10 +2,10 @@
  * @Author: Demian
  * @Date: 2020-04-22 14:54:26
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-22 16:17:29
+ * @LastEditTime: 2020-04-23 10:04:02
  */
 define(function () {
-  return transverse({
+  return {
     '<': {
       x: 0,
       y: 0,
@@ -200,77 +200,67 @@ define(function () {
     },
     '\\sum_\\placeholder\\placeholder': {
       x: 0,
-      y: 6
+      y: 6,
     },
     '\\sum^\\placeholder_\\placeholder\\placeholder': {
       x: 1,
-      y: 6
+      y: 6,
     },
     '\\int \\placeholder': {
       x: 2,
-      y: 6
+      y: 6,
     },
     '\\int^\\placeholder_\\placeholder\\placeholder': {
       x: 3,
-      y: 6
+      y: 6,
     },
     '\\iint\\placeholder': {
       x: 4,
-      y: 6
+      y: 6,
     },
     '\\iint^\\placeholder_\\placeholder\\placeholder': {
       x: 5,
-      y: 6
+      y: 6,
     },
     '\\iiint\\placeholder': {
       x: 6,
-      y: 6
+      y: 6,
     },
     '\\iiint^\\placeholder_\\placeholder\\placeholder': {
       x: 7,
-      y: 6
+      y: 6,
     },
-    'log': {
+    log: {
       x: 0,
-      y: 7
+      y: 7,
     },
-    'ln': {
+    ln: {
       x: 1,
-      y: 7
+      y: 7,
     },
     '\\to': {
       x: 2,
-      y: 7
+      y: 7,
     },
     '\\cup': {
       x: 3,
-      y: 7
+      y: 7,
     },
     '\\neg': {
       x: 4,
-      y: 7
+      y: 7,
     },
     '\\forall': {
       x: 5,
-      y: 7
+      y: 7,
     },
     '\\exists': {
       x: 6,
-      y: 7
+      y: 7,
     },
     '': {
       x: 7,
-      y: 6
+      y: 6,
     },
-  });
-
-  function transverse(obj) {
-    for (let i in obj) {
-      obj[i] = {
-        x: obj[i].x * 83,
-        y: obj[i].y * 65,
-      };
-    }
-    return obj;
-  }
+  };
 });

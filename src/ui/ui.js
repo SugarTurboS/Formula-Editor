@@ -221,6 +221,10 @@ define( function ( require ) {
 
                 this.viewState = this.viewState === VIEW_STATE.NO_OVERFLOW ? VIEW_STATE.OVERFLOW : VIEW_STATE.NO_OVERFLOW;
 
+            },
+
+            getDeviceType: function () {
+                return this.options.device;
             }
 
         } );

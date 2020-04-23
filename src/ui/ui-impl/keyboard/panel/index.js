@@ -2,13 +2,11 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-22 17:42:22
+ * @LastEditTime: 2020-04-23 09:55:13
  */
 define(function (require) {
   const kity = require('kity');
   const $$ = require('ui/ui-impl/ui-utils');
-  const PanelConstant = require('ui/ui-impl/keyboard/panel/const');
-  const Constant = require('ui/ui-impl/keyboard/const');
   const Panel = kity.createClass('Panel', {
     constructor(parentNode, parentProps) {
       this.parentNode = parentNode;
@@ -29,7 +27,7 @@ define(function (require) {
     },
     _render: function () {
       console.log('panel render');
-      const list = PanelConstant.find((x) => x.type === this.state.type).items || [];
+      const list = this.props.panelConstant.find((x) => x.type === this.state.type).items || [];
       const table = list.reduce((acc, cur, index) => {
         const row = Math.floor(index / 8);
         const col = Math.floor(index % 8);

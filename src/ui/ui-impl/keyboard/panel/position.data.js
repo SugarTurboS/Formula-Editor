@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 14:54:26
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 10:04:02
+ * @LastEditTime: 2020-04-23 16:01:11
  */
 define(function () {
   return {
@@ -42,7 +42,7 @@ define(function () {
       x: 0,
       y: 1,
     },
-    '||': {
+    '\\left|\\placeholder\\right|': {
       x: 1,
       y: 1,
     },
@@ -186,81 +186,97 @@ define(function () {
       x: 4,
       y: 5,
     },
-    排: {
-      x: 5,
-      y: 5,
-    },
-    组: {
-      x: 6,
-      y: 5,
-    },
     '\\sum\\placeholder': {
-      x: 7,
+      x: 5,
       y: 5,
     },
     '\\sum_\\placeholder\\placeholder': {
-      x: 0,
-      y: 6,
+      x: 6,
+      y: 5,
     },
     '\\sum^\\placeholder_\\placeholder\\placeholder': {
-      x: 1,
-      y: 6,
+      x: 7,
+      y: 5,
     },
     '\\int \\placeholder': {
-      x: 2,
+      x: 0,
       y: 6,
     },
     '\\int^\\placeholder_\\placeholder\\placeholder': {
-      x: 3,
+      x: 1,
       y: 6,
     },
     '\\iint\\placeholder': {
-      x: 4,
+      x: 2,
       y: 6,
     },
     '\\iint^\\placeholder_\\placeholder\\placeholder': {
-      x: 5,
+      x: 3,
       y: 6,
     },
     '\\iiint\\placeholder': {
-      x: 6,
+      x: 4,
       y: 6,
     },
     '\\iiint^\\placeholder_\\placeholder\\placeholder': {
+      x: 5,
+      y: 6,
+    },
+    '\\neg': {
+      x: 6,
+      y: 6,
+    },
+    '\\forall': {
       x: 7,
       y: 6,
     },
-    log: {
+    '\\exists': {
       x: 0,
       y: 7,
     },
-    ln: {
+    "\\infty": {
       x: 1,
       y: 7,
     },
-    '\\to': {
+    "\\cup": {
       x: 2,
       y: 7,
     },
-    '\\cup': {
+    "\\cap": {
       x: 3,
       y: 7,
     },
-    '\\neg': {
+    "\\in": {
       x: 4,
       y: 7,
     },
-    '\\forall': {
+    "\\notin": {
       x: 5,
       y: 7,
     },
-    '\\exists': {
+    "\\subset": {
       x: 6,
       y: 7,
     },
-    '': {
+    "\\subseteq": {
       x: 7,
-      y: 6,
+      y: 7,
     },
+    "\\supset": {
+      x: 0,
+      y: 8,
+    },
+    "\\supseteq": {
+      x: 1,
+      y: 8,
+    },
+    "\\varnothing": {
+      x: 3,
+      y: 8,
+    },
+    "\\sin\\placeholder": {
+      x: 0,
+      y: 9
+    }
   };
 });

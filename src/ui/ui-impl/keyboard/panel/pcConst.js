@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 10:18:34
+ * @LastEditTime: 2020-04-23 16:02:00
  */
 
 define(function (require) {
@@ -29,7 +29,7 @@ define(function (require) {
       '8',
       '9',
       '>',
-      '||',
+      '\\left|\\placeholder\\right|',
       '\\placeholder^2',
       'b',
       '-',
@@ -52,6 +52,13 @@ define(function (require) {
       '0',
       '.',
       '=',
+    ];
+
+    Constant[0].items = getIconContents(list, 'assets/images/pc/keyboard.png');
+  })();
+  // 代数
+  (function () {
+    const list = [
       '\\times',
       '\\div',
       '%0',
@@ -65,8 +72,6 @@ define(function (require) {
       '\\placeholder_\\placeholder',
       '{^\\placeholder_\\placeholder\\placeholder}',
       '\\placeholder^\\placeholder_\\placeholder',
-      '排',
-      '组',
       '\\sum\\placeholder',
       '\\sum_\\placeholder\\placeholder',
       '\\sum^\\placeholder_\\placeholder\\placeholder',
@@ -76,98 +81,51 @@ define(function (require) {
       '\\iint^\\placeholder_\\placeholder\\placeholder',
       '\\iiint\\placeholder',
       '\\iiint^\\placeholder_\\placeholder\\placeholder',
-      'log',
-      'ln',
-      '\\to',
-      '\\cup',
       '\\neg',
       '\\forall',
       '\\exists',
+      '\\infty',
+      '\\cup',
+      '\\cap',
+      '\\in',
+      '\\notin',
+      '\\subset',
+      '\\subseteq',
+      '\\supset',
+      '\\supseteq',
+      '\\varnothing',
     ];
 
-    Constant[0].items = getIconContents(list, 'assets/images/pc/keyboard.png');
+    Constant[1].items = getIconContents(list, 'assets/images/pc/keyboard.png');
   })();
-
-  // 希腊字符配置
+  // ----------------------------取雪碧图icon
+  // 几何
   (function () {
-    var greekList = [
-      {
-        title: '小写',
-        values: [
-          'alpha',
-          'beta',
-          'gamma',
-          'delta',
-          'epsilon',
-          'zeta',
-          'eta',
-          'theta',
-          'iota',
-          'kappa',
-          'lambda',
-          'mu',
-          'nu',
-          'xi',
-          'omicron',
-          'pi',
-          'rho',
-          'sigma',
-          'tau',
-          'upsilon',
-          'phi',
-          'chi',
-          'psi',
-          'omega',
-        ],
-      },
-      {
-        title: '大写',
-        values: [
-          'Alpha',
-          'Beta',
-          'Gamma',
-          'Delta',
-          'Epsilon',
-          'Zeta',
-          'Eta',
-          'Theta',
-          'Iota',
-          'Kappa',
-          'Lambda',
-          'Mu',
-          'Nu',
-          'Xi',
-          'Omicron',
-          'Pi',
-          'Rho',
-          'Sigma',
-          'Tau',
-          'Upsilon',
-          'Phi',
-          'Chi',
-          'Psi',
-          'Omega',
-        ],
-      },
-      {
-        title: '变体',
-        values: [
-          'digamma',
-          'varepsilon',
-          'varkappa',
-          'varphi',
-          'varpi',
-          'varrho',
-          'varsigma',
-          'vartheta',
-        ],
-      },
+    const list = [
+      '\\sin',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      // '',
+      
     ];
 
-    Constant[1].items = getIconContents(
-      greekList[0].values,
-      'assets/images/pc/keyboard.png'
-    );
+    Constant[2].items = getIconContents(list, 'assets/images/pc/keyboard.png');
   })();
 
   function getIconContents(keySet, imgSrc) {

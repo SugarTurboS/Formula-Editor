@@ -30,7 +30,9 @@ define( function ( require, exports, modules ) {
 
         select: function () {
 
-            this.opShape.fill( SELECT_COLOR );
+            // 默认placeholder改为光标后, select要置为黑色
+            var isPlaceholder = !!this.parentExpression.getLabel();
+            this.opShape.fill( isPlaceholder ? '#000' : SELECT_COLOR );
 
         },
 

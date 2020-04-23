@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 10:08:29
+ * @LastEditTime: 2020-04-23 10:18:34
  */
 
 define(function (require) {
@@ -85,7 +85,7 @@ define(function (require) {
       '\\exists',
     ];
 
-    Constant[0].items = getIconContents(list, 'assets/images/keyboard.png');
+    Constant[0].items = getIconContents(list, 'assets/images/pc/keyboard.png');
   })();
 
   // 希腊字符配置
@@ -166,7 +166,7 @@ define(function (require) {
 
     Constant[1].items = getIconContents(
       greekList[0].values,
-      'assets/images/keyboard.png'
+      'assets/images/pc/keyboard.png'
     );
   })();
 

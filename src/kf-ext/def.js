@@ -5,7 +5,7 @@
 define( function () {
 
     return {
-        selectColor: '#000',
+        selectColor: 'rgba(42, 106, 189, 0.6)',
         allSelectColor: 'rgba(42, 106, 189, 0.6)'
     };
 

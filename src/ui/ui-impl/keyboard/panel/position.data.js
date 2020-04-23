@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 14:54:26
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 16:01:11
+ * @LastEditTime: 2020-04-23 17:04:43
  */
 define(function () {
   return {
@@ -234,49 +234,197 @@ define(function () {
       x: 0,
       y: 7,
     },
-    "\\infty": {
+    '\\infty': {
       x: 1,
       y: 7,
     },
-    "\\cup": {
+    '\\cup': {
       x: 2,
       y: 7,
     },
-    "\\cap": {
+    '\\cap': {
       x: 3,
       y: 7,
     },
-    "\\in": {
+    '\\in': {
       x: 4,
       y: 7,
     },
-    "\\notin": {
+    '\\notin': {
       x: 5,
       y: 7,
     },
-    "\\subset": {
+    '\\subset': {
       x: 6,
       y: 7,
     },
-    "\\subseteq": {
+    '\\subseteq': {
       x: 7,
       y: 7,
     },
-    "\\supset": {
+    '\\supset': {
       x: 0,
       y: 8,
     },
-    "\\supseteq": {
+    '\\supseteq': {
       x: 1,
       y: 8,
     },
-    "\\varnothing": {
+    '\\varnothing': {
       x: 3,
       y: 8,
     },
-    "\\sin\\placeholder": {
+    '\\sin\\placeholder': {
       x: 0,
-      y: 9
-    }
+      y: 9,
+    },
+    '\\cos\\placeholder': {
+      x: 1,
+      y: 9,
+    },
+    '\\tan\\placeholder': {
+      x: 2,
+      y: 9,
+    },
+    '\\sec\\placeholder': {
+      x: 3,
+      y: 9,
+    },
+    '\\csc\\placeholder': {
+      x: 4,
+      y: 9,
+    },
+    '\\cot\\placeholder': {
+      x: 5,
+      y: 9,
+    },
+    '\\arcsin\\placeholder': {
+      x: 6,
+      y: 9,
+    },
+    '\\arccos\\placeholder': {
+      x: 7,
+      y: 9,
+    },
+    '\\arctan\\placeholder': {
+      x: 0,
+      y: 10,
+    },
+    '\\coth\\placeholder': {
+      x: 1,
+      y: 10,
+    },
+    '\\arcsec\\placeholder': {
+      x: 2,
+      y: 10,
+    },
+    '\\arccsc\\placeholder': {
+      x: 3,
+      y: 10,
+    },
+    '\\alpha': {
+      x: 4,
+      y: 10,
+    },
+    '\\beta': {
+      x: 5,
+      y: 10,
+    },
+    '\\gamma': {
+      x: 6,
+      y: 10,
+    },
+    '\\theta': {
+      x: 7,
+      y: 10,
+    },
+    '\\because': {
+      x: 0,
+      y: 11,
+    },
+    '\\therefore': {
+      x: 1,
+      y: 11,
+    },
+    '\\Longrightarrow': {
+      x: 2,
+      y: 11,
+    },
+    '\\Leftrightarrow': {
+      x: 3,
+      y: 11,
+    },
+    '\\uparrow': {
+      x: 4,
+      y: 11,
+    },
+    '\\downarrow': {
+      x: 5,
+      y: 11,
+    },
+    '\\lambda': {
+      x: 6,
+      y: 11,
+    },
+    '\\kappa': {
+      x: 7,
+      y: 11,
+    },
+    '\\mu': {
+      x: 0,
+      y: 12,
+    },
+    '\\rho': {
+      x: 1,
+      y: 12,
+    },
+    '\\sigma': {
+      x: 2,
+      y: 12,
+    },
+    '\\tau': {
+      x: 3,
+      y: 12,
+    },
+    '\\upsilon': {
+      x: 4,
+      y: 12,
+    },
+    '\\varphi': {
+      x: 5,
+      y: 12,
+    },
+    '\\Psi': {
+      x: 6,
+      y: 12,
+    },
+    '\\omega': {
+      x: 7,
+      y: 12,
+    },
+    '\\varepsilon': {
+      x: 0,
+      y: 13,
+    },
+    '\\zeta': {
+      x: 1,
+      y: 13,
+    },
+    '\\eta': {
+      x: 2,
+      y: 13,
+    },
+    '\\nu': {
+      x: 3,
+      y: 13,
+    },
+    '\\xi': {
+      x: 4,
+      y: 13,
+    },
+    '\\chi': {
+      x: 5,
+      y: 13,
+    },
   };
 });

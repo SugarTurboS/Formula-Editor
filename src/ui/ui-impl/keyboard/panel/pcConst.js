@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 16:02:00
+ * @LastEditTime: 2020-04-23 17:06:58
  */
 
 define(function (require) {
@@ -98,34 +98,60 @@ define(function (require) {
 
     Constant[1].items = getIconContents(list, 'assets/images/pc/keyboard.png');
   })();
-  // ----------------------------取雪碧图icon
   // 几何
   (function () {
     const list = [
-      '\\sin',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      // '',
-      
+      '\\sin\\placeholder',
+      '\\cos\\placeholder',
+      '\\tan\\placeholder',
+      '\\sec\\placeholder',
+      '\\csc\\placeholder',
+      '\\cot\\placeholder',
+      '\\arcsin\\placeholder',
+      '\\arccos\\placeholder',
+      '\\arctan\\placeholder',
+      '\\alpha',
+      '\\beta',
+      '\\gamma',
+      '\\theta',
     ];
 
     Constant[2].items = getIconContents(list, 'assets/images/pc/keyboard.png');
+  })();
+  // 单位
+  (function () {
+    const list = [];
+
+    Constant[3].items = getIconContents(list, 'assets/images/pc/keyboard.png');
+  })();
+  // 其他
+  (function () {
+    const list = [
+      '\\because',
+      '\\therefore',
+      '\\Longrightarrow',
+      '\\Leftrightarrow',
+      '\\uparrow',
+      '\\downarrow',
+      '\\lambda',
+      '\\kappa',
+      '\\mu',
+      '\\rho',
+      '\\sigma',
+      '\\tau',
+      '\\upsilon',
+      '\\varphi',
+      '\\Psi',
+      '\\omega',
+      '\\varepsilon',
+      '\\zeta',
+      '\\eta',
+      '\\nu',
+      '\\xi',
+      '\\chi',
+    ];
+
+    Constant[4].items = getIconContents(list, 'assets/images/pc/keyboard.png');
   })();
 
   function getIconContents(keySet, imgSrc) {

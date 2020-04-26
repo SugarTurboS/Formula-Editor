@@ -128,11 +128,24 @@ define(function (require) {
         this.kfEditor.requestService('control.delete.string');
       },
       onSubmit: function () {
-        const res = this.kfEditor.execCommand('get.source');
-        //TODO:导出res值
-        console.log(res);
+        this.kfEditor.execCommand('get.image.data', (data) => {
+          const formula = this.kfEditor.execCommand('get.source');
+          this.kfEditor.eclassWebService.send({
+            type: 'common.setFormula',
+            data: {
+              body: {
+                formulaSrc: data.img,
+                formula,
+              },
+            },
+          });
+        });
       },
-      onCancel: function () {},
+      onCancel: function () {
+        this.kfEditor.eclassWebService.send({
+          type: 'common.closeModal',
+        });
+      },
 
       render: function () {
         const keyboardNode = $$.ele(this.doc, 'div', {

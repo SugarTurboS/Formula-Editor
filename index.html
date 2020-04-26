@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="renderer" content="webkit" />
     <!-- 开发环境配置 -->
+    <script src="dist/npmBundle.js"></script>
     <script src="dev-lib/jquery-1.11.0.min.js"></script>
     <script src="dev-lib/kitygraph.all.js"></script>
     <script src="dev-lib/kity-formula-render.all.js"></script>
@@ -52,7 +53,9 @@
 
           this.execCommand('render', '\\placeholder');
           this.execCommand('focus');
-
+          
+          document.getElementById('kfEditorContainer').style.visibility = 'visible';
+          document.getElementById('kf-loading').style.visibility = 'hidden';
           window.kfe = this;
         });
       });
@@ -63,7 +66,8 @@
     <div
       id="kfEditorContainer"
       class="kf-editor"
-      style="width: 864px; height: 580px; position: absolute; top: 20px; left: 50px;"
+      style="width: 864px; height: 580px;visibility: hidden;"
     ></div>
+    <div id="kf-loading" class="kf-loading">加载中...</div>
   </body>
 </html>

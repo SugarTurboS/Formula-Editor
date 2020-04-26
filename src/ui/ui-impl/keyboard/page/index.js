@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 20:03:47
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 17:58:04
+ * @LastEditTime: 2020-04-26 18:06:01
  */
 define(function (require) {
   const kity = require('kity');
@@ -94,8 +94,10 @@ define(function (require) {
           break;
         case 'delete':
           this.props.onDelete();
+          break;
         case 'submit':
           this.props.onSubmit();
+          break;
       }
     },
     _setState: function (nextState) {

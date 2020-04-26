@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 09:53:01
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-22 17:11:05
+ * @LastEditTime: 2020-04-26 15:57:28
  */
 /*
  * @Author: Demian
@@ -24,7 +24,9 @@ define(function (require) {
 
       initEvent: function () {
         $$.delegate(this.uiComponent.header, '.' + this.prefix, 'click', () => {
-          // TODO: 增加取消事件
+          this.kfEditor.eclassWebService.send({
+            type: 'common.closeModal',
+          });
         });
       },
 

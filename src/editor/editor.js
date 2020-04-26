@@ -6,6 +6,7 @@ define( function ( require ) {
 
     var kity = require( "kity" ),
         Utils = require( "base/utils" ),
+        bundle = require('bundle');
         defaultOpt = {
             formula: {
                 fontsize: 50,
@@ -38,9 +39,9 @@ define( function ( require ) {
             this.container = container;
             this.services = {};
             this.commands = {};
-
+            
             this.initResource();
-
+            this.initWebService();
         },
 
         isReady: function () {
@@ -99,6 +100,24 @@ define( function ( require ) {
 
             }, this.options.resource );
 
+        },
+
+        initWebService: function () {
+          const { WebService } = bundle;
+          if (this.options.ui.device === 'android') {
+            this.eclassWebService = new WebService('webview');
+          } else {
+            this.eclassWebService = new WebService('iframe');
+          }
+          this.eclassWebService.send({
+            type: 'common.hello',
+            body: {
+              name: 'editor'
+            }
+          });
+          this.eclassWebService.on('common.sayyes', (msg) => {
+            console.log(msg)
+          })
         },
 
         /**

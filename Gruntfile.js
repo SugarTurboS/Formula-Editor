@@ -4,6 +4,14 @@ module.exports = function (grunt) {
     // Metadata.
     pkg: grunt.file.readJSON('package.json'),
 
+    // npm模块处理
+    browserify: {
+      dist: {
+        files: {
+          'dist/npmBundle.js': ['dev-lib/npmEntry.js'],
+        },
+      },
+    },
     copy: {
       image: {
         files: [
@@ -187,9 +195,10 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-less');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-browserify');
 
   // task list.
-  grunt.registerTask('default', ['clean:dist', 'copy', 'less', 'cssmin']);
+  grunt.registerTask('default', ['clean:dist', 'browserify', 'copy', 'less', 'cssmin']);
   grunt.registerTask('build', [
     'less',
     'cssmin',

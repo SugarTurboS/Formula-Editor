@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 14:54:26
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 17:04:43
+ * @LastEditTime: 2020-04-26 10:24:49
  */
 define(function () {
   return {
@@ -142,136 +142,148 @@ define(function () {
       x: 1,
       y: 4,
     },
-    '%0': {
-      x: 2,
-      y: 4,
-    },
     '\\approx': {
-      x: 3,
+      x: 2,
       y: 4,
     },
     '\\neq': {
-      x: 4,
+      x: 3,
       y: 4,
     },
     '\\sqrt [\\placeholder] \\placeholder': {
-      x: 5,
+      x: 4,
       y: 4,
     },
     '\\pi': {
-      x: 6,
+      x: 5,
       y: 4,
     },
     '\\sigma': {
-      x: 7,
+      x: 6,
       y: 4,
     },
     '\\left[\\placeholder\\right]': {
-      x: 0,
-      y: 5,
+      x: 7,
+      y: 4,
     },
     '\\placeholder^\\placeholder': {
-      x: 1,
+      x: 0,
       y: 5,
     },
     '\\placeholder_\\placeholder': {
-      x: 2,
+      x: 1,
       y: 5,
     },
     '{^\\placeholder_\\placeholder\\placeholder}': {
-      x: 3,
+      x: 2,
       y: 5,
     },
     '\\placeholder^\\placeholder_\\placeholder': {
-      x: 4,
+      x: 3,
       y: 5,
     },
     '\\sum\\placeholder': {
-      x: 5,
+      x: 4,
       y: 5,
     },
     '\\sum_\\placeholder\\placeholder': {
-      x: 6,
+      x: 5,
       y: 5,
     },
     '\\sum^\\placeholder_\\placeholder\\placeholder': {
-      x: 7,
+      x: 6,
       y: 5,
     },
     '\\int \\placeholder': {
-      x: 0,
-      y: 6,
+      x: 7,
+      y: 5,
     },
     '\\int^\\placeholder_\\placeholder\\placeholder': {
-      x: 1,
+      x: 0,
       y: 6,
     },
     '\\iint\\placeholder': {
-      x: 2,
+      x: 1,
       y: 6,
     },
     '\\iint^\\placeholder_\\placeholder\\placeholder': {
-      x: 3,
+      x: 2,
       y: 6,
     },
     '\\iiint\\placeholder': {
-      x: 4,
+      x: 3,
       y: 6,
     },
     '\\iiint^\\placeholder_\\placeholder\\placeholder': {
+      x: 4,
+      y: 6,
+    },
+    '\\log\\placeholder': {
       x: 5,
       y: 6,
     },
-    '\\neg': {
+    '\\ln\\placeholder': {
       x: 6,
       y: 6,
     },
-    '\\forall': {
+    '\\land': {
       x: 7,
       y: 6,
     },
-    '\\exists': {
+    '\\lor': {
       x: 0,
       y: 7,
     },
-    '\\infty': {
+    '\\neg': {
       x: 1,
       y: 7,
     },
-    '\\cup': {
+    '\\forall': {
       x: 2,
       y: 7,
     },
-    '\\cap': {
+    '\\exists': {
       x: 3,
       y: 7,
     },
-    '\\in': {
+    '\\infty': {
       x: 4,
       y: 7,
     },
-    '\\notin': {
+    '\\cup': {
       x: 5,
       y: 7,
     },
-    '\\subset': {
+    '\\cap': {
       x: 6,
       y: 7,
     },
-    '\\subseteq': {
+    '\\in': {
       x: 7,
       y: 7,
     },
-    '\\supset': {
+    '\\notin': {
       x: 0,
       y: 8,
     },
-    '\\supseteq': {
+    '\\subset': {
       x: 1,
       y: 8,
     },
-    '\\varnothing': {
+    '\\subseteq': {
+      x: 2,
+      y: 8,
+    },
+    '\\supset': {
       x: 3,
+      y: 8,
+    },
+    '\\supseteq': {
+      x: 4,
+      y: 8,
+    },
+    '\\varnothing': {
+      x: 5,
       y: 8,
     },
     '\\sin\\placeholder': {
@@ -310,121 +322,133 @@ define(function () {
       x: 0,
       y: 10,
     },
-    '\\coth\\placeholder': {
+    '\\triangle': {
       x: 1,
       y: 10,
     },
-    '\\arcsec\\placeholder': {
+    '\\sim': {
       x: 2,
       y: 10,
     },
-    '\\arccsc\\placeholder': {
+    '\\cong': {
       x: 3,
+      y: 10,
+    },
+    '\\angle': {
+      x: 4,
+      y: 10,
+    },
+    '\\bot': {
+      x: 5,
       y: 10,
     },
     '\\alpha': {
-      x: 4,
+      x: 6,
       y: 10,
     },
     '\\beta': {
-      x: 5,
+      x: 7,
       y: 10,
     },
     '\\gamma': {
-      x: 6,
-      y: 10,
+      x: 0,
+      y: 11,
     },
     '\\theta': {
-      x: 7,
-      y: 10,
+      x: 1,
+      y: 11,
+    },
+    '\\Omega': {
+      x: 0,
+      y: 12
     },
     '\\because': {
-      x: 0,
-      y: 11,
+      x: 1,
+      y: 12,
     },
     '\\therefore': {
-      x: 1,
-      y: 11,
+      x: 2,
+      y: 12,
     },
     '\\Longrightarrow': {
-      x: 2,
-      y: 11,
+      x: 3,
+      y: 12,
     },
     '\\Leftrightarrow': {
-      x: 3,
-      y: 11,
+      x: 4,
+      y: 12,
     },
     '\\uparrow': {
-      x: 4,
-      y: 11,
+      x: 5,
+      y: 12,
     },
     '\\downarrow': {
-      x: 5,
-      y: 11,
+      x: 6,
+      y: 12,
     },
     '\\lambda': {
-      x: 6,
-      y: 11,
+      x: 7,
+      y: 12,
     },
     '\\kappa': {
-      x: 7,
-      y: 11,
+      x: 0,
+      y: 13,
     },
     '\\mu': {
-      x: 0,
-      y: 12,
+      x: 1,
+      y: 13,
     },
     '\\rho': {
-      x: 1,
-      y: 12,
+      x: 2,
+      y: 13,
     },
     '\\sigma': {
-      x: 2,
-      y: 12,
+      x: 3,
+      y: 13,
     },
     '\\tau': {
-      x: 3,
-      y: 12,
+      x: 4,
+      y: 13,
     },
     '\\upsilon': {
-      x: 4,
-      y: 12,
+      x: 5,
+      y: 13,
     },
     '\\varphi': {
-      x: 5,
-      y: 12,
+      x: 6,
+      y: 13,
     },
     '\\Psi': {
-      x: 6,
-      y: 12,
+      x: 7,
+      y: 13,
     },
     '\\omega': {
-      x: 7,
-      y: 12,
+      x: 0,
+      y: 14,
     },
     '\\varepsilon': {
-      x: 0,
-      y: 13,
+      x: 1,
+      y: 14,
     },
     '\\zeta': {
-      x: 1,
-      y: 13,
+      x: 2,
+      y: 14,
     },
     '\\eta': {
-      x: 2,
-      y: 13,
+      x: 3,
+      y: 14,
     },
     '\\nu': {
-      x: 3,
-      y: 13,
+      x: 4,
+      y: 14,
     },
     '\\xi': {
-      x: 4,
-      y: 13,
+      x: 5,
+      y: 14,
     },
     '\\chi': {
-      x: 5,
-      y: 13,
+      x: 6,
+      y: 14,
     },
   };
 });

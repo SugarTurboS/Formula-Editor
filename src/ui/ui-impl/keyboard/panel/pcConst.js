@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 17:58:33
+ * @LastEditTime: 2020-04-26 10:15:43
  */
 
 define(function (require) {
@@ -61,7 +61,6 @@ define(function (require) {
     const list = [
       '\\times',
       '\\div',
-      '%0',
       '\\approx',
       '\\neq',
       '\\sqrt [\\placeholder] \\placeholder',
@@ -81,6 +80,10 @@ define(function (require) {
       '\\iint^\\placeholder_\\placeholder\\placeholder',
       '\\iiint\\placeholder',
       '\\iiint^\\placeholder_\\placeholder\\placeholder',
+      '\\log\\placeholder',
+      '\\ln\\placeholder',
+      '\\land',
+      '\\lor',
       '\\neg',
       '\\forall',
       '\\exists',
@@ -110,6 +113,11 @@ define(function (require) {
       '\\arcsin\\placeholder',
       '\\arccos\\placeholder',
       '\\arctan\\placeholder',
+      '\\triangle',
+      '\\sim',
+      '\\cong',
+      '\\angle',
+      '\\bot',
       '\\alpha',
       '\\beta',
       '\\gamma',
@@ -127,6 +135,7 @@ define(function (require) {
   // 其他
   (function () {
     const list = [
+      '\\Omega',
       '\\because',
       '\\therefore',
       '\\Longrightarrow',

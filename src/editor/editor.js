@@ -109,14 +109,10 @@ define( function ( require ) {
           } else {
             this.eclassWebService = new WebService('iframe');
           }
-          this.eclassWebService.send({
-            type: 'common.hello',
-            body: {
-              name: 'editor'
+          this.eclassWebService.on('common.readEditor', (msg) => {
+            if (msg.body.formula) {
+              this.execCommand('render', msg.body.formula);
             }
-          });
-          this.eclassWebService.on('common.sayyes', (msg) => {
-            console.log(msg)
           })
         },
 

@@ -18,7 +18,7 @@ define(function (require) {
       constructor: function (doc, kfEditor) {
         this.doc = doc;
         this.kfEditor = kfEditor;
-        this.pageSize = 36;
+        this.pageSize = 40;
         this.panelConstant = this.getConstant();
         this.typeEnum = {
           [Constant.Type.Common]: 0,

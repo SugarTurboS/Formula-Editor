@@ -117,6 +117,9 @@ define( function ( require ) {
           this.eclassWebService.on('common.clearFormula', () => {
             this.execCommand('render', '\\placeholder');
           })
+          this.eclassWebService.send({
+            type: 'common.ready'
+          })
         },
 
         /**

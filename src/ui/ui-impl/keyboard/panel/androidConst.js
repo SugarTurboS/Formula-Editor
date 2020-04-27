@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 18:00:32
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-27 15:23:10
+ * @LastEditTime: 2020-04-27 16:07:36
  */
 
 define(function (require) {
@@ -29,7 +29,7 @@ define(function (require) {
       '8',
       '9',
       '>',
-      '||',
+      '\\left|\\placeholder\\right|',
       '\\placeholder^2',
       'b',
       '-',
@@ -52,9 +52,15 @@ define(function (require) {
       '0',
       '.',
       '=',
+    ];
+
+    Constant[0].items = getIconContents(list, 'assets/images/android/keyboard.png');
+  })();
+  // 代数
+  (function () {
+    const list = [
       '\\times',
       '\\div',
-      '%0',
       '\\approx',
       '\\neq',
       '\\sqrt [\\placeholder] \\placeholder',
@@ -65,8 +71,6 @@ define(function (require) {
       '\\placeholder_\\placeholder',
       '{^\\placeholder_\\placeholder\\placeholder}',
       '\\placeholder^\\placeholder_\\placeholder',
-      '排',
-      '组',
       '\\sum\\placeholder',
       '\\sum_\\placeholder\\placeholder',
       '\\sum^\\placeholder_\\placeholder\\placeholder',
@@ -76,98 +80,87 @@ define(function (require) {
       '\\iint^\\placeholder_\\placeholder\\placeholder',
       '\\iiint\\placeholder',
       '\\iiint^\\placeholder_\\placeholder\\placeholder',
-      'log',
-      'ln',
-      '\\to',
-      '\\cup',
+      '\\log\\placeholder',
+      '\\ln\\placeholder',
+      '\\land',
+      '\\lor',
       '\\neg',
       '\\forall',
       '\\exists',
+      '\\infty',
+      '\\cup',
+      '\\cap',
+      '\\in',
+      '\\notin',
+      '\\subset',
+      '\\subseteq',
+      '\\supset',
+      '\\supseteq',
+      '\\varnothing',
     ];
 
-    Constant[0].items = getIconContents(list, 'assets/images/android/keyboard.png');
+    Constant[1].items = getIconContents(list, 'assets/images/android/keyboard.png');
   })();
-
-  // 希腊字符配置
+  // 几何
   (function () {
-    var greekList = [
-      {
-        title: '小写',
-        values: [
-          'alpha',
-          'beta',
-          'gamma',
-          'delta',
-          'epsilon',
-          'zeta',
-          'eta',
-          'theta',
-          'iota',
-          'kappa',
-          'lambda',
-          'mu',
-          'nu',
-          'xi',
-          'omicron',
-          'pi',
-          'rho',
-          'sigma',
-          'tau',
-          'upsilon',
-          'phi',
-          'chi',
-          'psi',
-          'omega',
-        ],
-      },
-      {
-        title: '大写',
-        values: [
-          'Alpha',
-          'Beta',
-          'Gamma',
-          'Delta',
-          'Epsilon',
-          'Zeta',
-          'Eta',
-          'Theta',
-          'Iota',
-          'Kappa',
-          'Lambda',
-          'Mu',
-          'Nu',
-          'Xi',
-          'Omicron',
-          'Pi',
-          'Rho',
-          'Sigma',
-          'Tau',
-          'Upsilon',
-          'Phi',
-          'Chi',
-          'Psi',
-          'Omega',
-        ],
-      },
-      {
-        title: '变体',
-        values: [
-          'digamma',
-          'varepsilon',
-          'varkappa',
-          'varphi',
-          'varpi',
-          'varrho',
-          'varsigma',
-          'vartheta',
-        ],
-      },
+    const list = [
+      '\\sin\\placeholder',
+      '\\cos\\placeholder',
+      '\\tan\\placeholder',
+      '\\sec\\placeholder',
+      '\\csc\\placeholder',
+      '\\cot\\placeholder',
+      '\\arcsin\\placeholder',
+      '\\arccos\\placeholder',
+      '\\arctan\\placeholder',
+      '\\triangle',
+      '\\sim',
+      '\\cong',
+      '\\angle',
+      '\\bot',
+      '\\alpha',
+      '\\beta',
+      '\\gamma',
+      '\\theta',
     ];
 
-    Constant[1].items = getIconContents(
-      greekList[0].values,
-      'assets/images/android/keyboard.png'
-    );
+    Constant[2].items = getIconContents(list, 'assets/images/android/keyboard.png');
+  })();
+  // 单位
+  (function () {
+    const list = [];
+
+    Constant[3].items = getIconContents(list, 'assets/images/android/keyboard.png');
+  })();
+  // 其他
+  (function () {
+    const list = [
+      '\\Omega',
+      '\\because',
+      '\\therefore',
+      '\\Longrightarrow',
+      '\\Leftrightarrow',
+      '\\uparrow',
+      '\\downarrow',
+      '\\lambda',
+      '\\kappa',
+      '\\mu',
+      '\\rho',
+      '\\sigma',
+      '\\tau',
+      '\\upsilon',
+      '\\varphi',
+      '\\Psi',
+      '\\omega',
+      '\\varepsilon',
+      '\\zeta',
+      '\\eta',
+      '\\nu',
+      '\\xi',
+      '\\chi',
+    ];
+
+    Constant[4].items = getIconContents(list, 'assets/images/android/keyboard.png');
   })();
 
   function getIconContents(keySet, imgSrc) {
@@ -175,7 +168,7 @@ define(function (require) {
 
     kity.Utils.each(keySet, function (key) {
       const point = CHAR_POSITION[key] || { x: 0, y: 0 };
-      const pos = { x: point.x * 148, y: -point.y * 122 };
+      const pos = { x: point.x * 172, y: point.y * 146 + 26};
       result.push({
         key: key,
         img: imgSrc,

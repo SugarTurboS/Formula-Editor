@@ -39,8 +39,8 @@
         }
 
         if (device && device[1] === 'android') {
-          $('#kfEditorContainer').css('transform', `scale(${window.innerWidth / 1920})`);
-          // $('#kfEditorContainer').css('transform-origin', 'top left');
+          $('#kfEditorContainer').css('transform-origin', 'top left');
+          $('#kfEditorContainer').css('transform', `scale(${(window.innerWidth / 1920).toFixed(3)})`);
         }
         var factory = kf.EditorFactory.create($('#kfEditorContainer')[0], {
           render: {

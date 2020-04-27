@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="renderer" content="webkit" />
     <!-- 开发环境配置 -->
-    <!-- <script src="dist/npmBundle.js"></script>
+    <script src="dist/npmBundle.js"></script>
     <script src="dev-lib/jquery-1.11.0.min.js"></script>
     <script src="dev-lib/kitygraph.all.js"></script>
     <script src="dev-lib/kity-formula-render.all.js"></script>
@@ -18,15 +18,15 @@
     </script>
     <script src="dev-lib/exports.js"></script>
     <script src="dev-lib/start.js"></script>
-    <script src="dev-lib/dev-start.js"></script> -->
+    <script src="dev-lib/dev-start.js"></script>
     <!-- end -->
     <!-- 生产环境配置 -->
-    <script src="dist/npmBundle.js"></script>
+    <!-- <script src="dist/npmBundle.js"></script>
     <script src="dist/jquery-1.11.0.min.js"></script>
     <script src="dist/kitygraph.all.min.js"></script>
     <script src="dist/kity-formula-render.all.min.js"></script>
     <script src="dist/kity-formula-parser.all.min.js"></script>
-    <script src="dist/kityformula-editor.all.min.js"></script>
+    <script src="dist/kityformula-editor.all.min.js"></script> -->
     <!-- end -->
     <script>
       jQuery(function ($) {
@@ -38,7 +38,7 @@
           console.log('读取到当前设备类型为：', device[1]);
         }
 
-        if (device[1] === 'android') {
+        if (device && device[1] === 'android') {
           $('#kfEditorContainer').css('transform', `scale(${window.innerWidth / 1920})`);
           // $('#kfEditorContainer').css('transform-origin', 'top left');
         }
@@ -72,7 +72,7 @@
     <div
       id="kfEditorContainer"
       class="kf-editor"
-      style="width: 100%; height: 100%; visibility: hidden;"
+      style="visibility: hidden;"
     ></div>
     <div id="kf-loading" class="kf-loading">加载中...</div>
   </body>

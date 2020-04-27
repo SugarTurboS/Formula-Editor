@@ -66,8 +66,6 @@ define( function ( require ) {
 
                 this.initEvent();
 
-                this.updateContainerSize( this.container, this.editArea, this.canvasContainer, this.keyboardContainer );
-
                 this.initScrollEvent();
 
             },
@@ -101,16 +99,6 @@ define( function ( require ) {
 
                 // 软件盘
                 this.components.keyboard = new Keyboard( this, this.kfEditor );
-
-            },
-
-            updateContainerSize: function ( container, editArea, canvas, keyboard ) {
-
-                var containerBox = container.getBoundingClientRect(),
-                    keyboardBox = keyboard.getBoundingClientRect();
-
-                editArea.style.width = containerBox.width + "px";
-                editArea.style.height = containerBox.height - keyboardBox.height + "px";
 
             },
 
@@ -269,8 +257,6 @@ define( function ( require ) {
     function createEditArea ( doc ) {
         var container = doc.createElement( "div" );
         container.className = "kf-editor-edit-area";
-        container.style.width = "80%";
-        container.style.height = "800px";
         return container;
     }
 

@@ -20,6 +20,7 @@ module.exports = function (grunt) {
             src: [
               'assets/images/**/*.{png,jpg,jpeg,gif,svg}',
               'assets/images/*.{png,jpg,jpeg,gif,svg}',
+              'resource/*'
             ],
             dest: 'dist/',
           },
@@ -208,9 +209,8 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-browserify');
 
   // task list.
-  grunt.registerTask('default', ['clean:dist', 'browserify', 'copy', 'less', 'cssmin']);
+  grunt.registerTask('default', ['browserify', 'copy', 'less', 'cssmin']);
   grunt.registerTask('build', [
-    'clean:dist',
     'browserify',
     'copy',
     'less',

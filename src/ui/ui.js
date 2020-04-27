@@ -79,8 +79,8 @@ define( function ( require ) {
               this.setScale(this.editArea, scale, false);
               this.setScaleByWidth(this.keyboardContainer, scale);
               const okButton = $(this.okButton);
-              okButton.css('font-size', okButton.css('font-size').split('px')[0] * scale); 
-              okButton.css('right', okButton.css('right').split('px')[0] * scale); 
+              okButton.css('font-size', Math.floor(okButton.css('font-size').split('px')[0] * scale)); 
+              okButton.css('right', Math.floor(okButton.css('right').split('px')[0] * scale)); 
             },
             setScaleByWidth: function (target, scale) {
               target.style.transform = `scale(${scale})`;
@@ -91,10 +91,9 @@ define( function ( require ) {
               const width = node.outerWidth();
               const height = node.outerHeight();
               const padding = node.css('padding').split('px')[0];
-              node.outerWidth(width * scale);
-              useHeight && node.outerHeight(height * scale);
-              node.css('padding', padding * scale + 'px');
-              console.log(width, height, padding);
+              node.outerWidth(Math.floor(width * scale));
+              useHeight && node.outerHeight(Math.floor(height * scale));
+              node.css('padding', Math.floor(padding * scale));
             },
             isAndroid: function () {
               return this.options.device === 'android';

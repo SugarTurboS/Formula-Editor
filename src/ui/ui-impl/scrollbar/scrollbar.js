@@ -19,7 +19,7 @@ define( function ( require ) {
 
             this.widgets = null;
             this.container = this.uiComponent.scrollbarContainer;
-
+            this.canvasContainer = this.uiComponent.canvasContainer;
             // 显示状态
             this.state = false;
 
@@ -83,6 +83,7 @@ define( function ( require ) {
 
             this.values.viewWidth = getRect( this.container ).width;
             this.values.trackWidth = this.values.viewWidth - leftBtnWidth - rightBtnWidth;
+            this.values.canvasWidth = getRect(this.canvasContainer).width;
 
             this.widgets.track.style.width = this.values.trackWidth + "px";
 
@@ -150,13 +151,14 @@ define( function ( require ) {
         update: function ( contentWidth ) {
 
             var trackWidth = this.values.trackWidth,
+                canvasWidth = this.values.canvasWidth,
                 thumbWidth = 0;
 
             this.isExpand = contentWidth > this.values.contentWidth;
             this.values.contentWidth = contentWidth;
             this.values.scrollWidth = contentWidth - this.values.viewWidth;
 
-            if ( trackWidth >= contentWidth ) {
+            if ( canvasWidth >= contentWidth ) {
                 this.hide();
                 return;
             }

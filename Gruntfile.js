@@ -209,7 +209,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-browserify');
 
   // task list.
-  grunt.registerTask('default', ['browserify', 'copy', 'less', 'cssmin']);
+  grunt.registerTask('default', ['clean:dist','browserify', 'copy', 'less', 'cssmin']);
   grunt.registerTask('build', [
     'browserify',
     'copy',

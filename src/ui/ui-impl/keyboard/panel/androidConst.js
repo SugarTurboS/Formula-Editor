@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 18:00:32
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 10:13:27
+ * @LastEditTime: 2020-04-27 15:23:10
  */
 
 define(function (require) {
@@ -175,7 +175,7 @@ define(function (require) {
 
     kity.Utils.each(keySet, function (key) {
       const point = CHAR_POSITION[key] || { x: 0, y: 0 };
-      const pos = { x: point.x * 95, y: point.y * 83 };
+      const pos = { x: point.x * 148, y: -point.y * 122 };
       result.push({
         key: key,
         img: imgSrc,

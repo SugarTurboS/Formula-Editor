@@ -109,10 +109,13 @@ define( function ( require ) {
           } else {
             this.eclassWebService = new WebService('iframe');
           }
-          this.eclassWebService.on('common.readEditor', (msg) => {
+          this.eclassWebService.on('common.readFormula', (msg) => {
             if (msg.body.formula) {
               this.execCommand('render', msg.body.formula);
             }
+          })
+          this.eclassWebService.on('common.clearFormula', () => {
+            this.execCommand('render', '\\placeholder');
           })
         },
 

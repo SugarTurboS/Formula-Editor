@@ -37,6 +37,11 @@
         } else {
           console.log('读取到当前设备类型为：', device[1]);
         }
+
+        if (device[1] === 'android') {
+          $('#kfEditorContainer').css('transform', `scale(${window.innerWidth / 1920})`);
+          // $('#kfEditorContainer').css('transform-origin', 'top left');
+        }
         var factory = kf.EditorFactory.create($('#kfEditorContainer')[0], {
           render: {
             fontsize: 40,
@@ -54,7 +59,7 @@
 
           this.execCommand('render', '\\placeholder');
           this.execCommand('focus');
-          
+
           document.getElementById('kfEditorContainer').style.visibility = 'visible';
           document.getElementById('kf-loading').style.visibility = 'hidden';
           window.kfe = this;
@@ -67,7 +72,7 @@
     <div
       id="kfEditorContainer"
       class="kf-editor"
-      style="width: 100%; height: 100%;visibility: hidden;"
+      style="width: 100%; height: 100%; visibility: hidden;"
     ></div>
     <div id="kf-loading" class="kf-loading">加载中...</div>
   </body>

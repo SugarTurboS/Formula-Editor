@@ -7,7 +7,7 @@ define( function ( require ) {
     var kity = require( "kity"),
 
         // UiUitls
-        // $$ = require( "ui/ui-impl/ui-utils" ),
+        $$ = require( "ui/ui-impl/ui-utils" ),
 
         Utils = require( "base/utils" ),
 
@@ -135,11 +135,20 @@ define( function ( require ) {
             },
 
             initEvent: function () {
-
-//                Utils.addEvent( this.container, 'mousewheel', function ( e ) {
-//                    e.preventDefault();
-//                } );
-
+              $$.delegate(this.container.ownerDocument, '.kf-editor-ok', 'click', () => {
+                this.kfEditor.execCommand('get.image.data', (data) => {
+                  const formula = this.kfEditor.execCommand('get.source');
+                  this.kfEditor.eclassWebService.send({
+                    type: 'common.setFormula',
+                    data: {
+                      body: {
+                        formulaSrc: data.img,
+                        formula,
+                      },
+                    },
+                  });
+                });
+              })
             },
 
             initScrollEvent: function () {

@@ -22,7 +22,7 @@ define( function ( require ) {
         // ELEMENT_LIST = require( "ui/toolbar-ele-list" ),
 
         Keyboard = require( "ui/keyboard/keyboard" ),
-        Header = require("ui/header/header");
+        Header = require("ui/header/header"),
 
         UIComponent = kity.createClass( 'UIComponent', {
 

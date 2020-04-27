@@ -25,6 +25,16 @@ module.exports = function (grunt) {
           },
         ],
       },
+      lib: {
+        files: [
+          {
+            expand: true,
+            cwd: 'lib/',
+            src: ['*.js'],
+            dest: 'dist/',
+          },
+        ],
+      },
     },
 
     babel: {
@@ -200,6 +210,9 @@ module.exports = function (grunt) {
   // task list.
   grunt.registerTask('default', ['clean:dist', 'browserify', 'copy', 'less', 'cssmin']);
   grunt.registerTask('build', [
+    'clean:dist',
+    'browserify',
+    'copy',
     'less',
     'cssmin',
     'babel',
@@ -207,6 +220,6 @@ module.exports = function (grunt) {
     'dependence:replace',
     'concat:full',
     'uglify:minimize',
-    'clean: temp',
+    'clean:temp',
   ]);
 };

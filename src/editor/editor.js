@@ -6,7 +6,7 @@ define( function ( require ) {
 
     var kity = require( "kity" ),
         Utils = require( "base/utils" ),
-        bundle = require('bundle');
+        bundle = require('bundle'),
         defaultOpt = {
             formula: {
                 fontsize: 50,

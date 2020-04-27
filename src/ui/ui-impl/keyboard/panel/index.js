@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 10:51:47
+ * @LastEditTime: 2020-04-27 21:04:59
  */
 define(function (require) {
   const kity = require('kity');
@@ -12,7 +12,7 @@ define(function (require) {
       this.parentNode = parentNode;
       this.props = parentProps;
       this.prefix = parentProps.prefix + 'keyboard-panel';
-      this.scrollHeight = 320;
+      this.scrollHeight = parentProps.scrollHeight;
       // 初始化状态
       this.state = {
         type: this.props.type,

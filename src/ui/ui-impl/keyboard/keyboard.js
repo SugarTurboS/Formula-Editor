@@ -18,7 +18,7 @@ define(function (require) {
       constructor: function (doc, kfEditor) {
         this.doc = doc;
         this.kfEditor = kfEditor;
-        this.pageSize = 40;
+        this.pageSize = this.getDeviceType() === 'android' ? 32 : 40;
         this.panelConstant = this.getConstant();
         this.typeEnum = {
           [Constant.Type.Common]: 0,
@@ -52,6 +52,7 @@ define(function (require) {
           prefix: PREFIX,
           doc: this.doc,
           panelConstant: this.panelConstant,
+          scrollHeight: this.getDeviceType() === 'android' ? 595 : 320,
           onClick: this.onPanelClick.bind(this),
         });
         this.pageChild = new Page(this.element, {

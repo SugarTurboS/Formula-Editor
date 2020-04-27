@@ -8,6 +8,8 @@ define( function ( require ) {
 
         // UiUitls
         $$ = require( "ui/ui-impl/ui-utils" ),
+        
+        $ = require('jquery');
 
         Utils = require( "base/utils" ),
 
@@ -68,8 +70,32 @@ define( function ( require ) {
 
                 this.initScrollEvent();
 
-            },
+                this.updateSize();
 
+            },
+            updateSize: function () {
+              const scale = this.options.scale;
+              this.setScale(this.canvasContainer, scale, true);
+              this.setScale(this.editArea, scale, false);
+              this.setScaleByWidth(this.keyboardContainer, scale);
+              const okButton = $(this.okButton);
+              okButton.css('font-size', okButton.css('font-size').split('px')[0] * scale); 
+              okButton.css('right', okButton.css('right').split('px')[0] * scale); 
+            },
+            setScaleByWidth: function (target, scale) {
+              target.style.transform = `scale(${scale})`;
+              target.style.transformOrigin = `left top`;
+            },
+            setScale: function (target, scale, useHeight) {
+              const node = $(target);
+              const width = node.outerWidth();
+              const height = node.outerHeight();
+              const padding = node.css('padding').split('px')[0];
+              node.outerWidth(width * scale);
+              useHeight && node.outerHeight(height * scale);
+              node.css('padding', padding * scale + 'px');
+              console.log(width, height, padding);
+            },
             isAndroid: function () {
               return this.options.device === 'android';
             },

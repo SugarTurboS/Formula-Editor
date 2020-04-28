@@ -81,11 +81,14 @@ define( function ( require ) {
               const canvasContainerNode = $(this.canvasContainer);
               const editAreaNode = $(this.editArea);
               const canvasWrapperNode = $(this.canvasWrapper);
+              const containerNode = $(this.container);
 
+              
               this.scaleWidth(canvasContainerNode).scaleHeight(canvasContainerNode);
               this.scaleWidth(editAreaNode).scalePadding(editAreaNode);
               this.scaleWidth(canvasWrapperNode).scaleHeight(canvasWrapperNode).scalePadding(canvasWrapperNode);
-
+              this.scaleWidth(containerNode).scaleHeight(containerNode);
+              
               this.keyboardContainer.style.transform = `scale(${scale})`;
               this.keyboardContainer.style.transformOrigin = `left top`;
 

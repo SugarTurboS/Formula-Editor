@@ -59,9 +59,9 @@ define( function ( require ) {
                 this.editArea.appendChild( this.header );
                 this.editArea.appendChild( this.canvasWrapper );
                 this.editArea.appendChild( this.okButton );
+                this.editArea.appendChild( this.scrollbarContainer );
                 this.canvasWrapper.appendChild( this.canvasContainer );
                 this.container.appendChild( this.editArea );
-                this.container.appendChild( this.scrollbarContainer );
                 this.container.appendChild( this.keyboardContainer );
 
                 this.initComponents();
@@ -81,7 +81,6 @@ define( function ( require ) {
               const editAreaNode = $(this.editArea);
               const canvasWrapperNode = $(this.canvasWrapper);
 
-              // 缩放canvas容器
               this.scaleWidth(canvasContainerNode).scaleHeight(canvasContainerNode);
               this.scaleWidth(editAreaNode).scalePadding(editAreaNode);
               this.scaleWidth(canvasWrapperNode).scaleHeight(canvasWrapperNode).scalePadding(canvasWrapperNode);
@@ -115,6 +114,12 @@ define( function ( require ) {
               node.css('padding-right', Math.floor(paddingRight * scale));
               node.css('padding-top', Math.floor(paddingTop * scale));
               node.css('padding-bottom', Math.floor(paddingBottom * scale));
+              return this;
+            },
+            scaleTop: function (node) {
+              const scale = this.options.scale;
+              const top = node.css('top').split('px')[0];
+              node.css('top', Math.floor(top * scale));
               return this;
             },
             isAndroid: function () {

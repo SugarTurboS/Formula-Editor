@@ -7,13 +7,13 @@
     padding: 0;
     list-style: none;
   }
-  .kf-editor-edit-scrollbar {
-    bottom: 411px;
-  }
   .kf-editor-edit-area {
     width: 100%;
     height: 168px;
     float: left;
+    .kf-editor-edit-scrollbar {
+      bottom: 0px;
+    }
     .kf-editor-header-container {
       width: 100%;
       height: 48px;
@@ -50,8 +50,11 @@
       height: calc(100% - 48px);
       background: #fff;
       float: left;
+      padding: 0 40px;
 
       .kf-editor-canvas-container {
+        width: 100%;
+        height: 100%;
       }
     }
     .kf-editor-ok {

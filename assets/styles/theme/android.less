@@ -19,13 +19,19 @@
     .kf-editor-header-container {
       display: none;
     }
-    .kf-editor-canvas-container {
+    .kf-editor-canvas-wrapper {
       width: 1740px;
       height: 80px;
       background: #f8f8f8;
-      border-radius: 54px;
+      padding: 0 40px;
       float: left;
-      // margin: 40px;
+      border-radius: 54px;
+
+      .kf-editor-canvas-container {
+        width: 100%;
+        height: 100%;
+        // margin: 40px;
+      }
     }
     .kf-editor-ok {
       height: 30px;
@@ -85,7 +91,7 @@
         padding: 14px 0 0 33px;
         overflow: hidden;
         position: relative;
-        transition: top .3s linear;
+        transition: top 0.3s linear;
         .kf-editor-ui-keyboard-panel-list-item {
           width: 148px;
           height: 122px;

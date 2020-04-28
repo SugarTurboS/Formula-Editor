@@ -52,12 +52,14 @@ define( function ( require ) {
                 this.editArea = createEditArea( currentDocument );
                 this.okButton = createOkButton( currentDocument );
                 this.canvasContainer = createCanvasContainer( currentDocument );
+                this.canvasWrapper = createCanvasWrapper( currentDocument );
                 this.scrollbarContainer = createScrollbarContainer( currentDocument );
                 this.keyboardContainer = createKeyboardContainer( currentDocument );
                 
                 this.editArea.appendChild( this.header );
-                this.editArea.appendChild( this.canvasContainer );
+                this.editArea.appendChild( this.canvasWrapper );
                 this.editArea.appendChild( this.okButton );
+                this.canvasWrapper.appendChild( this.canvasContainer );
                 this.container.appendChild( this.editArea );
                 this.container.appendChild( this.scrollbarContainer );
                 this.container.appendChild( this.keyboardContainer );
@@ -75,25 +77,39 @@ define( function ( require ) {
             },
             updateSize: function () {
               const scale = this.options.scale;
-              this.setScale(this.canvasContainer, scale, true);
-              this.setScale(this.editArea, scale, false);
-              this.setScaleByWidth(this.keyboardContainer, scale);
+              const canvasContainerNode = $(this.canvasContainer);
+              const editAreaNode = $(this.editArea);
+              const canvasWrapperNode = $(this.canvasWrapper);
+
+              // 缩放canvas容器
+              this.scaleWidth(canvasContainerNode).scaleHeight(canvasContainerNode);
+              this.scaleWidth(editAreaNode).scalePadding(editAreaNode);
+              this.scaleWidth(canvasWrapperNode).scaleHeight(canvasWrapperNode).scalePadding(canvasWrapperNode);
+
+              this.keyboardContainer.style.transform = `scale(${scale})`;
+              this.keyboardContainer.style.transformOrigin = `left top`;
+
               const okButton = $(this.okButton);
               okButton.css('font-size', Math.floor(okButton.css('font-size').split('px')[0] * scale)); 
               okButton.css('right', Math.floor(okButton.css('right').split('px')[0] * scale)); 
             },
-            setScaleByWidth: function (target, scale) {
-              target.style.transform = `scale(${scale})`;
-              target.style.transformOrigin = `left top`;
-            },
-            setScale: function (target, scale, useHeight) {
-              const node = $(target);
+            scaleWidth: function (node) {
+              const scale = this.options.scale;
               const width = node.outerWidth();
-              const height = node.outerHeight();
-              const padding = node.css('padding').split('px')[0];
               node.outerWidth(Math.floor(width * scale));
-              useHeight && node.outerHeight(Math.floor(height * scale));
+              return this;
+            },
+            scaleHeight: function (node) {
+              const scale = this.options.scale;
+              const height = node.outerHeight();
+              node.outerHeight(Math.floor(height * scale));
+              return this;
+            },
+            scalePadding: function (node) {
+              const scale = this.options.scale;
+              const padding = node.css('padding').split('px')[0];
               node.css('padding', Math.floor(padding * scale));
+              return this;
             },
             isAndroid: function () {
               return this.options.device === 'android';
@@ -288,6 +304,12 @@ define( function ( require ) {
     function createCanvasContainer ( doc ) {
         var container = doc.createElement( "div" );
         container.className = "kf-editor-canvas-container";
+        return container;
+    }
+
+    function createCanvasWrapper ( doc ) {
+        var container = doc.createElement("div");
+        container.className = 'kf-editor-canvas-wrapper';
         return container;
     }
 

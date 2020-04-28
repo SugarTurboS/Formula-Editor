@@ -211,6 +211,7 @@ module.exports = function (grunt) {
   // task list.
   grunt.registerTask('default', ['clean:dist','browserify', 'copy', 'less', 'cssmin']);
   grunt.registerTask('build', [
+    'clean:dist',
     'browserify',
     'copy',
     'less',

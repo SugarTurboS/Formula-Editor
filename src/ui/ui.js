@@ -9,7 +9,7 @@ define( function ( require ) {
         // UiUitls
         $$ = require( "ui/ui-impl/ui-utils" ),
         
-        $ = require('jquery');
+        $ = require('jquery'),
 
         Utils = require( "base/utils" ),
 

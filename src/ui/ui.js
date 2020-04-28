@@ -107,8 +107,14 @@ define( function ( require ) {
             },
             scalePadding: function (node) {
               const scale = this.options.scale;
-              const padding = node.css('padding').split('px')[0];
-              node.css('padding', Math.floor(padding * scale));
+              const paddingLeft = node.css('padding-left').split('px')[0];
+              const paddingRight = node.css('padding-right').split('px')[0];
+              const paddingTop = node.css('padding-top').split('px')[0];
+              const paddingBottom = node.css('padding-bottom').split('px')[0];
+              node.css('padding-left', Math.floor(paddingLeft * scale));
+              node.css('padding-right', Math.floor(paddingRight * scale));
+              node.css('padding-top', Math.floor(paddingTop * scale));
+              node.css('padding-bottom', Math.floor(paddingBottom * scale));
               return this;
             },
             isAndroid: function () {

@@ -38,7 +38,11 @@ define( function ( require ) {
                 // 滑块宽度
                 thumbWidth: 0,
                 // 可滚动的宽度
-                scrollWidth: 0
+                scrollWidth: 0,
+                // 画板的宽度
+                canvasWidth: 0,
+                // 滚动条父容器的宽度
+                viewBoxWidth: 0
             };
 
             // 滑块的物理偏移， 不同于values.offset
@@ -81,9 +85,10 @@ define( function ( require ) {
             var leftBtnWidth = getRect( this.widgets.leftButton ).width,
                 rightBtnWidth = getRect( this.widgets.rightButton ).width;
 
-            this.values.viewWidth = getRect( this.container ).width;
-            this.values.trackWidth = this.values.viewWidth - leftBtnWidth - rightBtnWidth;
             this.values.canvasWidth = getRect(this.canvasContainer).width;
+            this.values.viewWidth = this.values.canvasWidth;
+            this.values.viewBoxWidth = getRect( this.container ).width;
+            this.values.trackWidth = this.values.viewBoxWidth - leftBtnWidth - rightBtnWidth;
 
             this.widgets.track.style.width = this.values.trackWidth + "px";
 
@@ -158,7 +163,7 @@ define( function ( require ) {
             this.values.contentWidth = contentWidth;
             this.values.scrollWidth = contentWidth - this.values.viewWidth;
 
-            if ( canvasWidth >= contentWidth ) {
+            if ( this.values.viewWidth >= contentWidth ) {
                 this.hide();
                 return;
             }

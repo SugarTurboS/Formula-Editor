@@ -64,6 +64,8 @@ define( function ( require ) {
                 this.container.appendChild( this.editArea );
                 this.container.appendChild( this.keyboardContainer );
 
+                this.updateSize();
+                
                 this.initComponents();
 
                 this.initServices();
@@ -72,7 +74,6 @@ define( function ( require ) {
 
                 this.initScrollEvent();
 
-                this.updateSize();
 
             },
             updateSize: function () {

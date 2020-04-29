@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-29 09:52:59
+ * @LastEditTime: 2020-04-29 10:37:10
  */
 
 define(function (require) {
@@ -54,7 +54,7 @@ define(function (require) {
       '=',
     ];
 
-    Constant[0].items = getIconContents(list, 'assets/images/pc/keyboard.png');
+    Constant[0].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/a974c7f278ac4d2fa484b33f80435180');
   })();
   // 代数
   (function () {
@@ -99,7 +99,7 @@ define(function (require) {
       '\\varnothing',
     ];
 
-    Constant[1].items = getIconContents(list, 'assets/images/pc/keyboard.png');
+    Constant[1].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/a974c7f278ac4d2fa484b33f80435180');
   })();
   // 几何
   (function () {
@@ -124,13 +124,13 @@ define(function (require) {
       '\\theta',
     ];
 
-    Constant[2].items = getIconContents(list, 'assets/images/pc/keyboard.png');
+    Constant[2].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/a974c7f278ac4d2fa484b33f80435180');
   })();
   // 单位
   (function () {
     const list = [];
 
-    Constant[3].items = getIconContents(list, 'assets/images/pc/keyboard.png');
+    Constant[3].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/a974c7f278ac4d2fa484b33f80435180');
   })();
   // 其他
   (function () {

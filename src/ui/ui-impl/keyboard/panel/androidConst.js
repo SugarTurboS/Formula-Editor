@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 18:00:32
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-29 09:51:01
+ * @LastEditTime: 2020-04-29 10:38:59
  */
 
 define(function (require) {
@@ -54,7 +54,7 @@ define(function (require) {
       '=',
     ];
 
-    Constant[0].items = getIconContents(list, 'assets/images/android/keyboard.png');
+    Constant[0].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/161651900dba4c429c386fa19bf501bb');
   })();
   // 代数
   (function () {
@@ -99,7 +99,7 @@ define(function (require) {
       '\\varnothing',
     ];
 
-    Constant[1].items = getIconContents(list, 'assets/images/android/keyboard.png');
+    Constant[1].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/161651900dba4c429c386fa19bf501bb');
   })();
   // 几何
   (function () {
@@ -124,13 +124,13 @@ define(function (require) {
       '\\theta',
     ];
 
-    Constant[2].items = getIconContents(list, 'assets/images/android/keyboard.png');
+    Constant[2].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/161651900dba4c429c386fa19bf501bb');
   })();
   // 单位
   (function () {
     const list = [];
 
-    Constant[3].items = getIconContents(list, 'assets/images/android/keyboard.png');
+    Constant[3].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/161651900dba4c429c386fa19bf501bb');
   })();
   // 其他
   (function () {

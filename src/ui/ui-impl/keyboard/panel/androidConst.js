@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 18:00:32
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-27 16:07:36
+ * @LastEditTime: 2020-04-29 09:51:01
  */
 
 define(function (require) {
@@ -160,7 +160,7 @@ define(function (require) {
       '\\chi',
     ];
 
-    Constant[4].items = getIconContents(list, 'assets/images/android/keyboard.png');
+    Constant[4].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/161651900dba4c429c386fa19bf501bb');
   })();
 
   function getIconContents(keySet, imgSrc) {

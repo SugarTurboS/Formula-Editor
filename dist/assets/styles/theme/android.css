@@ -1,0 +1,186 @@
+body {
+  background-color: transparent;
+}
+.android {
+  width: 1920px;
+  height: 835px;
+  position: fixed;
+  bottom: 0;
+}
+.android * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.android .kf-editor-edit-area {
+  width: 100%;
+  height: auto;
+  float: left;
+  padding: 40px;
+  position: relative;
+}
+.android .kf-editor-edit-area .kf-editor-edit-scrollbar {
+  bottom: 0px;
+}
+.android .kf-editor-edit-area .kf-editor-header-container {
+  display: none;
+}
+.android .kf-editor-edit-area .kf-editor-canvas-wrapper {
+  width: 1740px;
+  height: 140px;
+  background: #f8f8f8;
+  padding: 0 40px;
+  float: left;
+  border-radius: 54px;
+}
+.android .kf-editor-edit-area .kf-editor-canvas-wrapper .kf-editor-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+.android .kf-editor-edit-area .kf-editor-ok {
+  height: 30px;
+  line-height: 30px;
+  font-size: 30px;
+  color: #ffab30;
+  position: absolute;
+  top: 50%;
+  right: 40px;
+  margin-top: -15px;
+  cursor: pointer;
+}
+.android .kf-editor-edit-keyboard {
+  width: 1920px;
+  height: 615px;
+  float: left;
+  background: #eceff1;
+  overflow: hidden;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-menu {
+  width: 274px;
+  height: 615px;
+  float: left;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-menu .kf-editor-ui-keyboard-menu-list {
+  width: 100%;
+  height: 100%;
+  padding: 26px;
+  background: #eceff1;
+  overflow: hidden;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-menu .kf-editor-ui-keyboard-menu-list .kf-editor-ui-keyboard-menu-list-item {
+  width: 183px;
+  height: 75px;
+  margin: 19px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 16px;
+  color: #49494d;
+  cursor: pointer;
+  float: left;
+  font-size: 34px;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-menu .kf-editor-ui-keyboard-menu-list .kf-editor-ui-keyboard-menu-list-item-active {
+  background: #ffab30;
+  border-radius: 8px;
+  color: #ffffff;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-panel {
+  width: 1425px;
+  height: 100%;
+  float: left;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-panel .kf-editor-ui-keyboard-panel-list {
+  width: 100%;
+  height: 100%;
+  padding: 14px 0 0 33px;
+  overflow: hidden;
+  position: relative;
+  transition: top 0.3s linear;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-panel .kf-editor-ui-keyboard-panel-list .kf-editor-ui-keyboard-panel-list-item {
+  width: 148px;
+  height: 122px;
+  margin: 12px;
+  text-align: center;
+  line-height: 121px;
+  font-size: 16px;
+  color: #49494d;
+  cursor: pointer;
+  float: left;
+  position: relative;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-panel .kf-editor-ui-keyboard-panel-list .kf-editor-ui-keyboard-panel-list-item:active::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(64, 75, 80, 0.15);
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page {
+  width: 212px;
+  height: 100%;
+  float: left;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list {
+  width: 100%;
+  height: 100%;
+  padding: 14px 0px 26px 0;
+  overflow: hidden;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item {
+  width: 100%;
+  height: 122px;
+  margin: 12px;
+  float: left;
+  font-size: 46px;
+  color: #ff9800;
+  text-align: center;
+  line-height: 122px;
+  cursor: pointer;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-delete {
+  width: 100%;
+  height: 122px;
+  background: url('https://store-g1.seewo.com/easiclass-public/a7ea5932b621487aaa1c8b9dd4e58cb0') center no-repeat;
+  background-size: initial;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-delete:active {
+  background-color: rgba(64, 75, 80, 0.15);
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-prev {
+  position: relative;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-prev::before {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url('https://store-g1.seewo.com/easiclass-public/27257523137e47499311266d0f872c8b') center no-repeat;
+  background-size: initial;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-prev:not(.kf-editor-ui-keyboard-page-list-item-disabled):active {
+  background-color: rgba(64, 75, 80, 0.15);
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-next {
+  position: relative;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-next::before {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url('https://store-g1.seewo.com/easiclass-public/3c2faacfac52472ea6cb522a34aa04db') center no-repeat;
+  background-size: initial;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-next:not(.kf-editor-ui-keyboard-page-list-item-disabled):active {
+  background-color: rgba(64, 75, 80, 0.15);
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-disabled::before {
+  opacity: 0.5;
+}
+.android .kf-editor-edit-keyboard .kf-editor-ui-keyboard-footer {
+  display: none;
+}

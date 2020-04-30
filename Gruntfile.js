@@ -86,7 +86,7 @@ module.exports = function (grunt) {
       },
       build: {
         src: 'dist/assets/styles/**/*.css', //压缩
-        dest: 'dist/assets/styles/theme/index.min.css', //dest 是目的地输出
+        dest: 'dist/index.min.css', //dest 是目的地输出
       },
     },
 

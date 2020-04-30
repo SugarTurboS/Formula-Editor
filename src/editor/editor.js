@@ -7,6 +7,7 @@ define( function ( require ) {
     var kity = require( "kity" ),
         Utils = require( "base/utils" ),
         bundle = require('bundle'),
+        Messager = require('editor/Message'),
         defaultOpt = {
             formula: {
                 fontsize: 50,
@@ -103,11 +104,13 @@ define( function ( require ) {
         },
 
         initWebService: function () {
-          const { WebService } = bundle;
-          if (this.options.ui.device === 'android') {
+          const { WebService, CustomWebService } = bundle;
+          if (this.options.ui.protocol === 'webview') {
             this.eclassWebService = new WebService('webview');
-          } else {
+          } else if (this.options.ui.protocol === 'iframe') {
             this.eclassWebService = new WebService('iframe');
+          } else if (this.options.ui.protocol === 'documentEvent'){
+            this.eclassWebService = new CustomWebService({ messager: new Messager() });
           }
           this.eclassWebService.on('common.readFormula', (msg) => {
             if (msg.body.formula) {

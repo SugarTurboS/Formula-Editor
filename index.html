@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="renderer" content="webkit" />
     <!-- 开发环境配置 -->
-    <script src="dist/npmBundle.js"></script>
+    <!-- <script src="dist/npmBundle.js"></script>
     <script src="dev-lib/jquery-1.11.0.min.js"></script>
     <script src="dev-lib/kitygraph.all.js"></script>
     <script src="dev-lib/kity-formula-render.all.js"></script>
@@ -18,39 +18,42 @@
     </script>
     <script src="dev-lib/exports.js"></script>
     <script src="dev-lib/start.js"></script>
-    <script src="dev-lib/dev-start.js"></script>
+    <script src="dev-lib/dev-start.js"></script> -->
     <!-- end -->
     <!-- 生产环境配置 -->
-    <!-- <script src="dist/npmBundle.js"></script>
+    <script src="dist/npmBundle.js"></script>
     <script src="dist/jquery-1.11.0.min.js"></script>
     <script src="dist/kitygraph.all.min.js"></script>
     <script src="dist/kity-formula-render.all.min.js"></script>
     <script src="dist/kity-formula-parser.all.min.js"></script>
-    <script src="dist/kityformula-editor.all.min.js"></script> -->
+    <script src="dist/kityformula-editor.all.min.js"></script>
     <!-- end -->
     <script>
       jQuery(function ($) {
         const device = /device=(android|pc)/.exec(location.search);
-
+        const protocol = /protocol=(webview|iframe|documentEvent)/.exec(location.search);
         if (!device) {
           console.log('没有读取到设备类型');
         } else {
           console.log('读取到当前设备类型为：', device[1]);
         }
-        console.log((window.innerWidth / 1920).toFixed(3), window.innerWidth)
+        if (!protocol) {
+          console.log('没有读取到设备类型');
+        } else {
+          console.log('读取到当前协议类型为：', protocol[1]);
+        }
         var factory = kf.EditorFactory.create($('#kfEditorContainer')[0], {
           render: {
             fontsize:
-              device && device[1] === 'android'
-                ? (window.innerWidth / 1920).toFixed(3) * 50
-                : 30,
+              device && device[1] === 'pc'
+                ? 30
+                : (window.innerWidth / 1920).toFixed(3) * 50,
           },
           ui: {
-            device: device ? device[1] : 'pc',
+            device: device ? device[1] : 'android',
             scale:
-              device && device[1] === 'android'
-                ? (window.innerWidth / 1920).toFixed(3)
-                : 1,
+              device && device[1] === 'pc' ? 1 : (window.innerWidth / 1920).toFixed(3),
+            protocol: protocol ? protocol[1] : 'webview',
           },
           resource: {
             path: 'resource/',
@@ -69,7 +72,7 @@
         });
       });
     </script>
-    <link rel="stylesheet" href="dist/assets/styles/theme/index.min.css" />
+    <link rel="stylesheet" href="dist/index.min.css" />
   </head>
   <body>
     <div id="kfEditorContainer" class="kf-editor" style="visibility: hidden;"></div>

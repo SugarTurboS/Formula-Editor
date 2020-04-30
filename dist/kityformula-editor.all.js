@@ -1100,8 +1100,10 @@ _p[14] = {
                 this.eclassWebService.on("common.clearFormula", function() {
                     _this.execCommand("render", "\\placeholder");
                 });
-                this.eclassWebService.send({
-                    type: "common.ready"
+                this.registerCommand("ready", this, function() {
+                    this.eclassWebService.send({
+                        type: "common.ready"
+                    });
                 });
             },
             /**

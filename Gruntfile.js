@@ -183,16 +183,8 @@ module.exports = function (grunt) {
   });
 
   function getFileName(isMin) {
-    var pkg = grunt.file.readJSON('package.json');
-
     return (
-      pkg.name.replace(/[A-Z]/g, function (match, index) {
-        if (index === 0) {
-          return match.toLowerCase();
-        } else {
-          return '-' + match.toLowerCase();
-        }
-      }) + (isMin ? '.all.min.js' : '.all.js')
+      isMin ? 'kityformula-editor.all.min.js' : 'kityformula-editor.all.js'
     );
   }
 

@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 09:53:01
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-06 09:46:49
+ * @LastEditTime: 2020-05-06 14:37:39
  */
 /*
  * @Author: Demian
@@ -40,7 +40,7 @@ define(function (require) {
         return $$.ele(doc, 'div', {
           className: this.prefix,
           content: `
-                <div class="${this.prefix}-title">插入字符</div>
+                <div class="${this.prefix}-title">插入公式</div>
                 <div class="${this.prefix}-close"></div>
               `,
         });

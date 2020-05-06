@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-29 10:37:10
+ * @LastEditTime: 2020-05-06 16:00:16
  */
 
 define(function (require) {
@@ -54,7 +54,7 @@ define(function (require) {
       '=',
     ];
 
-    Constant[0].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/a974c7f278ac4d2fa484b33f80435180');
+    Constant[0].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
   })();
   // 代数
   (function () {
@@ -99,7 +99,7 @@ define(function (require) {
       '\\varnothing',
     ];
 
-    Constant[1].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/a974c7f278ac4d2fa484b33f80435180');
+    Constant[1].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
   })();
   // 几何
   (function () {
@@ -124,13 +124,13 @@ define(function (require) {
       '\\theta',
     ];
 
-    Constant[2].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/a974c7f278ac4d2fa484b33f80435180');
+    Constant[2].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
   })();
   // 单位
   (function () {
     const list = [];
 
-    Constant[3].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/a974c7f278ac4d2fa484b33f80435180');
+    Constant[3].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
   })();
   // 其他
   (function () {
@@ -160,7 +160,7 @@ define(function (require) {
       '\\chi',
     ];
 
-    Constant[4].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/a974c7f278ac4d2fa484b33f80435180');
+    Constant[4].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
   })();
 
   function getIconContents(keySet, imgSrc) {

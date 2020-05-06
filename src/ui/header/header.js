@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 09:53:01
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-26 15:57:28
+ * @LastEditTime: 2020-05-06 09:46:49
  */
 /*
  * @Author: Demian
@@ -23,7 +23,7 @@ define(function (require) {
       },
 
       initEvent: function () {
-        $$.delegate(this.uiComponent.header, '.' + this.prefix, 'click', () => {
+        $$.delegate(this.uiComponent.header, '.' + this.prefix + '-close', 'click', () => {
           this.kfEditor.eclassWebService.send({
             type: 'common.closeModal',
           });

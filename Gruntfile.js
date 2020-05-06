@@ -208,7 +208,7 @@ module.exports = function (grunt) {
     'copy',
     'less',
     'cssmin',
-    'babel',
+    'babel:prod',
     'jshint',
     'dependence:replace',
     'concat:full',

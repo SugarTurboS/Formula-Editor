@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Kity Formula Editor - v1.0.0 - 2020-04-30
+ * Kity Formula Editor - v1.0.1 - 2020-05-06
  * https://github.com/kitygraph/formula
  * GitHub: https://github.com/kitygraph/formula.git 
  * Copyright (c) 2020 test-kf-editor; Licensed MIT
@@ -4429,7 +4429,7 @@ _p[34] = {
  * @Author: Demian
  * @Date: 2020-04-22 09:53:01
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-26 15:57:28
+ * @LastEditTime: 2020-05-06 09:46:49
  */
 /*
  * @Author: Demian
@@ -4449,7 +4449,7 @@ _p[35] = {
             },
             initEvent: function initEvent() {
                 var _this = this;
-                $$.delegate(this.uiComponent.header, "." + this.prefix, "click", function() {
+                $$.delegate(this.uiComponent.header, "." + this.prefix + "-close", "click", function() {
                     _this.kfEditor.eclassWebService.send({
                         type: "common.closeModal"
                     });

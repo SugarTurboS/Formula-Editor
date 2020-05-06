@@ -38,13 +38,24 @@
         &::before {
           content: '';
           display: block;
-          background: url('https://store-g1.seewo.com/easiclass-public/8747fc92a01246e19d7f9bc9f3868652') center no-repeat;
+          background: url('https://store-g1.seewo.com/easiclass-public/8747fc92a01246e19d7f9bc9f3868652')
+            center no-repeat;
           background-size: 100%;
           position: absolute;
           width: 16px;
           height: 16px;
           top: 16px;
           right: 16px;
+        }
+        &:hover {
+          &::before {
+            background: url('https://store-g1.seewo.com/easiclass-public/c2682d9dcc844986898be60b26ee5823');
+          }
+        }
+        &:active {
+          &::before {
+            background: url('https://store-g1.seewo.com/easiclass-public/9550aaa080574f739425122e7908e012');
+          }
         }
       }
     }
@@ -161,7 +172,8 @@
         .kf-editor-ui-keyboard-page-list-item-delete {
           width: 81px;
           height: 64px;
-          background: url('https://store-g1.seewo.com/easiclass-public/78c93d3c1204445982c6b5700e1442eb') center no-repeat;
+          background: url('https://store-g1.seewo.com/easiclass-public/78c93d3c1204445982c6b5700e1442eb')
+            center no-repeat;
           background-size: initial;
           border-bottom: 1px solid #e4e4e4;
           &:hover {
@@ -176,7 +188,8 @@
             display: block;
             width: 100%;
             height: 100%;
-            background: url('https://store-g1.seewo.com/easiclass-public/4993661fa54249249b152a89cb1cec6b') center no-repeat;
+            background: url('https://store-g1.seewo.com/easiclass-public/4993661fa54249249b152a89cb1cec6b')
+              center no-repeat;
             background-size: initial;
           }
           &:not(.kf-editor-ui-keyboard-page-list-item-disabled):hover {
@@ -193,7 +206,8 @@
             display: block;
             width: 100%;
             height: 100%;
-            background: url('https://store-g1.seewo.com/easiclass-public/f4df574b99d748f0823ccd36362d1a9c') center no-repeat;
+            background: url('https://store-g1.seewo.com/easiclass-public/f4df574b99d748f0823ccd36362d1a9c')
+              center no-repeat;
             background-size: initial;
           }
         }
@@ -224,6 +238,16 @@
         float: left;
         margin-left: calc(50% - 128px);
         cursor: pointer;
+        user-select: none;
+        &:not(:disabled) {
+          cursor: pointer;
+        }
+        &:not(:disabled):hover {
+          background-color: #ebf5ff;
+        }
+        &:not(:disabled):active {
+          background-color: #dce8f5;
+        }
       }
       #kf-editor-ui-keyboard-footer-button-submit {
         width: 120px;
@@ -237,6 +261,15 @@
         float: left;
         margin-left: 16px;
         cursor: pointer;
+        &:not(:disabled) {
+          cursor: pointer;
+        }
+        &:not(:disabled):hover {
+          background-color: #3399ff;
+        }
+        &:not(:disabled):active {
+          background-color: #1885f2;
+        }
       }
     }
   }

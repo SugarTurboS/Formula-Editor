@@ -50,6 +50,12 @@
   top: 16px;
   right: 16px;
 }
+.pc .kf-editor-edit-area .kf-editor-header-container .kf-editor-header-container-close:hover::before {
+  background: url('https://store-g1.seewo.com/easiclass-public/c2682d9dcc844986898be60b26ee5823');
+}
+.pc .kf-editor-edit-area .kf-editor-header-container .kf-editor-header-container-close:active::before {
+  background: url('https://store-g1.seewo.com/easiclass-public/9550aaa080574f739425122e7908e012');
+}
 .pc .kf-editor-edit-area .kf-editor-canvas-wrapper {
   width: 100%;
   height: calc(100% - 48px);
@@ -220,6 +226,16 @@
   float: left;
   margin-left: calc(50% - 128px);
   cursor: pointer;
+  user-select: none;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-cancel:not(:disabled) {
+  cursor: pointer;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-cancel:not(:disabled):hover {
+  background-color: #ebf5ff;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-cancel:not(:disabled):active {
+  background-color: #dce8f5;
 }
 .pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-submit {
   width: 120px;
@@ -233,4 +249,13 @@
   float: left;
   margin-left: 16px;
   cursor: pointer;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-submit:not(:disabled) {
+  cursor: pointer;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-submit:not(:disabled):hover {
+  background-color: #3399ff;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-submit:not(:disabled):active {
+  background-color: #1885f2;
 }

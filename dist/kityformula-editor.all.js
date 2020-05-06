@@ -359,11 +359,11 @@ _p[8] = {
                 editorContainer.appendChild(box);
                 return box;
             },
-            focus: function focus() {
+            focus: function focus(hack) {
                 var rootInfo = null;
                 this.inputBox.focus();
                 // 如果当前不包含光标信息， 则手动设置光标信息， 以使得当前根节点被全选中
-                if (!this.kfEditor.requestService("syntax.has.cursor.info")) {
+                if (!this.kfEditor.requestService("syntax.has.cursor.info") || hack) {
                     rootInfo = this.kfEditor.requestService("syntax.get.root.group.info");
                     this.kfEditor.requestService("syntax.update.record.cursor", {
                         groupId: rootInfo.id,
@@ -1096,6 +1096,7 @@ _p[14] = {
                     if (msg.body.formula) {
                         _this.execCommand("render", msg.body.formula);
                     }
+                    _this.execCommand("focus", true);
                 });
                 this.eclassWebService.on("common.clearFormula", function() {
                     _this.execCommand("render", "\\placeholder");

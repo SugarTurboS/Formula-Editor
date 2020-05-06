@@ -116,6 +116,7 @@ define( function ( require ) {
             if (msg.body.formula) {
               this.execCommand('render', msg.body.formula);
             }
+            this.execCommand('focus', true);
           })
           this.eclassWebService.on('common.clearFormula', () => {
             this.execCommand('render', '\\placeholder');

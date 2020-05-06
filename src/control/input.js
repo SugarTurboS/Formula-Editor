@@ -70,14 +70,12 @@ define( function ( require, exports, module ) {
 
         },
 
-        focus: function () {
-
+        focus: function (hack) {
             var rootInfo = null;
 
             this.inputBox.focus();
-
             // 如果当前不包含光标信息， 则手动设置光标信息， 以使得当前根节点被全选中
-            if ( !this.kfEditor.requestService( "syntax.has.cursor.info" ) ) {
+            if ( !this.kfEditor.requestService( "syntax.has.cursor.info" ) || hack ) {
 
                 rootInfo = this.kfEditor.requestService( "syntax.get.root.group.info" );
 

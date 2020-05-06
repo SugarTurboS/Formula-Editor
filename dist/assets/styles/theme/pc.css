@@ -131,7 +131,8 @@
   cursor: pointer;
   float: left;
   border: solid #e4e4e4;
-  border-width: 0px 1px 1px 0px;
+  border-width: 1px 1px 1px 0px;
+  margin-top: -1px;
   position: relative;
 }
 .pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-panel .kf-editor-ui-keyboard-panel-list .kf-editor-ui-keyboard-panel-list-item:hover::before {

@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 18:52:57
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-27 21:04:59
+ * @LastEditTime: 2020-05-06 15:42:41
  */
 define(function (require) {
   const kity = require('kity');
@@ -13,6 +13,7 @@ define(function (require) {
       this.props = parentProps;
       this.prefix = parentProps.prefix + 'keyboard-panel';
       this.scrollHeight = parentProps.scrollHeight;
+      this.rowHeight = parentProps.rowHeight;
       // 初始化状态
       this.state = {
         type: this.props.type,
@@ -25,9 +26,27 @@ define(function (require) {
 
       this._onClick = this._onClick.bind(this);
     },
+    _calculateHeight: function (type, page) {
+      // 计算当前类型的起始行数
+      const curTypeIndex =
+        this.props.panelConstant.findIndex((item) => item.type === type) || 0;
+      const prevList =
+        this.props.panelConstant.slice(0, curTypeIndex) || this.props.panelConstant[0];
+      const rows = prevList.reduce((acc, cur, index) => {
+        const curRows = Math.ceil(cur.items.length / 8);
+        return acc + curRows;
+      }, 0);
+      // 计算当前类型的锚点坐标
+      const typeHeight = rows * this.rowHeight;
+      return typeHeight + page * this.scrollHeight;
+    },
     _render: function () {
       console.log('panel render');
-      const list = this.props.panelConstant.find((x) => x.type === this.state.type).items || [];
+      const list = this.props.panelConstant.reduce((acc, cur, index) => {
+        const itemLenOfLastRow = cur.items.length % 8;
+        const blankArr = itemLenOfLastRow ? new Array(8 - itemLenOfLastRow).fill('') : [];
+        return acc.concat(cur.items, blankArr);
+      }, []);
       const table = list.reduce((acc, cur, index) => {
         const row = Math.floor(index / 8);
         const col = Math.floor(index % 8);
@@ -38,21 +57,24 @@ define(function (require) {
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `
-        <table id="${this.listClassName}" class="${this.listClassName}" style="top: -${
-          this.state.page * this.scrollHeight
-        }px" cellspacing="0" cellpadding="0">
+        <table id="${this.listClassName}" class="${
+          this.listClassName
+        }" style="top: -${this._calculateHeight(
+          this.state.type,
+          this.state.page
+        )}px" cellspacing="0" cellpadding="0">
           ${table
             .map(
               (row) =>
                 '<tr>' +
                 row
-                  .map(
-                    (x) =>
-                      `<td class='${this.itemClassName}' style="background-image: url(${
-                        x.img
-                      });background-position: ${-x.pos.x}px ${-x.pos.y}px" data-value="${
-                        x.key
-                      }" />`
+                  .map((x) =>
+                    x
+                      ? `<td class='${this.itemClassName}' style="background-image: url(${
+                          x.img
+                        });background-position: ${-x.pos.x}px ${-x.pos
+                          .y}px" data-value="${x.key}" />`
+                      : null
                   )
                   .join('') +
                 '</tr>'
@@ -68,37 +90,14 @@ define(function (require) {
       this.parentNode.appendChild(node);
     },
     update: function (nextProps) {
-      if (!this._shouldUpdate(nextProps)) return;
-      if (this._justPageChange(nextProps)) return;
-      Object.keys(nextProps)
-        .filter((x) => x in this.state)
-        .forEach((x) =>
-          this._setState({
-            [x]: nextProps[x],
-          })
-        );
-      const node = this._render();
-      $('.' + this.prefix).html(node);
-    },
-    _shouldUpdate: function (nextProps) {
-      const isSame = Object.keys(this.state).every((x) => nextProps[x] === this.state[x]);
-      if (isSame) {
-        return false;
-      }
-      return true;
-    },
-    _justPageChange: function (nextProps) {
-      const justPageChange = Object.keys(this.state)
-        .filter((k) => k !== 'page')
-        .every((v) => this.state[v] === nextProps[v]);
-      console.log(justPageChange, this.state, nextProps);
-      if (justPageChange) {
-        $('#' + this.listClassName).css('top', - nextProps.page * this.scrollHeight + 'px');
-        this._setState({
-          page: nextProps.page,
-        });
-      }
-      return justPageChange;
+      $('#' + this.listClassName).css(
+        'top',
+        `-${this._calculateHeight(nextProps.type, nextProps.page)}px`
+      );
+      this._setState({
+        type: nextProps.type,
+        page: nextProps.page,
+      });
     },
     _onClick: function (e) {
       const val = e.target.dataset.value;

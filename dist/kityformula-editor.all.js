@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Kity Formula Editor - v1.0.1 - 2020-05-06
+ * Kity Formula Editor - v1.0.1-test-1 - 2020-05-07
  * https://github.com/kitygraph/formula
  * GitHub: https://github.com/kitygraph/formula.git 
  * Copyright (c) 2020 test-kf-editor; Licensed MIT
@@ -4477,7 +4477,7 @@ _p[35] = {
  * @Author: Demian
  * @Date: 2020-04-14 16:31:36
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 09:48:01
+ * @LastEditTime: 2020-05-07 10:26:22
  */
 _p[36] = {
     value: function(require) {
@@ -4519,6 +4519,14 @@ _p[36] = {
             },
             insertSource: function insertSource(val) {
                 this.kfEditor.requestService("control.insert.string", val);
+                this.kfEditor.eclassWebService.send({
+                    type: "common.selectKey",
+                    data: {
+                        body: {
+                            key: val
+                        }
+                    }
+                });
             },
             // disableToolbar: function () {
             //   kity.Utils.each(this.elements, function (ele) {
@@ -7517,6 +7525,18 @@ _p[51] = {
                     onCancel: this.onCancel.bind(this)
                 });
                 this.renderKeyboard();
+                // 通知当前类型
+                this.sendService();
+            },
+            sendService: function sendService() {
+                this.kfEditor.eclassWebService.send({
+                    type: "common.setType",
+                    data: {
+                        body: {
+                            type: this.state.type
+                        }
+                    }
+                });
             },
             renderKeyboard: function renderKeyboard() {
                 this.menuChild.mount();
@@ -7529,6 +7549,14 @@ _p[51] = {
                     return x.type === val;
                 }) || {};
                 var len = charCollection.items ? charCollection.items.length : 0;
+                this.kfEditor.eclassWebService.send({
+                    type: "common.setType",
+                    data: {
+                        body: {
+                            type: val
+                        }
+                    }
+                });
                 this.setState({
                     type: val,
                     page: 0,

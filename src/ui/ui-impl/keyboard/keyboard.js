@@ -74,6 +74,19 @@ define(function (require) {
           onCancel: this.onCancel.bind(this),
         });
         this.renderKeyboard();
+        // 通知当前类型
+        this.sendService();
+      },
+
+      sendService: function () {
+        this.kfEditor.eclassWebService.send({
+          type: 'common.setType',
+          data: {
+            body: {
+              type: this.state.type,
+            },
+          },
+        });
       },
 
       renderKeyboard: function () {
@@ -86,6 +99,14 @@ define(function (require) {
       onMenuClick: function (val) {
         const charCollection = this.panelConstant.find((x) => x.type === val) || {};
         const len = charCollection.items ? charCollection.items.length : 0;
+        this.kfEditor.eclassWebService.send({
+          type: 'common.setType',
+          data: {
+            body: {
+              type: val,
+            },
+          },
+        });
         this.setState({
           type: val,
           page: 0,

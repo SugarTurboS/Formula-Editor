@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-14 16:31:36
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 09:48:01
+ * @LastEditTime: 2020-05-07 10:26:22
  */
 define(function (require) {
   var kity = require('kity'),
@@ -57,6 +57,14 @@ define(function (require) {
 
       insertSource: function (val) {
         this.kfEditor.requestService('control.insert.string', val);
+        this.kfEditor.eclassWebService.send({
+          type: 'common.selectKey',
+          data: {
+            body: {
+              key: val,
+            },
+          },
+        });
       },
 
       // disableToolbar: function () {

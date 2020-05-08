@@ -1,5 +1,4 @@
 {
   "sourceType": "script",
-  "presets": ["@babel/preset-env"],
-  "plugins": ["@babel/plugin-transform-typeof-symbol"]
+  "presets": ["@babel/preset-env"]
 }

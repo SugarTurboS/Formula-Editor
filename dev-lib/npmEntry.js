@@ -2,13 +2,14 @@
  * @Author: Demian
  * @Date: 2020-04-26 11:07:17
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-30 10:15:37
+ * @LastEditTime: 2020-05-08 16:37:17
  * @description: 将项目中用的npm模块从该处引入并挂载到window中
  */
-const { default: WebService } = require('@student/eclass-web-service');
-const { default: CustomWebService } = require('@student/web-service');
+require('@babel/polyfill');
+var WebService = require('@student/eclass-web-service').default;
+var CustomWebService = require('@student/web-service').default;
 
 module.exports = window.bundle = {
-  WebService,
-  CustomWebService
+  WebService: WebService,
+  CustomWebService: CustomWebService,
 };

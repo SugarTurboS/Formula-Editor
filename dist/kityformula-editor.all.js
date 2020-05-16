@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Kity Formula Editor - v1.0.1-test-2 - 2020-05-12
+ * Kity Formula Editor - v1.0.1-test-3 - 2020-05-16
  * https://github.com/kitygraph/formula
  * GitHub: https://github.com/kitygraph/formula.git 
  * Copyright (c) 2020 test-kf-editor; Licensed MIT
@@ -1818,7 +1818,7 @@ _p[27] = {
         var kity = _p.r(22), Assembly = _p.r(21).Assembly, DEFAULT_OPTIONS = {
             autoresize: false,
             fontsize: 50,
-            padding: [ 0, 0 ]
+            padding: [ 0, 5 ]
         }, RenderComponenet = kity.createClass("RenderComponent", {
             // 异步组件
             base: _p.r(1),

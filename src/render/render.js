@@ -11,7 +11,7 @@ define( function ( require ) {
         DEFAULT_OPTIONS = {
             autoresize: false,
             fontsize: 50,
-            padding: [ 0, 0 ]
+            padding: [ 0, 5 ]
         },
 
         RenderComponenet = kity.createClass( 'RenderComponent', {

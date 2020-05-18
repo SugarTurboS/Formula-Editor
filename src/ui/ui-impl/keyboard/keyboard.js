@@ -54,8 +54,8 @@ define(function (require) {
           prefix: PREFIX,
           doc: this.doc,
           panelConstant: this.panelConstant,
-          rowHeight: this.getDeviceType() === 'android' ? 149 : 63,
-          scrollHeight: this.getDeviceType() === 'android' ? 149 * 4 : 63 * 5,
+          rowHeight: this.getDeviceType() === 'android' ? 146 : 63,
+          scrollHeight: this.getDeviceType() === 'android' ? 146 * 4 : 63 * 5,
           onClick: this.onPanelClick.bind(this),
         });
         this.pageChild = new Page(this.element, {

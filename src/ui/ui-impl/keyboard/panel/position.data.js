@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 14:54:26
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-18 09:36:27
+ * @LastEditTime: 2020-05-18 14:37:05
  */
 define(function () {
   return {
@@ -158,7 +158,7 @@ define(function () {
       x: 5,
       y: 4,
     },
-    '\\sigma': {
+    '\\delta': {
       x: 6,
       y: 4,
     },

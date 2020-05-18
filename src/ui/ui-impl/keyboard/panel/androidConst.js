@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-22 18:00:32
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-18 10:13:55
+ * @LastEditTime: 2020-05-18 14:36:50
  */
 
 define(function (require) {
@@ -56,7 +56,7 @@ define(function (require) {
 
     Constant[0].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23'
+      'https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f'
     );
   })();
   // 代数
@@ -68,7 +68,7 @@ define(function (require) {
       '\\neq',
       '\\sqrt [\\placeholder] \\placeholder',
       '\\pi',
-      '\\sigma',
+      '\\delta',
       '\\left[\\placeholder\\right]',
       '\\placeholder^\\placeholder',
       '\\placeholder_\\placeholder',
@@ -104,7 +104,7 @@ define(function (require) {
 
     Constant[1].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23'
+      'https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f'
     );
   })();
   // 几何
@@ -132,7 +132,7 @@ define(function (require) {
 
     Constant[2].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23'
+      'https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f'
     );
   })();
   // 字母
@@ -168,7 +168,7 @@ define(function (require) {
 
     Constant[3].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23'
+      'https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f'
     );
   })();
   // 其他
@@ -201,7 +201,7 @@ define(function (require) {
 
     Constant[4].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23'
+      'https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f'
     );
   })();
 

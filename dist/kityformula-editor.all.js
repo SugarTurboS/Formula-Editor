@@ -7990,7 +7990,7 @@ _p[53] = {
  * @Author: Demian
  * @Date: 2020-04-22 18:00:32
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-18 10:13:55
+ * @LastEditTime: 2020-05-18 14:36:50
  */
 _p[54] = {
     value: function(require) {
@@ -8024,27 +8024,27 @@ _p[54] = {
         // 常用
         (function() {
             var list = [ "<", "\\frac \\placeholder\\placeholder", "\\sqrt \\placeholder", "a", "+", "7", "8", "9", ">", "\\left|\\placeholder\\right|", "\\placeholder^2", "b", "-", "4", "5", "6", "\\leq", "\\left(\\placeholder\\right)", "\\sqrt [3] \\placeholder", "x", "\\pm", "1", "2", "3", "\\geq", "%", "\\placeholder^3", "y", ",", "0", ".", "=" ];
-            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23");
+            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f");
         })();
         // 代数
         (function() {
-            var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\sigma", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing" ];
-            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23");
+            var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\delta", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing" ];
+            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f");
         })();
         // 几何
         (function() {
             var list = [ "\\sin\\placeholder", "\\cos\\placeholder", "\\tan\\placeholder", "\\sec\\placeholder", "\\csc\\placeholder", "\\cot\\placeholder", "\\arcsin\\placeholder", "\\arccos\\placeholder", "\\arctan\\placeholder", "\\triangle", "\\sim", "\\cong", "\\angle", "\\bot", "\\alpha", "\\beta", "\\gamma", "\\theta" ];
-            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23");
+            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f");
         })();
         // 字母
         (function() {
             var list = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23");
+            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f");
         })();
         // 其他
         (function() {
             var list = [ "\\Omega", "\\because", "\\therefore", "\\Longrightarrow", "\\Leftrightarrow", "\\uparrow", "\\downarrow", "\\lambda", "\\kappa", "\\mu", "\\rho", "\\sigma", "\\tau", "\\upsilon", "\\varphi", "\\Psi", "\\omega", "\\varepsilon", "\\zeta", "\\eta", "\\nu", "\\xi", "\\chi" ];
-            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/241cbf750ba24fe787102317afde3b23");
+            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/00d404d48805444aaff4c6091242c78f");
         })();
         function getIconContents(keySet, imgSrc) {
             var result = [];
@@ -8208,7 +8208,7 @@ _p[55] = {
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-18 09:29:48
+ * @LastEditTime: 2020-05-18 14:36:33
  */
 _p[56] = {
     value: function(require) {
@@ -8242,27 +8242,27 @@ _p[56] = {
         // 常用
         (function() {
             var list = [ "<", "\\frac \\placeholder\\placeholder", "\\sqrt \\placeholder", "a", "+", "7", "8", "9", ">", "\\left|\\placeholder\\right|", "\\placeholder^2", "b", "-", "4", "5", "6", "\\leq", "\\left(\\placeholder\\right)", "\\sqrt [3] \\placeholder", "x", "\\pm", "1", "2", "3", "\\geq", "%", "\\placeholder^3", "y", ",", "0", ".", "=" ];
-            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
+            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
         })();
         // 代数
         (function() {
-            var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\sigma", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing" ];
-            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
+            var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\delta", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing" ];
+            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
         })();
         // 几何
         (function() {
             var list = [ "\\sin\\placeholder", "\\cos\\placeholder", "\\tan\\placeholder", "\\sec\\placeholder", "\\csc\\placeholder", "\\cot\\placeholder", "\\arcsin\\placeholder", "\\arccos\\placeholder", "\\arctan\\placeholder", "\\triangle", "\\sim", "\\cong", "\\angle", "\\bot", "\\alpha", "\\beta", "\\gamma", "\\theta" ];
-            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
+            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
         })();
         // 单位
         (function() {
             var list = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
+            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
         })();
         // 其他
         (function() {
             var list = [ "\\Omega", "\\because", "\\therefore", "\\Longrightarrow", "\\Leftrightarrow", "\\uparrow", "\\downarrow", "\\lambda", "\\kappa", "\\mu", "\\rho", "\\sigma", "\\tau", "\\upsilon", "\\varphi", "\\Psi", "\\omega", "\\varepsilon", "\\zeta", "\\eta", "\\nu", "\\xi", "\\chi" ];
-            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
+            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
         })();
         function getIconContents(keySet, imgSrc) {
             var result = [];
@@ -8306,7 +8306,7 @@ function _defineProperty(obj, key, value) {
  * @Author: Demian
  * @Date: 2020-04-22 14:54:26
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-18 09:36:27
+ * @LastEditTime: 2020-05-18 14:37:05
  */
 _p[57] = {
     value: function() {
@@ -8464,7 +8464,7 @@ _p[57] = {
                 x: 5,
                 y: 4
             },
-            "\\sigma": {
+            "\\delta": {
                 x: 6,
                 y: 4
             },

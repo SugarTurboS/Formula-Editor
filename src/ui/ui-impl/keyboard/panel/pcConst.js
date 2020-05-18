@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-18 09:29:48
+ * @LastEditTime: 2020-05-18 14:36:33
  */
 
 define(function (require) {
@@ -56,7 +56,7 @@ define(function (require) {
 
     Constant[0].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
     );
   })();
   // 代数
@@ -68,7 +68,7 @@ define(function (require) {
       '\\neq',
       '\\sqrt [\\placeholder] \\placeholder',
       '\\pi',
-      '\\sigma',
+      '\\delta',
       '\\left[\\placeholder\\right]',
       '\\placeholder^\\placeholder',
       '\\placeholder_\\placeholder',
@@ -104,7 +104,7 @@ define(function (require) {
 
     Constant[1].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
     );
   })();
   // 几何
@@ -132,7 +132,7 @@ define(function (require) {
 
     Constant[2].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
     );
   })();
   // 单位
@@ -168,7 +168,7 @@ define(function (require) {
 
     Constant[3].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
     );
   })();
   // 其他
@@ -201,7 +201,7 @@ define(function (require) {
 
     Constant[4].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
     );
   })();
 

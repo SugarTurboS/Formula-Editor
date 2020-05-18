@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Kity Formula Editor - v1.0.1-test-4 - 2020-05-18
+ * Kity Formula Editor - v1.0.1-test-6 - 2020-05-18
  * https://github.com/kitygraph/formula
  * GitHub: https://github.com/kitygraph/formula.git 
  * Copyright (c) 2020 test-kf-editor; Licensed MIT
@@ -1100,6 +1100,7 @@ _p[14] = {
                 });
                 this.eclassWebService.on("common.clearFormula", function() {
                     _this.execCommand("render", "\\placeholder");
+                    _this.execCommand("menu.clearType");
                 });
                 this.registerCommand("ready", this, function() {
                     this.eclassWebService.send({
@@ -7733,7 +7734,7 @@ function _defineProperty(obj, key, value) {
  * @Author: Demian
  * @Date: 2020-04-16 16:11:27
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-18 10:34:50
+ * @LastEditTime: 2020-05-18 14:20:00
  */
 _p[52] = {
     value: function(require) {
@@ -7773,7 +7774,7 @@ _p[52] = {
                 this.listClassName = "".concat(this.prefix, "-list");
                 this.itemClassName = "".concat(this.prefix, "-list-item");
                 this._onClick = this._onClick.bind(this);
-                this._onService = this._onService.bind(this);
+                this._initCommand.call(this);
             },
             _render: function _render() {
                 var _this = this;
@@ -7817,8 +7818,10 @@ _p[52] = {
                 }
                 return true;
             },
-            _onService: function _onService() {
-                this.kfEditor.eclassWebService.on("common.clearFormula", this.props.onClick.bind(this, Constant.Type.Common));
+            _initCommand: function _initCommand() {
+                this.props.kfEditor.registerCommand("menu.clearType", this, function() {
+                    this.props.onClick(Constant.Type.Common);
+                });
             },
             _onClick: function _onClick(e) {
                 var val = e.target.dataset.value;

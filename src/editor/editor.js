@@ -120,6 +120,7 @@ define( function ( require ) {
           })
           this.eclassWebService.on('common.clearFormula', () => {
             this.execCommand('render', '\\placeholder');
+            this.execCommand('menu.clearType');
           })
           this.registerCommand('ready', this, function () {
             this.eclassWebService.send({

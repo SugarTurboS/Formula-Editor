@@ -46,6 +46,7 @@ define(function (require) {
           type: this.state.type,
           prefix: PREFIX,
           doc: this.doc,
+          kfEditor: this.kfEditor,
           onClick: this.onMenuClick.bind(this),
         });
         this.panelChild = new Panel(this.element, {
@@ -53,6 +54,7 @@ define(function (require) {
           page: this.state.page,
           prefix: PREFIX,
           doc: this.doc,
+          kfEditor: this.kfEditor,
           panelConstant: this.panelConstant,
           rowHeight: this.getDeviceType() === 'android' ? 146 : 63,
           scrollHeight: this.getDeviceType() === 'android' ? 146 * 4 : 63 * 5,
@@ -64,6 +66,7 @@ define(function (require) {
           totalPage: this.state.totalPage,
           prefix: PREFIX,
           doc: this.doc,
+          kfEditor: this.kfEditor,
           onPrevPage: this.onPrevPage.bind(this),
           onNextPage: this.onNextPage.bind(this),
           onDelete: this.onDelete.bind(this),

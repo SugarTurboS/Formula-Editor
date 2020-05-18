@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 16:11:27
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-16 10:10:05
+ * @LastEditTime: 2020-05-18 10:34:50
  */
 define(function (require) {
   const kity = require('kity');
@@ -29,6 +29,7 @@ define(function (require) {
       this.listClassName = `${this.prefix}-list`;
       this.itemClassName = `${this.prefix}-list-item`;
       this._onClick = this._onClick.bind(this);
+      this._onService = this._onService.bind(this);
     },
     _render: function () {
       console.log('menu render');
@@ -77,6 +78,12 @@ define(function (require) {
         return false;
       }
       return true;
+    },
+    _onService: function () {
+      this.kfEditor.eclassWebService.on(
+        'common.clearFormula',
+        this.props.onClick.bind(this, Constant.Type.Common)
+      );
     },
     _onClick: function (e) {
       const val = e.target.dataset.value;

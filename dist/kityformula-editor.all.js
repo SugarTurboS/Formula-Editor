@@ -7480,7 +7480,6 @@ _p[51] = {
                 this.kfEditor = kfEditor;
                 this.pageSize = this.getDeviceType() === "android" ? 32 : 40;
                 this.panelConstant = this.getConstant();
-                console.log(this.panelConstant);
                 this.typeEnum = (_this$typeEnum = {}, _defineProperty(_this$typeEnum, Constant.Type.Common, 0), 
                 _defineProperty(_this$typeEnum, Constant.Type.Algebra, 1), _defineProperty(_this$typeEnum, Constant.Type.Geometry, 2), 
                 _defineProperty(_this$typeEnum, Constant.Type.Letter, 3), _defineProperty(_this$typeEnum, Constant.Type.Other, 4), 
@@ -7498,6 +7497,7 @@ _p[51] = {
                     type: this.state.type,
                     prefix: PREFIX,
                     doc: this.doc,
+                    kfEditor: this.kfEditor,
                     onClick: this.onMenuClick.bind(this)
                 });
                 this.panelChild = new Panel(this.element, {
@@ -7505,6 +7505,7 @@ _p[51] = {
                     page: this.state.page,
                     prefix: PREFIX,
                     doc: this.doc,
+                    kfEditor: this.kfEditor,
                     panelConstant: this.panelConstant,
                     rowHeight: this.getDeviceType() === "android" ? 146 : 63,
                     scrollHeight: this.getDeviceType() === "android" ? 146 * 4 : 63 * 5,
@@ -7516,6 +7517,7 @@ _p[51] = {
                     totalPage: this.state.totalPage,
                     prefix: PREFIX,
                     doc: this.doc,
+                    kfEditor: this.kfEditor,
                     onPrevPage: this.onPrevPage.bind(this),
                     onNextPage: this.onNextPage.bind(this),
                     onDelete: this.onDelete.bind(this),
@@ -7731,7 +7733,7 @@ function _defineProperty(obj, key, value) {
  * @Author: Demian
  * @Date: 2020-04-16 16:11:27
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-16 10:10:05
+ * @LastEditTime: 2020-05-18 10:34:50
  */
 _p[52] = {
     value: function(require) {
@@ -7771,6 +7773,7 @@ _p[52] = {
                 this.listClassName = "".concat(this.prefix, "-list");
                 this.itemClassName = "".concat(this.prefix, "-list-item");
                 this._onClick = this._onClick.bind(this);
+                this._onService = this._onService.bind(this);
             },
             _render: function _render() {
                 var _this = this;
@@ -7813,6 +7816,9 @@ _p[52] = {
                     return false;
                 }
                 return true;
+            },
+            _onService: function _onService() {
+                this.kfEditor.eclassWebService.on("common.clearFormula", this.props.onClick.bind(this, Constant.Type.Common));
             },
             _onClick: function _onClick(e) {
                 var val = e.target.dataset.value;

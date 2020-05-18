@@ -24,11 +24,13 @@ define(function (require) {
           [Constant.Type.Common]: 0,
           [Constant.Type.Algebra]: 1,
           [Constant.Type.Geometry]: 2,
-          [Constant.Type.Other]: 3,
+          [Constant.Type.Letter]: 3,
+          [Constant.Type.Other]: 4,
           0: Constant.Type.Common,
           1: Constant.Type.Algebra,
           2: Constant.Type.Geometry,
-          3: Constant.Type.Other,
+          3: Constant.Type.Letter,
+          4: Constant.Type.Other,
         };
 
         this.state = {
@@ -52,8 +54,8 @@ define(function (require) {
           prefix: PREFIX,
           doc: this.doc,
           panelConstant: this.panelConstant,
-          rowHeight: this.getDeviceType() === 'android' ? 149 : 64,
-          scrollHeight: this.getDeviceType() === 'android' ? 149 * 4 : 64 * 5,
+          rowHeight: this.getDeviceType() === 'android' ? 149 : 63,
+          scrollHeight: this.getDeviceType() === 'android' ? 149 * 4 : 63 * 5,
           onClick: this.onPanelClick.bind(this),
         });
         this.pageChild = new Page(this.element, {

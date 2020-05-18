@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-06 16:00:16
+ * @LastEditTime: 2020-05-18 09:29:48
  */
 
 define(function (require) {
@@ -12,7 +12,7 @@ define(function (require) {
       { type: 'common', title: '常用', index: 0, items: [] },
       { type: 'algebra', title: '代数', index: 1, items: [] },
       { type: 'geometry', title: '几何', index: 2, items: [] },
-      { type: 'unit', title: '单位', index: 3, items: [] },
+      { type: 'letter', title: '字母', index: 3, items: [] },
       { type: 'other', title: '其他', index: 4, items: [] },
     ];
 
@@ -54,7 +54,10 @@ define(function (require) {
       '=',
     ];
 
-    Constant[0].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
+    Constant[0].items = getIconContents(
+      list,
+      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+    );
   })();
   // 代数
   (function () {
@@ -99,7 +102,10 @@ define(function (require) {
       '\\varnothing',
     ];
 
-    Constant[1].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
+    Constant[1].items = getIconContents(
+      list,
+      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+    );
   })();
   // 几何
   (function () {
@@ -124,13 +130,46 @@ define(function (require) {
       '\\theta',
     ];
 
-    Constant[2].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
+    Constant[2].items = getIconContents(
+      list,
+      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+    );
   })();
   // 单位
   (function () {
-    const list = [];
+    const list = [
+      'a',
+      'b',
+      'c',
+      'd',
+      'e',
+      'f',
+      'g',
+      'h',
+      'i',
+      'j',
+      'k',
+      'l',
+      'm',
+      'n',
+      'o',
+      'p',
+      'q',
+      'r',
+      's',
+      't',
+      'u',
+      'v',
+      'w',
+      'x',
+      'y',
+      'z',
+    ];
 
-    Constant[3].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
+    Constant[3].items = getIconContents(
+      list,
+      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+    );
   })();
   // 其他
   (function () {
@@ -160,7 +199,10 @@ define(function (require) {
       '\\chi',
     ];
 
-    Constant[4].items = getIconContents(list, 'https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653');
+    Constant[4].items = getIconContents(
+      list,
+      'https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e'
+    );
   })();
 
   function getIconContents(keySet, imgSrc) {

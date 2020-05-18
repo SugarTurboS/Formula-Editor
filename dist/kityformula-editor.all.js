@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Kity Formula Editor - v1.0.1-test-3 - 2020-05-16
+ * Kity Formula Editor - v1.0.1-test-4 - 2020-05-18
  * https://github.com/kitygraph/formula
  * GitHub: https://github.com/kitygraph/formula.git 
  * Copyright (c) 2020 test-kf-editor; Licensed MIT
@@ -7343,7 +7343,7 @@ _p[48] = {
  * @Author: Demian
  * @Date: 2020-04-16 19:03:59
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-16 19:04:38
+ * @LastEditTime: 2020-05-16 10:10:53
  */
 /*
  * @Author: Demian
@@ -7359,7 +7359,8 @@ _p[49] = {
                 Algebra: "algebra",
                 Geometry: "geometry",
                 Unit: "unit",
-                Other: "other"
+                Other: "other",
+                Letter: "letter"
             }
         };
         return Constant;
@@ -7481,9 +7482,10 @@ _p[51] = {
                 this.panelConstant = this.getConstant();
                 this.typeEnum = (_this$typeEnum = {}, _defineProperty(_this$typeEnum, Constant.Type.Common, 0), 
                 _defineProperty(_this$typeEnum, Constant.Type.Algebra, 1), _defineProperty(_this$typeEnum, Constant.Type.Geometry, 2), 
-                _defineProperty(_this$typeEnum, Constant.Type.Other, 3), _defineProperty(_this$typeEnum, 0, Constant.Type.Common), 
-                _defineProperty(_this$typeEnum, 1, Constant.Type.Algebra), _defineProperty(_this$typeEnum, 2, Constant.Type.Geometry), 
-                _defineProperty(_this$typeEnum, 3, Constant.Type.Other), _this$typeEnum);
+                _defineProperty(_this$typeEnum, Constant.Type.Letter, 3), _defineProperty(_this$typeEnum, Constant.Type.Other, 4), 
+                _defineProperty(_this$typeEnum, 0, Constant.Type.Common), _defineProperty(_this$typeEnum, 1, Constant.Type.Algebra), 
+                _defineProperty(_this$typeEnum, 2, Constant.Type.Geometry), _defineProperty(_this$typeEnum, 3, Constant.Type.Letter), 
+                _defineProperty(_this$typeEnum, 4, Constant.Type.Other), _this$typeEnum);
                 this.state = {
                     type: Constant.Type.Common,
                     page: 0,
@@ -7503,7 +7505,7 @@ _p[51] = {
                     prefix: PREFIX,
                     doc: this.doc,
                     panelConstant: this.panelConstant,
-                    rowHeight: this.getDeviceType() === "android" ? 149 : 64,
+                    rowHeight: this.getDeviceType() === "android" ? 149 : 63,
                     scrollHeight: this.getDeviceType() === "android" ? 149 * 4 : 64 * 5,
                     onClick: this.onPanelClick.bind(this)
                 });
@@ -7728,7 +7730,7 @@ function _defineProperty(obj, key, value) {
  * @Author: Demian
  * @Date: 2020-04-16 16:11:27
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 17:25:07
+ * @LastEditTime: 2020-05-16 10:10:05
  */
 _p[52] = {
     value: function(require) {
@@ -7753,9 +7755,13 @@ _p[52] = {
                     title: "几何",
                     index: 2
                 }, {
+                    type: Constant.Type.Letter,
+                    title: "字母",
+                    index: 3
+                }, {
                     type: Constant.Type.Other,
                     title: "其他",
-                    index: 3
+                    index: 4
                 } ];
                 this.state = {
                     type: Constant.Type.Common
@@ -8192,7 +8198,7 @@ _p[55] = {
  * @Author: Demian
  * @Date: 2020-04-15 10:11:11
  * @LastEditor: Demian
- * @LastEditTime: 2020-05-06 16:00:16
+ * @LastEditTime: 2020-05-18 09:29:48
  */
 _p[56] = {
     value: function(require) {
@@ -8212,8 +8218,8 @@ _p[56] = {
             index: 2,
             items: []
         }, {
-            type: "unit",
-            title: "单位",
+            type: "letter",
+            title: "字母",
             index: 3,
             items: []
         }, {
@@ -8226,27 +8232,27 @@ _p[56] = {
         // 常用
         (function() {
             var list = [ "<", "\\frac \\placeholder\\placeholder", "\\sqrt \\placeholder", "a", "+", "7", "8", "9", ">", "\\left|\\placeholder\\right|", "\\placeholder^2", "b", "-", "4", "5", "6", "\\leq", "\\left(\\placeholder\\right)", "\\sqrt [3] \\placeholder", "x", "\\pm", "1", "2", "3", "\\geq", "%", "\\placeholder^3", "y", ",", "0", ".", "=" ];
-            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653");
+            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
         })();
         // 代数
         (function() {
             var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\sigma", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing" ];
-            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653");
+            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
         })();
         // 几何
         (function() {
             var list = [ "\\sin\\placeholder", "\\cos\\placeholder", "\\tan\\placeholder", "\\sec\\placeholder", "\\csc\\placeholder", "\\cot\\placeholder", "\\arcsin\\placeholder", "\\arccos\\placeholder", "\\arctan\\placeholder", "\\triangle", "\\sim", "\\cong", "\\angle", "\\bot", "\\alpha", "\\beta", "\\gamma", "\\theta" ];
-            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653");
+            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
         })();
         // 单位
         (function() {
-            var list = [];
-            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653");
+            var list = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
+            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
         })();
         // 其他
         (function() {
             var list = [ "\\Omega", "\\because", "\\therefore", "\\Longrightarrow", "\\Leftrightarrow", "\\uparrow", "\\downarrow", "\\lambda", "\\kappa", "\\mu", "\\rho", "\\sigma", "\\tau", "\\upsilon", "\\varphi", "\\Psi", "\\omega", "\\varepsilon", "\\zeta", "\\eta", "\\nu", "\\xi", "\\chi" ];
-            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4725914de2ff4f14af060cd5a5c9e653");
+            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/6ba3665eb5c544aa8c4c148d8b23871e");
         })();
         function getIconContents(keySet, imgSrc) {
             var result = [];
@@ -8290,7 +8296,7 @@ function _defineProperty(obj, key, value) {
  * @Author: Demian
  * @Date: 2020-04-22 14:54:26
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-26 10:24:49
+ * @LastEditTime: 2020-05-18 09:36:27
  */
 _p[57] = {
     value: function() {
@@ -8647,87 +8653,154 @@ _p[57] = {
             "\\theta": {
                 x: 1,
                 y: 11
-            },
-            "\\Omega": {
-                x: 0,
-                y: 12
-            },
-            "\\because": {
-                x: 1,
-                y: 12
-            },
-            "\\therefore": {
-                x: 2,
-                y: 12
-            },
-            "\\Longrightarrow": {
-                x: 3,
-                y: 12
-            },
-            "\\Leftrightarrow": {
-                x: 4,
-                y: 12
-            },
-            "\\uparrow": {
-                x: 5,
-                y: 12
-            },
-            "\\downarrow": {
-                x: 6,
-                y: 12
-            },
-            "\\lambda": {
-                x: 7,
-                y: 12
-            },
-            "\\kappa": {
-                x: 0,
-                y: 13
-            },
-            "\\mu": {
-                x: 1,
-                y: 13
-            },
-            "\\rho": {
-                x: 2,
-                y: 13
             }
-        }, _defineProperty(_ref, "\\sigma", {
+        }, _defineProperty(_ref, "a", {
+            x: 0,
+            y: 12
+        }), _defineProperty(_ref, "b", {
+            x: 1,
+            y: 12
+        }), _defineProperty(_ref, "c", {
+            x: 2,
+            y: 12
+        }), _defineProperty(_ref, "d", {
+            x: 3,
+            y: 12
+        }), _defineProperty(_ref, "e", {
+            x: 4,
+            y: 12
+        }), _defineProperty(_ref, "f", {
+            x: 5,
+            y: 12
+        }), _defineProperty(_ref, "g", {
+            x: 6,
+            y: 12
+        }), _defineProperty(_ref, "h", {
+            x: 7,
+            y: 12
+        }), _defineProperty(_ref, "i", {
+            x: 0,
+            y: 13
+        }), _defineProperty(_ref, "j", {
+            x: 1,
+            y: 13
+        }), _defineProperty(_ref, "k", {
+            x: 2,
+            y: 13
+        }), _defineProperty(_ref, "l", {
             x: 3,
             y: 13
-        }), _defineProperty(_ref, "\\tau", {
+        }), _defineProperty(_ref, "m", {
             x: 4,
             y: 13
-        }), _defineProperty(_ref, "\\upsilon", {
+        }), _defineProperty(_ref, "n", {
             x: 5,
             y: 13
-        }), _defineProperty(_ref, "\\varphi", {
+        }), _defineProperty(_ref, "o", {
             x: 6,
             y: 13
-        }), _defineProperty(_ref, "\\Psi", {
+        }), _defineProperty(_ref, "p", {
             x: 7,
             y: 13
-        }), _defineProperty(_ref, "\\omega", {
+        }), _defineProperty(_ref, "q", {
             x: 0,
             y: 14
-        }), _defineProperty(_ref, "\\varepsilon", {
+        }), _defineProperty(_ref, "r", {
             x: 1,
             y: 14
-        }), _defineProperty(_ref, "\\zeta", {
+        }), _defineProperty(_ref, "s", {
             x: 2,
             y: 14
-        }), _defineProperty(_ref, "\\eta", {
+        }), _defineProperty(_ref, "t", {
             x: 3,
             y: 14
-        }), _defineProperty(_ref, "\\nu", {
+        }), _defineProperty(_ref, "u", {
             x: 4,
             y: 14
-        }), _defineProperty(_ref, "\\xi", {
+        }), _defineProperty(_ref, "v", {
             x: 5,
             y: 14
-        }), _defineProperty(_ref, "\\chi", {
+        }), _defineProperty(_ref, "w", {
             x: 6,
             y: 14
+        }), _defineProperty(_ref, "x", {
+            x: 7,
+            y: 14
+        }), _defineProperty(_ref, "y", {
+            x: 0,
+            y: 15
+        }), _defineProperty(_ref, "z", {
+            x: 1,
+            y: 15
+        }), _defineProperty(_ref, "\\Omega", {
+            x: 0,
+            y: 16
+        }), _defineProperty(_ref, "\\because", {
+            x: 1,
+            y: 16
+        }), _defineProperty(_ref, "\\therefore", {
+            x: 2,
+            y: 16
+        }), _defineProperty(_ref, "\\Longrightarrow", {
+            x: 3,
+            y: 16
+        }), _defineProperty(_ref, "\\Leftrightarrow", {
+            x: 4,
+            y: 16
+        }), _defineProperty(_ref, "\\uparrow", {
+            x: 5,
+            y: 16
+        }), _defineProperty(_ref, "\\downarrow", {
+            x: 6,
+            y: 16
+        }), _defineProperty(_ref, "\\lambda", {
+            x: 7,
+            y: 16
+        }), _defineProperty(_ref, "\\kappa", {
+            x: 0,
+            y: 17
+        }), _defineProperty(_ref, "\\mu", {
+            x: 1,
+            y: 17
+        }), _defineProperty(_ref, "\\rho", {
+            x: 2,
+            y: 17
+        }), _defineProperty(_ref, "\\sigma", {
+            x: 3,
+            y: 17
+        }), _defineProperty(_ref, "\\tau", {
+            x: 4,
+            y: 17
+        }), _defineProperty(_ref, "\\upsilon", {
+            x: 5,
+            y: 17
+        }), _defineProperty(_ref, "\\varphi", {
+            x: 6,
+            y: 17
+        }), _defineProperty(_ref, "\\Psi", {
+            x: 7,
+            y: 17
+        }), _defineProperty(_ref, "\\omega", {
+            x: 0,
+            y: 18
+        }), _defineProperty(_ref, "\\varepsilon", {
+            x: 1,
+            y: 18
+        }), _defineProperty(_ref, "\\zeta", {
+            x: 2,
+            y: 18
+        }), _defineProperty(_ref, "\\eta", {
+            x: 3,
+            y: 18
+        }), _defineProperty(_ref, "\\nu", {
+            x: 4,
+            y: 18
+        }), _defineProperty(_ref, "\\xi", {
+            x: 5,
+            y: 18
+        }), _defineProperty(_ref, "\\chi", {
+            x: 6,
+            y: 18
         }), _ref;
     }
 };

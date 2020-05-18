@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 19:03:59
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-16 19:04:38
+ * @LastEditTime: 2020-05-16 10:10:53
  */
 /*
  * @Author: Demian
@@ -19,6 +19,7 @@ define(function (require) {
       Geometry: 'geometry',
       Unit: 'unit',
       Other: 'other',
+      Letter: 'letter',
     },
   };
   return Constant;

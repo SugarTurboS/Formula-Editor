@@ -2,7 +2,7 @@
  * @Author: Demian
  * @Date: 2020-04-16 16:11:27
  * @LastEditor: Demian
- * @LastEditTime: 2020-04-23 17:25:07
+ * @LastEditTime: 2020-05-16 10:10:05
  */
 define(function (require) {
   const kity = require('kity');
@@ -17,7 +17,8 @@ define(function (require) {
         { type: Constant.Type.Common, title: '常用', index: 0 },
         { type: Constant.Type.Algebra, title: '代数', index: 1 },
         { type: Constant.Type.Geometry, title: '几何', index: 2 },
-        { type: Constant.Type.Other, title: '其他', index: 3 },
+        { type: Constant.Type.Letter, title: '字母', index: 3 },
+        { type: Constant.Type.Other, title: '其他', index: 4 },
       ];
 
       this.state = {

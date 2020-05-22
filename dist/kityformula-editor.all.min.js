@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Kity Formula Editor - v1.0.1-test-6 - 2020-05-18
+ * Kity Formula Editor - v1.0.1-test-7 - 2020-05-22
  * https://github.com/kitygraph/formula
  * GitHub: https://github.com/kitygraph/formula.git 
  * Copyright (c) 2020 test-kf-editor; Licensed MIT

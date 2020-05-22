@@ -697,7 +697,6 @@ function () {
   }, {
     key: "on",
     value: function on(type, arg) {
-
       if (!this.listeners[type]) {
         this.listeners[type] = [];
       }

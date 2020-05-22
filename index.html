@@ -47,6 +47,13 @@
         } else {
           console.log('读取到当前设备类型为：', device[1]);
         }
+
+        if (device && device[1] === 'android') {
+          document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+          });
+        }
+
         if (!protocol) {
           console.log('没有读取到设备类型');
         } else {

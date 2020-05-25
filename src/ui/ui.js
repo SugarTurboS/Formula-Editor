@@ -5,9 +5,6 @@
 define( function ( require ) {
 
     var kity = require( "kity"),
-
-        // UiUitls
-        $$ = require( "ui/ui-impl/ui-utils" ),
         
         $ = require('jquery'),
 
@@ -50,7 +47,6 @@ define( function ( require ) {
 
                 this.header = createHeader( currentDocument );
                 this.editArea = createEditArea( currentDocument );
-                this.okButton = createOkButton( currentDocument );
                 this.canvasContainer = createCanvasContainer( currentDocument );
                 this.canvasWrapper = createCanvasWrapper( currentDocument );
                 this.scrollbarContainer = createScrollbarContainer( currentDocument );
@@ -58,7 +54,6 @@ define( function ( require ) {
                 
                 this.editArea.appendChild( this.header );
                 this.editArea.appendChild( this.canvasWrapper );
-                this.editArea.appendChild( this.okButton );
                 this.editArea.appendChild( this.scrollbarContainer );
                 this.canvasWrapper.appendChild( this.canvasContainer );
                 this.container.appendChild( this.editArea );
@@ -92,9 +87,6 @@ define( function ( require ) {
               this.keyboardContainer.style.transform = `scale(${scale})`;
               this.keyboardContainer.style.transformOrigin = `left top`;
 
-              const okButton = $(this.okButton);
-              okButton.css('font-size', Math.floor(okButton.css('font-size').split('px')[0] * scale)); 
-              okButton.css('right', Math.floor(okButton.css('right').split('px')[0] * scale)); 
             },
             scaleWidth: function (node) {
               const scale = this.options.scale;
@@ -179,20 +171,6 @@ define( function ( require ) {
             },
 
             initEvent: function () {
-              $$.delegate(this.container.ownerDocument, '.kf-editor-ok', 'click', () => {
-                this.kfEditor.execCommand('get.image.data', (data) => {
-                  const formula = this.kfEditor.execCommand('get.source');
-                  this.kfEditor.eclassWebService.send({
-                    type: 'common.setFormula',
-                    data: {
-                      body: {
-                        formulaSrc: data.img,
-                        formula,
-                      },
-                    },
-                  });
-                });
-              })
             },
 
             initScrollEvent: function () {
@@ -300,13 +278,6 @@ define( function ( require ) {
     function createHeader ( doc ) {
       var container = doc.createElement('div');
       container.className = "kf-editor-header";
-      return container;
-    }
-    
-    function createOkButton ( doc ) {
-      var container = doc.createElement( "div" );
-      container.className = "kf-editor-ok";
-      container.innerText = "确定";
       return container;
     }
 

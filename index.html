@@ -117,11 +117,7 @@
             protocol: params.protocol || 'webview',
             fontSize: (width / 1920).toFixed(3) * 50,
             scale: (width / 1920).toFixed(3),
-            sideEffects: function () {
-              document.addEventListener('contextmenu', function (e) {
-                e.preventDefault();
-              });
-            },
+            sideEffects: function () {},
           };
         }
 

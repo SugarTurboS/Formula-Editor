@@ -2,7 +2,7 @@
   "name": "@student/kityformula-editor",
   "title": "Kity Formula Editor",
   "description": "HTML(SVG) Formula display solutions",
-  "version": "1.0.1-test-7",
+  "version": "1.0.2",
   "homepage": "https://github.com/kitygraph/formula",
   "author": {
     "name": "test-kf-editor",

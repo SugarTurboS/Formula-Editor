@@ -1,0 +1,258 @@
+.pc {
+  width: 864px;
+  height: 580px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.pc * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.pc .kf-editor-edit-area {
+  width: 100%;
+  height: 168px;
+  float: left;
+}
+.pc .kf-editor-edit-area .kf-editor-edit-scrollbar {
+  bottom: 0px;
+}
+.pc .kf-editor-edit-area .kf-editor-header-container {
+  width: 100%;
+  height: 48px;
+  background: #eeeeee;
+  overflow: hidden;
+  padding-left: 16px;
+}
+.pc .kf-editor-edit-area .kf-editor-header-container .kf-editor-header-container-title {
+  font-size: 16px;
+  color: #616266;
+  line-height: 48px;
+  float: left;
+}
+.pc .kf-editor-edit-area .kf-editor-header-container .kf-editor-header-container-close {
+  width: 48px;
+  height: 48px;
+  float: right;
+  cursor: pointer;
+  position: relative;
+}
+.pc .kf-editor-edit-area .kf-editor-header-container .kf-editor-header-container-close::before {
+  content: '';
+  display: block;
+  background: url('https://store-g1.seewo.com/easiclass-public/8747fc92a01246e19d7f9bc9f3868652') center no-repeat;
+  background-size: 100%;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: 16px;
+  right: 16px;
+}
+.pc .kf-editor-edit-area .kf-editor-header-container .kf-editor-header-container-close:hover::before {
+  background: url('https://store-g1.seewo.com/easiclass-public/c2682d9dcc844986898be60b26ee5823');
+}
+.pc .kf-editor-edit-area .kf-editor-header-container .kf-editor-header-container-close:active::before {
+  background: url('https://store-g1.seewo.com/easiclass-public/9550aaa080574f739425122e7908e012');
+}
+.pc .kf-editor-edit-area .kf-editor-canvas-wrapper {
+  width: 100%;
+  height: calc(100% - 48px);
+  background: #fff;
+  float: left;
+  padding: 0 40px;
+}
+.pc .kf-editor-edit-area .kf-editor-canvas-wrapper .kf-editor-canvas-container {
+  width: 100%;
+  height: 100%;
+}
+.pc .kf-editor-edit-keyboard {
+  width: 100%;
+  height: 411px;
+  border-top: 1px solid #ddd;
+  box-sizing: border-box;
+  background-color: white;
+}
+.pc .kf-editor-edit-keyboard * {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.pc .kf-editor-ui-keyboard {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #fff;
+  border-top: 1px solid #e4e4e4;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-menu {
+  width: 118px;
+  height: 347px;
+  border-right: 1px solid #e4e4e4;
+  float: left;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-menu .kf-editor-ui-keyboard-menu-list {
+  width: 100%;
+  height: 100%;
+  padding: 11px;
+  background: #f4f4f4;
+  overflow: hidden;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-menu .kf-editor-ui-keyboard-menu-list .kf-editor-ui-keyboard-menu-list-item {
+  width: 72px;
+  height: 40px;
+  margin: 12px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 16px;
+  color: #49494d;
+  cursor: pointer;
+  float: left;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-menu .kf-editor-ui-keyboard-menu-list .kf-editor-ui-keyboard-menu-list-item-active {
+  background: #198cff;
+  border-radius: 4px;
+  color: #ffffff;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-panel {
+  width: 664px;
+  height: 347px;
+  float: left;
+  overflow: hidden;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-panel .kf-editor-ui-keyboard-panel-list {
+  width: 100%;
+  position: relative;
+  top: 0;
+  transition: 0.3s top linear;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-panel .kf-editor-ui-keyboard-panel-list .kf-editor-ui-keyboard-panel-list-item {
+  width: 83px;
+  height: 64px;
+  cursor: pointer;
+  float: left;
+  border: solid #e4e4e4;
+  border-width: 1px 1px 1px 0px;
+  margin-top: -1px;
+  position: relative;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-panel .kf-editor-ui-keyboard-panel-list .kf-editor-ui-keyboard-panel-list-item:hover::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(73, 73, 77, 0.1);
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page {
+  width: 81px;
+  height: 347px;
+  float: left;
+  margin-left: -1px;
+  border-left: 1px solid #e4e4e4;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item {
+  width: 81px;
+  height: 128px;
+  cursor: pointer;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-delete {
+  width: 81px;
+  height: 64px;
+  background: url('https://store-g1.seewo.com/easiclass-public/78c93d3c1204445982c6b5700e1442eb') center no-repeat;
+  background-size: initial;
+  border-bottom: 1px solid #e4e4e4;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-delete:hover {
+  background-color: rgba(73, 73, 77, 0.1);
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-prev {
+  border-bottom: 1px solid #e4e4e4;
+  position: relative;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-prev::before {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url('https://store-g1.seewo.com/easiclass-public/4993661fa54249249b152a89cb1cec6b') center no-repeat;
+  background-size: initial;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-prev:not(.kf-editor-ui-keyboard-page-list-item-disabled):hover {
+  background-color: rgba(73, 73, 77, 0.1);
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-next {
+  position: relative;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-next:not(.kf-editor-ui-keyboard-page-list-item-disabled):hover {
+  background-color: rgba(73, 73, 77, 0.1);
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-next::before {
+  content: ' ';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: url('https://store-g1.seewo.com/easiclass-public/f4df574b99d748f0823ccd36362d1a9c') center no-repeat;
+  background-size: initial;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-disabled::before {
+  opacity: 0.5;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-page .kf-editor-ui-keyboard-page-list .kf-editor-ui-keyboard-page-list-item-ok {
+  display: none;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer {
+  width: 100%;
+  height: 64px;
+  padding: 14px 0;
+  float: left;
+  border-top: 1px solid #e4e4e4;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-cancel {
+  width: 120px;
+  height: 36px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 18px;
+  font-size: 16px;
+  color: #616266;
+  text-align: center;
+  line-height: 34px;
+  float: left;
+  margin-left: calc(50% - 128px);
+  cursor: pointer;
+  user-select: none;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-cancel:not(:disabled) {
+  cursor: pointer;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-cancel:not(:disabled):hover {
+  background-color: #ebf5ff;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-cancel:not(:disabled):active {
+  background-color: #dce8f5;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-submit {
+  width: 120px;
+  height: 36px;
+  background: #198cff;
+  border-radius: 18px;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 36px;
+  float: left;
+  margin-left: 16px;
+  cursor: pointer;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-submit:not(:disabled) {
+  cursor: pointer;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-submit:not(:disabled):hover {
+  background-color: #3399ff;
+}
+.pc .kf-editor-ui-keyboard .kf-editor-ui-keyboard-footer #kf-editor-ui-keyboard-footer-button-submit:not(:disabled):active {
+  background-color: #1885f2;
+}

@@ -11,6 +11,7 @@ define( function ( require, exports, module ) {
             LEFT: 37,
             RIGHT: 39,
             DELETE: 8,
+            PREV_DELETE: 46,
             // 输入法特殊处理
             INPUT: 229
         };
@@ -146,6 +147,10 @@ define( function ( require, exports, module ) {
                 switch ( e.keyCode ) {
 
                     case KEY_CODE.INPUT:
+                        return;
+
+                    case KEY_CODE.PREV_DELETE:
+                        e.preventDefault();
                         return;
 
                     case KEY_CODE.LEFT:

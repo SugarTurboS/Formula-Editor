@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Kity Formula Editor - v1.0.2-1 - 2020-05-26
+ * Kity Formula Editor - v1.0.2-1 - 2020-06-17
  * https://github.com/kitygraph/formula
  * GitHub: https://github.com/kitygraph/formula.git 
  * Copyright (c) 2020 test-kf-editor; Licensed MIT
@@ -323,6 +323,7 @@ _p[8] = {
             LEFT: 37,
             RIGHT: 39,
             DELETE: 8,
+            PREV_DELETE: 46,
             // 输入法特殊处理
             INPUT: 229
         };
@@ -408,6 +409,10 @@ _p[8] = {
                     }
                     switch (e.keyCode) {
                       case KEY_CODE.INPUT:
+                        return;
+
+                      case KEY_CODE.PREV_DELETE:
+                        e.preventDefault();
                         return;
 
                       case KEY_CODE.LEFT:

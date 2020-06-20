@@ -1,28 +1,17 @@
 {
-  "name": "@student/kityformula-editor",
-  "title": "Kity Formula Editor",
-  "description": "HTML(SVG) Formula display solutions",
+  "name": "@sugarteam/formula-editor",
+  "title": "Formula Editor",
+  "description": "基于百度kityformula-editor的公式编辑器",
   "version": "1.0.3",
   "homepage": "https://github.com/kitygraph/formula",
   "author": {
-    "name": "test-kf-editor",
-    "url": "http://ueditor.baidu.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/kitygraph/formula.git"
+    "name": "sugarteam"
   },
   "keywords": [
     "formula",
-    "kity",
     "svg",
-    "graphic",
-    "javascript",
     "library"
   ],
-  "bugs": {
-    "url": "http://www.ueditorbbs.com/forum.php"
-  },
   "licenses": [
     {
       "type": "MIT",

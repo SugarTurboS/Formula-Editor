@@ -6,8 +6,8 @@
  * @description: 将项目中用的npm模块从该处引入并挂载到window中
  */
 require('@babel/polyfill');
-var WebService = require('@student/eclass-web-service').default;
-var CustomWebService = require('@student/web-service').default;
+var WebService = require('@sugarteam/eclass-web-service').default;
+var CustomWebService = require('@sugarteam/web-service').default;
 
 module.exports = window.bundle = {
   WebService: WebService,

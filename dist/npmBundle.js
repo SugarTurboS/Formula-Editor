@@ -7,15 +7,15 @@
  * @description: 将项目中用的npm模块从该处引入并挂载到window中
  */
 require('@babel/polyfill');
-var WebService = require('@student/eclass-web-service').default;
-var CustomWebService = require('@student/web-service').default;
+var WebService = require('@sugarteam/eclass-web-service').default;
+var CustomWebService = require('@sugarteam/web-service').default;
 
 module.exports = window.bundle = {
   WebService: WebService,
   CustomWebService: CustomWebService,
 };
 
-},{"@babel/polyfill":2,"@student/eclass-web-service":10,"@student/web-service":15}],2:[function(require,module,exports){
+},{"@babel/polyfill":2,"@sugarteam/eclass-web-service":10,"@sugarteam/web-service":15}],2:[function(require,module,exports){
 "use strict";
 
 require("./noConflict");
@@ -163,9 +163,9 @@ exports.default = void 0;
 
 var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
 
-var _webService = _interopRequireDefault(require("@student/web-service"));
+var _webService = _interopRequireDefault(require("@sugarteam/web-service"));
 
-var _webMessager = require("@student/web-messager");
+var _webMessager = require("@sugarteam/web-messager");
 
 var EclassWebService = function EclassWebService(messagerType) {
   (0, _classCallCheck2.default)(this, EclassWebService);
@@ -198,7 +198,7 @@ var _default = function _default(messagerType) {
 };
 
 exports.default = _default;
-},{"@babel/runtime/helpers/classCallCheck":5,"@babel/runtime/helpers/interopRequireDefault":8,"@student/web-messager":13,"@student/web-service":15}],11:[function(require,module,exports){
+},{"@babel/runtime/helpers/classCallCheck":5,"@babel/runtime/helpers/interopRequireDefault":8,"@sugarteam/web-messager":13,"@sugarteam/web-service":15}],11:[function(require,module,exports){
 "use strict";
 },{}],12:[function(require,module,exports){
 "use strict";
@@ -414,7 +414,7 @@ function () {
   function WebService(serviceOption) {
     (0, _classCallCheck2.default)(this, WebService);
     (0, _defineProperty2.default)(this, "messager", void 0);
-    (0, _defineProperty2.default)(this, "listeners", []);
+    (0, _defineProperty2.default)(this, "listeners", new Map());
     (0, _defineProperty2.default)(this, "services", []);
     (0, _defineProperty2.default)(this, "retryQueue", []);
     var messager = serviceOption.messager;
@@ -660,34 +660,6 @@ function () {
       });
     }
     /**
-     * 监听请求类型的消息，并回复
-     * @param {string} type 监听事件类型 
-     * @param {function} callback 监听器回调函数
-     * @param {MessageListener} 完整监听器
-     */
-
-  }, {
-    key: "response",
-    value: function response(type, arg) {
-      if (!this.listeners[type]) {
-        this.listeners[type] = [];
-      }
-
-      var messageListener;
-
-      if (typeof arg === 'function') {
-        messageListener = {
-          callback: arg,
-          reqId: '',
-          once: false
-        };
-      } else {
-        messageListener = arg;
-      }
-
-      this.listeners[type].push(messageListener);
-    }
-    /**
      * 监听事件
      * @param {string} type 监听事件类型 
      * @param {function} callback 监听器回调函数
@@ -723,16 +695,28 @@ function () {
 
   }, {
     key: "off",
-    value: function off(type, messageListener) {
-      if (!messageListener) {
+    value: function off(type, arg) {
+      if (!arg) {
         delete this.listeners[type];
+        return;
       }
 
-      var callback = messageListener.callback,
-          reqId = messageListener.reqId;
-      (0, _lodash.remove)(this.listeners[type], function (listener) {
-        return listener.callback === callback || listener.reqId && listener.reqId === reqId;
-      });
+      if (typeof arg === 'function') {
+        (0, _lodash.remove)(this.listeners[type], function (listener) {
+          return listener.callback === arg;
+        });
+      } else {
+        var callback = arg.callback,
+            reqId = arg.reqId;
+        (0, _lodash.remove)(this.listeners[type], function (listener) {
+          return listener.callback === callback || listener.reqId && listener.reqId === reqId;
+        });
+      }
+    }
+  }, {
+    key: "removeAllListeners",
+    value: function removeAllListeners() {
+      this.listeners = new Map();
     }
   }]);
   return WebService;

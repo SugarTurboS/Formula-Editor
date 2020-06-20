@@ -1,9 +1,9 @@
 /*!
  * ====================================================
- * Kity Formula Editor - v1.0.2-1 - 2020-06-17
+ * Formula Editor - v1.0.3 - 2020-06-20
  * https://github.com/kitygraph/formula
- * GitHub: https://github.com/kitygraph/formula.git 
- * Copyright (c) 2020 test-kf-editor; Licensed MIT
+ * GitHub: git@github.com:SugarTurboS/Formula-Editor.git 
+ * Copyright (c) 2020 sugarteam; Licensed MIT
  * ====================================================
  */
 

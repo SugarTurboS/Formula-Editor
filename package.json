@@ -18,9 +18,14 @@
       "url": "https://github.com/jquery/jquery/blob/master/MIT-LICENSE.txt"
     }
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:SugarTurboS/Formula-Editor.git"
+  },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
-    "@student/eclass-web-service": "^1.0.3",
+    "@sugarteam/eclass-web-service": "^1.0.3",
+    "@sugarteam/web-service": "^1.0.4",
     "@types/chai": "^4.2.11"
   },
   "devDependencies": {

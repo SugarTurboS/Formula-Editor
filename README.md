@@ -37,6 +37,11 @@ anywhere -p 9999 // 这里anywhere是为了开静态服务器，预览index.html
 
 ## 样式
 
+安卓：
+![android](https://github.com/SugarTurboS/Formula-Editor/blob/dev-2.0.19/images/android.png)
+
+web：
+![web](https://github.com/SugarTurboS/Formula-Editor/blob/dev-2.0.19/images/web.png)
 老铁，走过路过给个 ⭐️
 
 点个 ⭐️，不迷路

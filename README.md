@@ -6,13 +6,14 @@
 
 ```sh
 npm install
+npm install -g anywhere // 随启随用的静态服务器
 ```
 
 ## 编译
 
 ```sh
 grunt build
-anywhere -p 9999 // 这里anywhere是为了开静态服务器，预览index.html
+anywhere -p {port} // 这里anywhere是为了开静态服务器，预览index.html
 ```
 
 ## 特性
@@ -20,19 +21,19 @@ anywhere -p 9999 // 这里anywhere是为了开静态服务器，预览index.html
 设备类型：device - pc/android
 
 ```sh
-{ip地址}:9999?device=android
+{ip地址}:{port}?device=android
 ```
 
 协议类型：protocol - iframe/webview/documentEvent
 
 ```sh
-{ip地址}:9999?protocol=webview
+{ip地址}:{port}?protocol=webview
 ```
 
 设备宽度：width
 
 ```sh
-{ip地址}:9999?width=1920
+{ip地址}:{port}?width=1920
 ```
 
 ## 样式
@@ -40,7 +41,7 @@ anywhere -p 9999 // 这里anywhere是为了开静态服务器，预览index.html
 #### 安卓：
 
 ```sh
-{ip地址}:9999?device=android&protocol=webview&width=1920
+{ip地址}:{port}?device=android&protocol=webview&width=1920
 ```
 
 ![android](https://github.com/SugarTurboS/Formula-Editor/blob/dev-2.0.19/images/android.png)
@@ -48,7 +49,7 @@ anywhere -p 9999 // 这里anywhere是为了开静态服务器，预览index.html
 #### web：
 
 ```sh
-{ip地址}:9999?device=pc&protocol=documentEvent&width=1920
+{ip地址}:{port}?device=pc&protocol=documentEvent&width=1920
 ```
 
 ![web](https://github.com/SugarTurboS/Formula-Editor/blob/dev-2.0.19/images/web.png)

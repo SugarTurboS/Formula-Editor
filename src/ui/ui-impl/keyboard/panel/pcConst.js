@@ -100,6 +100,8 @@ define(function (require) {
       '\\supset',
       '\\supseteq',
       '\\varnothing',
+      '\\cdot',
+      '\\colon'
     ];
 
     Constant[1].items = getIconContents(
@@ -128,6 +130,8 @@ define(function (require) {
       '\\beta',
       '\\gamma',
       '\\theta',
+      '\\degree',
+      '\\bigcirc'
     ];
 
     Constant[2].items = getIconContents(

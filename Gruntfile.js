@@ -20,7 +20,7 @@ module.exports = function (grunt) {
             src: [
               'assets/images/**/*.{png,jpg,jpeg,gif,svg}',
               'assets/images/*.{png,jpg,jpeg,gif,svg}',
-              'resource/*'
+              'resource/*',
             ],
             dest: 'dist/',
           },
@@ -183,9 +183,7 @@ module.exports = function (grunt) {
   });
 
   function getFileName(isMin) {
-    return (
-      isMin ? 'kityformula-editor.all.min.js' : 'kityformula-editor.all.js'
-    );
+    return isMin ? 'kityformula-editor.all.min.js' : 'kityformula-editor.all.js';
   }
 
   // These plugins provide necessary tasks.
@@ -201,7 +199,19 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-browserify');
 
   // task list.
-  grunt.registerTask('default', ['clean:dist','browserify', 'copy', 'less', 'cssmin']);
+  grunt.registerTask('default', [
+    'clean:dist',
+    'browserify',
+    'copy',
+    'less',
+    'cssmin',
+    'babel:dev',
+    'jshint',
+    'dependence:replace',
+    'concat:full',
+    'uglify:minimize',
+    'clean:temp',
+  ]);
   grunt.registerTask('build', [
     'clean:dist',
     'browserify',

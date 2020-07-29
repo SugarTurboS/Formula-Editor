@@ -286,6 +286,14 @@ define(function () {
       x: 5,
       y: 8,
     },
+    '\\cdot': {
+      x: 5,
+      y: 8,
+    },
+    '\\colon': {
+      x: 5,
+      y: 8,
+    },
     '\\sin\\placeholder': {
       x: 0,
       y: 9,
@@ -355,6 +363,14 @@ define(function () {
       y: 11,
     },
     '\\theta': {
+      x: 1,
+      y: 11,
+    },
+    '\\degree': {
+      x: 1,
+      y: 11,
+    },
+    '\\bigcirc': {
       x: 1,
       y: 11,
     },

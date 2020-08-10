@@ -144,7 +144,7 @@ module.exports = function (grunt) {
         cwd: 'dev-lib/',
         src: ['kity-formula-render.all.js', 'kity-formula-parser.all.js'],
         dest: 'lib/',
-        ext: '.all.min.js'
+        ext: '.all.min.js',
       },
     },
 
@@ -219,6 +219,7 @@ module.exports = function (grunt) {
     'uglify:minimize',
     'clean:temp',
   ]);
+  grunt.registerTask('updateLib', ['uglify:lib']);
   grunt.registerTask('build', [
     'clean:dist',
     'browserify',
@@ -232,5 +233,4 @@ module.exports = function (grunt) {
     'uglify:minimize',
     'clean:temp',
   ]);
-  grunt.registerTask('updateLib', ['uglify:lib']);
 };

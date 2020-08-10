@@ -2,7 +2,7 @@
   "name": "@sugarteam/formula-editor",
   "title": "Formula Editor",
   "description": "基于百度kityformula-editor的公式编辑器",
-  "version": "1.0.4-rc.0",
+  "version": "1.0.5",
   "homepage": "https://github.com/SugarTurboS/Formula-Editor",
   "author": {
     "name": "sugarteam"

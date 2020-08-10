@@ -287,11 +287,11 @@ define(function () {
       y: 8,
     },
     '\\cdot': {
-      x: 5,
+      x: 6,
       y: 8,
     },
     '\\colon': {
-      x: 5,
+      x: 7,
       y: 8,
     },
     '\\sin\\placeholder': {
@@ -367,11 +367,11 @@ define(function () {
       y: 11,
     },
     '\\degree': {
-      x: 1,
+      x: 2,
       y: 11,
     },
     '\\bigcirc': {
-      x: 1,
+      x: 3,
       y: 11,
     },
     a: { x: 0, y: 12 },

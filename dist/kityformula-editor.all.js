@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Formula Editor - v1.0.3 - 2020-07-29
+ * Formula Editor - v1.0.3 - 2020-08-10
  * https://github.com/SugarTurboS/Formula-Editor
  * GitHub: git@github.com:SugarTurboS/Formula-Editor.git 
  * Copyright (c) 2020 sugarteam; Licensed MIT
@@ -149,7 +149,6 @@ _p[0] = {
     }
 };
 
-//# sourceMappingURL=common.js.map
 //.tmp_build/src/base/component.js
 /*!
  * 组件抽象类，所有的组件都是该类的子类
@@ -164,7 +163,6 @@ _p[1] = {
     }
 };
 
-//# sourceMappingURL=component.js.map
 //.tmp_build/src/base/event/event.js
 /*!
  * event模块
@@ -225,7 +223,6 @@ _p[2] = {
     }
 };
 
-//# sourceMappingURL=event.js.map
 //.tmp_build/src/base/event/kfevent.js
 /**
  * Created by hn on 14-3-17.
@@ -242,7 +239,6 @@ _p[3] = {
     }
 };
 
-//# sourceMappingURL=kfevent.js.map
 //.tmp_build/src/base/utils.js
 /*!
  * 基础工具包
@@ -255,7 +251,6 @@ _p[4] = {
     }
 };
 
-//# sourceMappingURL=utils.js.map
 //.tmp_build/src/bundle.js
 /*
  * @Author: Demian
@@ -270,7 +265,6 @@ _p[5] = {
     }
 };
 
-//# sourceMappingURL=bundle.js.map
 //.tmp_build/src/control/controller.js
 /**
  * Created by hn on 14-4-11.
@@ -291,7 +285,6 @@ _p[6] = {
     }
 };
 
-//# sourceMappingURL=controller.js.map
 //.tmp_build/src/control/input-filter.js
 /*!
  * 输入过滤器
@@ -320,7 +313,6 @@ _p[7] = {
     }
 };
 
-//# sourceMappingURL=input-filter.js.map
 //.tmp_build/src/control/input.js
 /*!
 * 输入控制组件
@@ -555,7 +547,6 @@ _p[8] = {
     }
 };
 
-//# sourceMappingURL=input.js.map
 //.tmp_build/src/control/listener.js
 /**
  * Created by hn on 14-4-11.
@@ -582,7 +573,6 @@ _p[9] = {
     }
 };
 
-//# sourceMappingURL=listener.js.map
 //.tmp_build/src/control/location.js
 /*!
  * 光标定位组件
@@ -728,7 +718,6 @@ _p[10] = {
     }
 };
 
-//# sourceMappingURL=location.js.map
 //.tmp_build/src/control/selection.js
 /*!
  * 光标选区组件
@@ -979,7 +968,6 @@ _p[11] = {
     }
 };
 
-//# sourceMappingURL=selection.js.map
 //.tmp_build/src/def/group-type.js
 /*!
  * 组类型
@@ -993,7 +981,6 @@ _p[12] = {
     }
 };
 
-//# sourceMappingURL=group-type.js.map
 //.tmp_build/src/editor/Message.js
 /*
  * @Author: Demian
@@ -1032,7 +1019,6 @@ _p[13] = {
     }
 };
 
-//# sourceMappingURL=Message.js.map
 //.tmp_build/src/editor/editor.js
 /*!
  * 编辑器主体结构
@@ -1192,7 +1178,6 @@ _p[14] = {
     }
 };
 
-//# sourceMappingURL=editor.js.map
 //.tmp_build/src/editor/factory.js
 /**
  * 编辑器工厂方法
@@ -1231,7 +1216,6 @@ _p[15] = {
     }
 };
 
-//# sourceMappingURL=factory.js.map
 //.tmp_build/src/jquery.js
 /**
  * Created by hn on 14-3-31.
@@ -1242,7 +1226,6 @@ _p[16] = {
     }
 };
 
-//# sourceMappingURL=jquery.js.map
 //.tmp_build/src/kf-ext/def.js
 /**
  * Created by hn on 14-3-18.
@@ -1256,7 +1239,6 @@ _p[17] = {
     }
 };
 
-//# sourceMappingURL=def.js.map
 //.tmp_build/src/kf-ext/expression/placeholder.js
 /**
  * 占位符表达式， 扩展KF自有的Empty表达式
@@ -1306,7 +1288,6 @@ _p[18] = {
     }
 };
 
-//# sourceMappingURL=placeholder.js.map
 //.tmp_build/src/kf-ext/extension.js
 /**
  * 公式扩展接口
@@ -1351,7 +1332,6 @@ _p[19] = {
     }
 };
 
-//# sourceMappingURL=extension.js.map
 //.tmp_build/src/kf-ext/operator/placeholder.js
 /**
  * 占位符操作符
@@ -1407,7 +1387,6 @@ _p[20] = {
     }
 };
 
-//# sourceMappingURL=placeholder.js.map
 //.tmp_build/src/kf.js
 /**
  * Created by hn on 14-3-12.
@@ -1418,7 +1397,6 @@ _p[21] = {
     }
 };
 
-//# sourceMappingURL=kf.js.map
 //.tmp_build/src/kity.js
 /**
  * 数学公式Latex语法解析器
@@ -1429,7 +1407,6 @@ _p[22] = {
     }
 };
 
-//# sourceMappingURL=kity.js.map
 //.tmp_build/src/parse/parser.js
 /**
  * 数学公式解析器
@@ -1601,7 +1578,6 @@ _p[23] = {
     }
 };
 
-//# sourceMappingURL=parser.js.map
 //.tmp_build/src/parse/vgroup-def.js
 /*!
  * 虚拟组列表
@@ -1623,7 +1599,6 @@ _p[24] = {
     }
 };
 
-//# sourceMappingURL=vgroup-def.js.map
 //.tmp_build/src/position/position.js
 /*!
  * 定位模块
@@ -1783,7 +1758,6 @@ _p[25] = {
     }
 };
 
-//# sourceMappingURL=position.js.map
 //.tmp_build/src/print/printer.js
 /*!
  * 打印服务
@@ -1845,7 +1819,6 @@ _p[26] = {
     }
 };
 
-//# sourceMappingURL=printer.js.map
 //.tmp_build/src/render/render.js
 /**
  * Created by hn on 14-3-17.
@@ -2140,7 +2113,6 @@ _p[27] = {
     }
 };
 
-//# sourceMappingURL=render.js.map
 //.tmp_build/src/syntax/delete.js
 /*！
  * 删除控制
@@ -2259,7 +2231,6 @@ _p[28] = {
     }
 };
 
-//# sourceMappingURL=delete.js.map
 //.tmp_build/src/syntax/move.js
 /*！
  * 光标移动控制
@@ -2609,7 +2580,6 @@ _p[29] = {
     }
 };
 
-//# sourceMappingURL=move.js.map
 //.tmp_build/src/syntax/syntax.js
 /*!
  * 语法控制单元
@@ -2938,7 +2908,6 @@ _p[30] = {
     }
 };
 
-//# sourceMappingURL=syntax.js.map
 //.tmp_build/src/sysconf.js
 /*!
  * 系统配置文件
@@ -2962,7 +2931,6 @@ _p[31] = {
     }
 };
 
-//# sourceMappingURL=sysconf.js.map
 //.tmp_build/src/ui/char-position.data.js
 /**
  * 特殊字符区域的icon位置数据
@@ -4406,7 +4374,6 @@ _p[32] = {
     }
 };
 
-//# sourceMappingURL=char-position.data.js.map
 //.tmp_build/src/ui/control/zoom.js
 /*!
  * 滚动缩放控制器
@@ -4446,7 +4413,6 @@ _p[33] = {
     }
 };
 
-//# sourceMappingURL=zoom.js.map
 //.tmp_build/src/ui/def.js
 /*!
  * UI定义
@@ -4469,7 +4435,6 @@ _p[34] = {
     }
 };
 
-//# sourceMappingURL=def.js.map
 //.tmp_build/src/ui/header/header.js
 /*
  * @Author: Demian
@@ -4517,7 +4482,6 @@ _p[35] = {
     }
 };
 
-//# sourceMappingURL=header.js.map
 //.tmp_build/src/ui/keyboard/keyboard.js
 /*
  * @Author: Demian
@@ -4624,7 +4588,6 @@ _p[36] = {
     }
 };
 
-//# sourceMappingURL=keyboard.js.map
 //.tmp_build/src/ui/other-position.data.js
 /**
  * 特殊字符区域之外的icon位置和大小数据
@@ -5076,7 +5039,6 @@ _p[37] = {
     }
 };
 
-//# sourceMappingURL=other-position.data.js.map
 //.tmp_build/src/ui/toolbar-ele-list.bak.js
 /*!
  * toolbar元素列表定义
@@ -5757,7 +5719,6 @@ _p[38] = {
     }
 };
 
-//# sourceMappingURL=toolbar-ele-list.bak.js.map
 //.tmp_build/src/ui/toolbar-ele-list.js
 /*!
  * toolbar元素列表定义
@@ -6324,7 +6285,6 @@ _p[39] = {
     }
 };
 
-//# sourceMappingURL=toolbar-ele-list.js.map
 //.tmp_build/src/ui/toolbar/toolbar.js
 /*!
  * 工具条组件
@@ -6445,7 +6405,6 @@ _p[40] = {
     }
 };
 
-//# sourceMappingURL=toolbar.js.map
 //.tmp_build/src/ui/ui-impl/area.js
 /*!
  * 特殊字符区域
@@ -6698,7 +6657,6 @@ _p[41] = {
     }
 };
 
-//# sourceMappingURL=area.js.map
 //.tmp_build/src/ui/ui-impl/box.js
 /**
  * Created by hn on 14-3-31.
@@ -7066,7 +7024,6 @@ _p[42] = {
     }
 };
 
-//# sourceMappingURL=box.js.map
 //.tmp_build/src/ui/ui-impl/button.js
 /**
  * Created by hn on 14-3-31.
@@ -7253,7 +7210,6 @@ _p[43] = {
     }
 };
 
-//# sourceMappingURL=button.js.map
 //.tmp_build/src/ui/ui-impl/def/box-type.js
 /*!
  * box类型定义
@@ -7269,7 +7225,6 @@ _p[44] = {
     }
 };
 
-//# sourceMappingURL=box-type.js.map
 //.tmp_build/src/ui/ui-impl/def/ele-type.js
 /*!
  * toolbar元素类型定义
@@ -7285,7 +7240,6 @@ _p[45] = {
     }
 };
 
-//# sourceMappingURL=ele-type.js.map
 //.tmp_build/src/ui/ui-impl/def/item-type.js
 /*!
  * 组元素类型定义
@@ -7299,7 +7253,6 @@ _p[46] = {
     }
 };
 
-//# sourceMappingURL=item-type.js.map
 //.tmp_build/src/ui/ui-impl/delimiter.js
 /*!
  * 分割符
@@ -7330,7 +7283,6 @@ _p[47] = {
     }
 };
 
-//# sourceMappingURL=delimiter.js.map
 //.tmp_build/src/ui/ui-impl/drapdown-box.js
 /**
  * Created by hn on 14-3-31.
@@ -7396,7 +7348,6 @@ _p[48] = {
     }
 };
 
-//# sourceMappingURL=drapdown-box.js.map
 //.tmp_build/src/ui/ui-impl/keyboard/const.js
 /*
  * @Author: Demian
@@ -7426,7 +7377,6 @@ _p[49] = {
     }
 };
 
-//# sourceMappingURL=const.js.map
 //.tmp_build/src/ui/ui-impl/keyboard/footer/index.js
 /*
  * @Author: Demian
@@ -7482,7 +7432,6 @@ _p[50] = {
     }
 };
 
-//# sourceMappingURL=index.js.map
 //.tmp_build/src/ui/ui-impl/keyboard/keyboard.js
 function ownKeys(object, enumerableOnly) {
     var keys = Object.keys(object);
@@ -7745,7 +7694,6 @@ _p[51] = {
     }
 };
 
-//# sourceMappingURL=keyboard.js.map
 //.tmp_build/src/ui/ui-impl/keyboard/menu/index.js
 function ownKeys(object, enumerableOnly) {
     var keys = Object.keys(object);
@@ -7839,7 +7787,6 @@ _p[52] = {
             },
             _render: function _render() {
                 var _this = this;
-                console.log("menu render");
                 return $$.ele(this.props.doc, "div", {
                     className: this.containerClassName,
                     content: '\n          <ul id="'.concat(this.prefix, '" class="').concat(this.listClassName, '">\n            ').concat(this.elementList.map(function(x) {
@@ -7896,7 +7843,6 @@ _p[52] = {
     }
 };
 
-//# sourceMappingURL=index.js.map
 //.tmp_build/src/ui/ui-impl/keyboard/page/index.js
 function ownKeys(object, enumerableOnly) {
     var keys = Object.keys(object);
@@ -7978,7 +7924,6 @@ _p[53] = {
             },
             _render: function _render() {
                 var _this = this;
-                console.log("page render");
                 return $$.ele(this.props.doc, "div", {
                     className: this.containerClassName,
                     content: '\n          <ul id="'.concat(this.prefix, '" class="').concat(this.listClassName, '">\n            <li class="').concat(this.itemClassName, " ").concat(this.itemClassName, '-delete" data-value="delete"></li>\n            ').concat(this.elementList.map(function(x) {
@@ -8047,7 +7992,6 @@ _p[53] = {
     }
 };
 
-//# sourceMappingURL=index.js.map
 //.tmp_build/src/ui/ui-impl/keyboard/panel/androidConst.js
 /*
  * @Author: Demian
@@ -8087,27 +8031,27 @@ _p[54] = {
         // 常用
         (function() {
             var list = [ "<", "\\frac \\placeholder\\placeholder", "\\sqrt \\placeholder", "a", "+", "7", "8", "9", ">", "\\left|\\placeholder\\right|", "\\placeholder^2", "b", "-", "4", "5", "6", "\\leq", "\\left(\\placeholder\\right)", "\\sqrt [3] \\placeholder", "x", "\\pm", "1", "2", "3", "\\geq", "%", "\\placeholder^3", "y", ",", "0", ".", "=" ];
-            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         // 代数
         (function() {
             var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\delta", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing", "\\cdot", "\\colon" ];
-            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         // 几何
         (function() {
             var list = [ "\\sin\\placeholder", "\\cos\\placeholder", "\\tan\\placeholder", "\\sec\\placeholder", "\\csc\\placeholder", "\\cot\\placeholder", "\\arcsin\\placeholder", "\\arccos\\placeholder", "\\arctan\\placeholder", "\\triangle", "\\sim", "\\cong", "\\angle", "\\bot", "\\alpha", "\\beta", "\\gamma", "\\theta", "\\degree", "\\bigcirc" ];
-            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         // 字母
         (function() {
             var list = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         // 其他
         (function() {
             var list = [ "\\Omega", "\\because", "\\therefore", "\\Longrightarrow", "\\Leftrightarrow", "\\uparrow", "\\downarrow", "\\lambda", "\\kappa", "\\mu", "\\rho", "\\sigma", "\\tau", "\\upsilon", "\\varphi", "\\Psi", "\\omega", "\\varepsilon", "\\zeta", "\\eta", "\\nu", "\\xi", "\\chi" ];
-            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         function getIconContents(keySet, imgSrc) {
             var result = [];
@@ -8132,7 +8076,6 @@ _p[54] = {
     }
 };
 
-//# sourceMappingURL=androidConst.js.map
 //.tmp_build/src/ui/ui-impl/keyboard/panel/index.js
 function ownKeys(object, enumerableOnly) {
     var keys = Object.keys(object);
@@ -8221,7 +8164,6 @@ _p[55] = {
             },
             _render: function _render() {
                 var _this = this;
-                console.log("panel render");
                 var list = this.props.panelConstant.reduce(function(acc, cur, index) {
                     var itemLenOfLastRow = cur.items.length % 8;
                     var blankArr = itemLenOfLastRow ? new Array(8 - itemLenOfLastRow).fill("") : [];
@@ -8267,7 +8209,6 @@ _p[55] = {
     }
 };
 
-//# sourceMappingURL=index.js.map
 //.tmp_build/src/ui/ui-impl/keyboard/panel/pcConst.js
 /*
  * @Author: Demian
@@ -8307,27 +8248,27 @@ _p[56] = {
         // 常用
         (function() {
             var list = [ "<", "\\frac \\placeholder\\placeholder", "\\sqrt \\placeholder", "a", "+", "7", "8", "9", ">", "\\left|\\placeholder\\right|", "\\placeholder^2", "b", "-", "4", "5", "6", "\\leq", "\\left(\\placeholder\\right)", "\\sqrt [3] \\placeholder", "x", "\\pm", "1", "2", "3", "\\geq", "%", "\\placeholder^3", "y", ",", "0", ".", "=" ];
-            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         // 代数
         (function() {
             var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\delta", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing", "\\cdot", "\\colon" ];
-            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         // 几何
         (function() {
             var list = [ "\\sin\\placeholder", "\\cos\\placeholder", "\\tan\\placeholder", "\\sec\\placeholder", "\\csc\\placeholder", "\\cot\\placeholder", "\\arcsin\\placeholder", "\\arccos\\placeholder", "\\arctan\\placeholder", "\\triangle", "\\sim", "\\cong", "\\angle", "\\bot", "\\alpha", "\\beta", "\\gamma", "\\theta", "\\degree", "\\bigcirc" ];
-            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         // 单位
         (function() {
             var list = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         // 其他
         (function() {
             var list = [ "\\Omega", "\\because", "\\therefore", "\\Longrightarrow", "\\Leftrightarrow", "\\uparrow", "\\downarrow", "\\lambda", "\\kappa", "\\mu", "\\rho", "\\sigma", "\\tau", "\\upsilon", "\\varphi", "\\Psi", "\\omega", "\\varepsilon", "\\zeta", "\\eta", "\\nu", "\\xi", "\\chi" ];
-            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         function getIconContents(keySet, imgSrc) {
             var result = [];
@@ -8352,7 +8293,6 @@ _p[56] = {
     }
 };
 
-//# sourceMappingURL=pcConst.js.map
 //.tmp_build/src/ui/ui-impl/keyboard/panel/position.data.js
 function _defineProperty(obj, key, value) {
     if (key in obj) {
@@ -8659,11 +8599,11 @@ _p[57] = {
                 y: 8
             },
             "\\cdot": {
-                x: 5,
+                x: 6,
                 y: 8
             },
             "\\colon": {
-                x: 5,
+                x: 7,
                 y: 8
             },
             "\\sin\\placeholder": {
@@ -8739,11 +8679,11 @@ _p[57] = {
                 y: 11
             },
             "\\degree": {
-                x: 1,
+                x: 2,
                 y: 11
             },
             "\\bigcirc": {
-                x: 1,
+                x: 3,
                 y: 11
             }
         }, _defineProperty(_ref, "a", {
@@ -8897,7 +8837,6 @@ _p[57] = {
     }
 };
 
-//# sourceMappingURL=position.data.js.map
 //.tmp_build/src/ui/ui-impl/list.js
 /**
  * Created by hn on 14-3-31.
@@ -9000,7 +8939,6 @@ _p[58] = {
     }
 };
 
-//# sourceMappingURL=list.js.map
 //.tmp_build/src/ui/ui-impl/scrollbar/scrollbar.js
 /*!
  * 滚动条组件
@@ -9306,7 +9244,6 @@ _p[59] = {
     }
 };
 
-//# sourceMappingURL=scrollbar.js.map
 //.tmp_build/src/ui/ui-impl/ui-utils.js
 /**
  * Created by hn on 14-4-1.
@@ -9395,7 +9332,6 @@ _p[60] = {
     }
 };
 
-//# sourceMappingURL=ui-utils.js.map
 //.tmp_build/src/ui/ui-impl/ui.js
 /**
  * Created by hn on 14-3-31.
@@ -9411,7 +9347,6 @@ _p[61] = {
     }
 };
 
-//# sourceMappingURL=ui.js.map
 //.tmp_build/src/ui/ui.js
 /**
  * Created by hn on 14-3-17.
@@ -9630,7 +9565,6 @@ _p[62] = {
     }
 };
 
-//# sourceMappingURL=ui.js.map
 //dev-lib/start.js
 /*!
  * 启动模块

@@ -139,6 +139,13 @@ module.exports = function (grunt) {
         dest: 'dist/' + getFileName(true),
         src: 'dist/' + getFileName(),
       },
+      lib: {
+        expand: true,
+        cwd: 'dev-lib/',
+        src: ['kity-formula-render.all.js', 'kity-formula-parser.all.js'],
+        dest: 'lib/',
+        ext: '.all.min.js'
+      },
     },
 
     // 模块依赖合并
@@ -225,4 +232,5 @@ module.exports = function (grunt) {
     'uglify:minimize',
     'clean:temp',
   ]);
+  grunt.registerTask('updateLib', ['uglify:lib']);
 };

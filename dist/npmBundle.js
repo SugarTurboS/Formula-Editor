@@ -337,6 +337,10 @@ function () {
         window[ECLASS_API] = {};
       }
 
+      if (!window[ECLASS_API]['sendAction']) {
+        return;
+      }
+
       Object.defineProperty(window[ECLASS_API], 'sendAction', {
         get: function get() {
           return _this.send;

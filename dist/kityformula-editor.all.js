@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Formula Editor - v1.0.7-test-1 - 2020-08-31
+ * Formula Editor - v1.0.7-test-1 - 2020-09-17
  * https://github.com/SugarTurboS/Formula-Editor
  * GitHub: git@github.com:SugarTurboS/Formula-Editor.git 
  * Copyright (c) 2020 sugarteam; Licensed MIT
@@ -7639,7 +7639,7 @@ _p[51] = {
                 return keyboardNode;
             },
             setState: function setState(nextState) {
-                this.state = _objectSpread({}, this.state, {}, nextState);
+                this.state = _objectSpread(_objectSpread({}, this.state), nextState);
                 this.menuChild.update(this.state);
                 this.panelChild.update(this.state);
                 this.pageChild.update(this.state);
@@ -7836,7 +7836,7 @@ _p[52] = {
                 this.props.onClick(val);
             },
             _setState: function _setState(nextState) {
-                this.state = _objectSpread({}, this.state, {}, nextState);
+                this.state = _objectSpread(_objectSpread({}, this.state), nextState);
             }
         });
         return Menu;
@@ -7985,7 +7985,7 @@ _p[53] = {
                 }
             },
             _setState: function _setState(nextState) {
-                this.state = _objectSpread({}, this.state, {}, nextState);
+                this.state = _objectSpread(_objectSpread({}, this.state), nextState);
             }
         });
         return Page;
@@ -8202,7 +8202,7 @@ _p[55] = {
                 this.props.onClick(val);
             },
             _setState: function _setState(nextState) {
-                this.state = _objectSpread({}, this.state, {}, nextState);
+                this.state = _objectSpread(_objectSpread({}, this.state), nextState);
             }
         });
         return Panel;

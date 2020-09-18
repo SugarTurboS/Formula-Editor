@@ -178,7 +178,7 @@ document.dispatchEvent(event);
 
 7、清空公式编辑器
 
-- 说明：通知公式编辑器清空内容
+- 说明：通知公式编辑器清空内容和左侧tab，一般用于关闭弹窗。
 - 发布者：使用者
 - 订阅者：公式编辑器
 - 事件名：common.clearFormula

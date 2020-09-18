@@ -48,7 +48,7 @@ anywhere -p {port} // 这里anywhere是为了开静态服务器，预览index.ht
 {ip地址}:{port}?device=android&protocol=webview&width=1920
 ```
 
-![android](https://github.com/SugarTurboS/Formula-Editor/blob/dev-2.0.23/src/editor/command.md)
+![android](./images/android.png)
 
 #### web：
 
@@ -56,7 +56,7 @@ anywhere -p {port} // 这里anywhere是为了开静态服务器，预览index.ht
 {ip地址}:{port}?device=pc&protocol=documentEvent&width=1920
 ```
 
-![web](https://github.com/SugarTurboS/Formula-Editor/blob/dev-2.0.19/images/web.png)
+![web](./images/web.png)
 
 老铁，走过路过给个 ⭐️
 

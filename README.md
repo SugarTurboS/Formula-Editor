@@ -18,7 +18,7 @@ anywhere -p {port} // 这里anywhere是为了开静态服务器，预览index.ht
 
 ## 信令
 
-[信令详情](https://github.com/SugarTurboS/Formula-Editor/)
+[信令详情](./src/editor/command.md)
 
 ## 特性
 

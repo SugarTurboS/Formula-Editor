@@ -2,19 +2,23 @@
 
 > 基于百度 kityformula-editor 开发的公式编辑器，有 android 和 web 两种模式
 
-## 安装
+## 安装依赖
 
 ```sh
 npm install
 npm install -g anywhere // 随启随用的静态服务器
 ```
 
-## 编译
+## 编译和运行程序
 
 ```sh
 grunt build
 anywhere -p {port} // 这里anywhere是为了开静态服务器，预览index.html
 ```
+
+## 信令
+
+[信令详情](https://github.com/SugarTurboS/Formula-Editor/)
 
 ## 特性
 
@@ -44,7 +48,7 @@ anywhere -p {port} // 这里anywhere是为了开静态服务器，预览index.ht
 {ip地址}:{port}?device=android&protocol=webview&width=1920
 ```
 
-![android](https://github.com/SugarTurboS/Formula-Editor/blob/dev-2.0.19/images/android.png)
+![android](https://github.com/SugarTurboS/Formula-Editor/blob/dev-2.0.23/src/editor/command.md)
 
 #### web：
 

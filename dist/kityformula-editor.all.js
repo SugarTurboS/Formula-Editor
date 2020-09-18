@@ -1,6 +1,6 @@
 /*!
  * ====================================================
- * Formula Editor - v1.0.5 - 2020-08-10
+ * Formula Editor - v1.0.7-test-1 - 2020-09-17
  * https://github.com/SugarTurboS/Formula-Editor
  * GitHub: git@github.com:SugarTurboS/Formula-Editor.git 
  * Copyright (c) 2020 sugarteam; Licensed MIT

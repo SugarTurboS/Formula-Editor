@@ -115,6 +115,10 @@ define( function ( require, exports, module ) {
 
         },
 
+        /**
+         * 点击键盘字符时调用的事件
+         * @param {string} str - 插入的字符
+         */
         insertStr: function ( str ) {
 
             var latexInfo = this.kfEditor.requestService( "syntax.serialization" ),

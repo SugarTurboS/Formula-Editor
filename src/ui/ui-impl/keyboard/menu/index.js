@@ -32,7 +32,6 @@ define(function (require) {
       this._initCommand.call(this);
     },
     _render: function () {
-      console.log('menu render');
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `

@@ -1,6 +1,6 @@
 # 接口文档
 
-公式编辑器借助 web-service 库，通过事件的触发和监听实现数据交互，有 webview 和 documentEvent 两种通信方式。下面的示例均以 documentEvent 作为通信通道，公式编辑器启用 documentEvent 需要在 url 中增加 protocol，详细请参照[readme](https://github.com/SugarTurboS/Formula-Editor/blob/dev-2.0.23/readme.md)
+公式编辑器借助 web-service 库，通过事件的触发和监听实现数据交互，有 webview 和 documentEvent 两种通信方式。下面的示例均以 documentEvent 作为通信通道，公式编辑器启用 documentEvent 需要在 url 中增加 protocol，详细请参照[readme](../../readme.md)
 
 ## 信令格式
 

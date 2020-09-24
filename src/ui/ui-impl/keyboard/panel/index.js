@@ -41,7 +41,6 @@ define(function (require) {
       return typeHeight + page * this.scrollHeight;
     },
     _render: function () {
-      console.log('panel render');
       const list = this.props.panelConstant.reduce((acc, cur, index) => {
         const itemLenOfLastRow = cur.items.length % 8;
         const blankArr = itemLenOfLastRow ? new Array(8 - itemLenOfLastRow).fill('') : [];

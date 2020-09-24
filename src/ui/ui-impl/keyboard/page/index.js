@@ -29,7 +29,6 @@ define(function (require) {
       this._onClick = this._onClick.bind(this);
     },
     _render: function () {
-      console.log('page render');
       return $$.ele(this.props.doc, 'div', {
         className: this.containerClassName,
         content: `

@@ -56,7 +56,7 @@ define(function (require) {
 
     Constant[0].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
+      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
     );
   })();
   // 代数
@@ -100,11 +100,13 @@ define(function (require) {
       '\\supset',
       '\\supseteq',
       '\\varnothing',
+      '\\cdot',
+      '\\colon'
     ];
 
     Constant[1].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
+      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
     );
   })();
   // 几何
@@ -128,11 +130,13 @@ define(function (require) {
       '\\beta',
       '\\gamma',
       '\\theta',
+      '\\degree',
+      '\\bigcirc'
     ];
 
     Constant[2].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
+      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
     );
   })();
   // 单位
@@ -168,7 +172,7 @@ define(function (require) {
 
     Constant[3].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
+      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
     );
   })();
   // 其他
@@ -201,7 +205,7 @@ define(function (require) {
 
     Constant[4].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254'
+      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
     );
   })();
 

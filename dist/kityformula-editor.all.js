@@ -1,7 +1,7 @@
 /*!
  * ====================================================
- * Formula Editor - v1.0.3 - 2020-06-20
- * https://github.com/kitygraph/formula
+ * Formula Editor - v1.0.7-test-1 - 2020-09-17
+ * https://github.com/SugarTurboS/Formula-Editor
  * GitHub: git@github.com:SugarTurboS/Formula-Editor.git 
  * Copyright (c) 2020 sugarteam; Licensed MIT
  * ====================================================
@@ -390,6 +390,10 @@ _p[8] = {
                 this.inputBox.focus();
                 this.setTrusted();
             },
+            /**
+     * 点击键盘字符时调用的事件
+     * @param {string} str - 插入的字符
+     */
             insertStr: function insertStr(str) {
                 var latexInfo = this.kfEditor.requestService("syntax.serialization"), originString = latexInfo.str;
                 // 拼接latex字符串
@@ -7635,7 +7639,7 @@ _p[51] = {
                 return keyboardNode;
             },
             setState: function setState(nextState) {
-                this.state = _objectSpread({}, this.state, {}, nextState);
+                this.state = _objectSpread(_objectSpread({}, this.state), nextState);
                 this.menuChild.update(this.state);
                 this.panelChild.update(this.state);
                 this.pageChild.update(this.state);
@@ -7783,7 +7787,6 @@ _p[52] = {
             },
             _render: function _render() {
                 var _this = this;
-                console.log("menu render");
                 return $$.ele(this.props.doc, "div", {
                     className: this.containerClassName,
                     content: '\n          <ul id="'.concat(this.prefix, '" class="').concat(this.listClassName, '">\n            ').concat(this.elementList.map(function(x) {
@@ -7833,7 +7836,7 @@ _p[52] = {
                 this.props.onClick(val);
             },
             _setState: function _setState(nextState) {
-                this.state = _objectSpread({}, this.state, {}, nextState);
+                this.state = _objectSpread(_objectSpread({}, this.state), nextState);
             }
         });
         return Menu;
@@ -7921,7 +7924,6 @@ _p[53] = {
             },
             _render: function _render() {
                 var _this = this;
-                console.log("page render");
                 return $$.ele(this.props.doc, "div", {
                     className: this.containerClassName,
                     content: '\n          <ul id="'.concat(this.prefix, '" class="').concat(this.listClassName, '">\n            <li class="').concat(this.itemClassName, " ").concat(this.itemClassName, '-delete" data-value="delete"></li>\n            ').concat(this.elementList.map(function(x) {
@@ -7983,7 +7985,7 @@ _p[53] = {
                 }
             },
             _setState: function _setState(nextState) {
-                this.state = _objectSpread({}, this.state, {}, nextState);
+                this.state = _objectSpread(_objectSpread({}, this.state), nextState);
             }
         });
         return Page;
@@ -8029,27 +8031,27 @@ _p[54] = {
         // 常用
         (function() {
             var list = [ "<", "\\frac \\placeholder\\placeholder", "\\sqrt \\placeholder", "a", "+", "7", "8", "9", ">", "\\left|\\placeholder\\right|", "\\placeholder^2", "b", "-", "4", "5", "6", "\\leq", "\\left(\\placeholder\\right)", "\\sqrt [3] \\placeholder", "x", "\\pm", "1", "2", "3", "\\geq", "%", "\\placeholder^3", "y", ",", "0", ".", "=" ];
-            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         // 代数
         (function() {
-            var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\delta", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing" ];
-            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\delta", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing", "\\cdot", "\\colon" ];
+            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         // 几何
         (function() {
-            var list = [ "\\sin\\placeholder", "\\cos\\placeholder", "\\tan\\placeholder", "\\sec\\placeholder", "\\csc\\placeholder", "\\cot\\placeholder", "\\arcsin\\placeholder", "\\arccos\\placeholder", "\\arctan\\placeholder", "\\triangle", "\\sim", "\\cong", "\\angle", "\\bot", "\\alpha", "\\beta", "\\gamma", "\\theta" ];
-            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            var list = [ "\\sin\\placeholder", "\\cos\\placeholder", "\\tan\\placeholder", "\\sec\\placeholder", "\\csc\\placeholder", "\\cot\\placeholder", "\\arcsin\\placeholder", "\\arccos\\placeholder", "\\arctan\\placeholder", "\\triangle", "\\sim", "\\cong", "\\angle", "\\bot", "\\alpha", "\\beta", "\\gamma", "\\theta", "\\degree", "\\bigcirc" ];
+            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         // 字母
         (function() {
             var list = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         // 其他
         (function() {
             var list = [ "\\Omega", "\\because", "\\therefore", "\\Longrightarrow", "\\Leftrightarrow", "\\uparrow", "\\downarrow", "\\lambda", "\\kappa", "\\mu", "\\rho", "\\sigma", "\\tau", "\\upsilon", "\\varphi", "\\Psi", "\\omega", "\\varepsilon", "\\zeta", "\\eta", "\\nu", "\\xi", "\\chi" ];
-            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/4e2ad7e22b924c42869f634ccde79c5c");
+            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/ec4941099e30462b935956b413e3ca8d");
         })();
         function getIconContents(keySet, imgSrc) {
             var result = [];
@@ -8162,7 +8164,6 @@ _p[55] = {
             },
             _render: function _render() {
                 var _this = this;
-                console.log("panel render");
                 var list = this.props.panelConstant.reduce(function(acc, cur, index) {
                     var itemLenOfLastRow = cur.items.length % 8;
                     var blankArr = itemLenOfLastRow ? new Array(8 - itemLenOfLastRow).fill("") : [];
@@ -8201,7 +8202,7 @@ _p[55] = {
                 this.props.onClick(val);
             },
             _setState: function _setState(nextState) {
-                this.state = _objectSpread({}, this.state, {}, nextState);
+                this.state = _objectSpread(_objectSpread({}, this.state), nextState);
             }
         });
         return Panel;
@@ -8247,27 +8248,27 @@ _p[56] = {
         // 常用
         (function() {
             var list = [ "<", "\\frac \\placeholder\\placeholder", "\\sqrt \\placeholder", "a", "+", "7", "8", "9", ">", "\\left|\\placeholder\\right|", "\\placeholder^2", "b", "-", "4", "5", "6", "\\leq", "\\left(\\placeholder\\right)", "\\sqrt [3] \\placeholder", "x", "\\pm", "1", "2", "3", "\\geq", "%", "\\placeholder^3", "y", ",", "0", ".", "=" ];
-            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            Constant[0].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         // 代数
         (function() {
-            var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\delta", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing" ];
-            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            var list = [ "\\times", "\\div", "\\approx", "\\neq", "\\sqrt [\\placeholder] \\placeholder", "\\pi", "\\delta", "\\left[\\placeholder\\right]", "\\placeholder^\\placeholder", "\\placeholder_\\placeholder", "{^\\placeholder_\\placeholder\\placeholder}", "\\placeholder^\\placeholder_\\placeholder", "\\sum\\placeholder", "\\sum_\\placeholder\\placeholder", "\\sum^\\placeholder_\\placeholder\\placeholder", "\\int \\placeholder", "\\int^\\placeholder_\\placeholder\\placeholder", "\\iint\\placeholder", "\\iint^\\placeholder_\\placeholder\\placeholder", "\\iiint\\placeholder", "\\iiint^\\placeholder_\\placeholder\\placeholder", "\\log\\placeholder", "\\ln\\placeholder", "\\land", "\\lor", "\\neg", "\\forall", "\\exists", "\\infty", "\\cup", "\\cap", "\\in", "\\notin", "\\subset", "\\subseteq", "\\supset", "\\supseteq", "\\varnothing", "\\cdot", "\\colon" ];
+            Constant[1].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         // 几何
         (function() {
-            var list = [ "\\sin\\placeholder", "\\cos\\placeholder", "\\tan\\placeholder", "\\sec\\placeholder", "\\csc\\placeholder", "\\cot\\placeholder", "\\arcsin\\placeholder", "\\arccos\\placeholder", "\\arctan\\placeholder", "\\triangle", "\\sim", "\\cong", "\\angle", "\\bot", "\\alpha", "\\beta", "\\gamma", "\\theta" ];
-            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            var list = [ "\\sin\\placeholder", "\\cos\\placeholder", "\\tan\\placeholder", "\\sec\\placeholder", "\\csc\\placeholder", "\\cot\\placeholder", "\\arcsin\\placeholder", "\\arccos\\placeholder", "\\arctan\\placeholder", "\\triangle", "\\sim", "\\cong", "\\angle", "\\bot", "\\alpha", "\\beta", "\\gamma", "\\theta", "\\degree", "\\bigcirc" ];
+            Constant[2].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         // 单位
         (function() {
             var list = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z" ];
-            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            Constant[3].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         // 其他
         (function() {
             var list = [ "\\Omega", "\\because", "\\therefore", "\\Longrightarrow", "\\Leftrightarrow", "\\uparrow", "\\downarrow", "\\lambda", "\\kappa", "\\mu", "\\rho", "\\sigma", "\\tau", "\\upsilon", "\\varphi", "\\Psi", "\\omega", "\\varepsilon", "\\zeta", "\\eta", "\\nu", "\\xi", "\\chi" ];
-            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/36f1e1f5300a42fd8200f212a58fb254");
+            Constant[4].items = getIconContents(list, "https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783");
         })();
         function getIconContents(keySet, imgSrc) {
             var result = [];
@@ -8597,6 +8598,14 @@ _p[57] = {
                 x: 5,
                 y: 8
             },
+            "\\cdot": {
+                x: 6,
+                y: 8
+            },
+            "\\colon": {
+                x: 7,
+                y: 8
+            },
             "\\sin\\placeholder": {
                 x: 0,
                 y: 9
@@ -8667,6 +8676,14 @@ _p[57] = {
             },
             "\\theta": {
                 x: 1,
+                y: 11
+            },
+            "\\degree": {
+                x: 2,
+                y: 11
+            },
+            "\\bigcirc": {
+                x: 3,
                 y: 11
             }
         }, _defineProperty(_ref, "a", {

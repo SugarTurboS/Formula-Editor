@@ -4694,7 +4694,9 @@ _p[29] = {
                 top: "⊤",
                 varnothing: "∅",
                 triangle: "△",
-                triangledown: "▽"
+                triangledown: "▽",
+                colon: ":",
+                degree: "°"
             }
         };
     }

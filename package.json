@@ -2,8 +2,8 @@
   "name": "@sugarteam/formula-editor",
   "title": "Formula Editor",
   "description": "基于百度kityformula-editor的公式编辑器",
-  "version": "1.0.3",
-  "homepage": "https://github.com/kitygraph/formula",
+  "version": "1.0.7-test-1",
+  "homepage": "https://github.com/SugarTurboS/Formula-Editor",
   "author": {
     "name": "sugarteam"
   },
@@ -24,8 +24,8 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.8.7",
-    "@sugarteam/eclass-web-service": "^1.0.3",
-    "@sugarteam/web-service": "^1.0.4",
+    "@sugarteam/eclass-web-service": "^1.0.5",
+    "@sugarteam/web-service": "^1.0.5",
     "@types/chai": "^4.2.11"
   },
   "devDependencies": {
@@ -48,5 +48,8 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com/"
+  }
 }

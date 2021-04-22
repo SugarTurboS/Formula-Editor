@@ -372,9 +372,10 @@ define( function ( require ) {
             },
 
             render: function ( latexStr ) {
-
+                
                 var parsedTree = this.kfEditor.requestService( "parser.parse", latexStr, true ),
-                    objTree = this.assembly.regenerateBy( parsedTree );
+                objTree = this.assembly.regenerateBy( parsedTree );
+                console.log('render', latexStr, parsedTree);
 
                 // 更新语法模块所维护的树
                 this.kfEditor.requestService( "syntax.update.objtree", objTree );

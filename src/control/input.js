@@ -38,6 +38,7 @@ define( function ( require, exports, module ) {
                 updateInput: this.updateInput
             } );
 
+            /* 自定义键盘插入事件 */
             this.kfEditor.registerService( "control.insert.string", this, {
                 insertStr: this.insertStr
             } );
@@ -49,7 +50,7 @@ define( function ( require, exports, module ) {
         },
 
         initCommands: function () {
-
+            
             this.kfEditor.registerCommand( "focus", this, this.focus );
 
         },
@@ -103,7 +104,7 @@ define( function ( require, exports, module ) {
         },
 
         updateInput: function () {
-
+            
             var latexInfo = this.kfEditor.requestService( "syntax.serialization" );
 
             this.setUntrusted();
@@ -313,7 +314,7 @@ define( function ( require, exports, module ) {
         },
 
         processingInput: function () {
-
+            
             this.restruct( this.inputBox.value );
             this.kfEditor.requestService( "ui.update.canvas.view" );
 
@@ -321,7 +322,7 @@ define( function ( require, exports, module ) {
 
         // 根据给定的字符串重新进行构造公式
         restruct: function ( latexStr ) {
-
+            
             this.kfEditor.requestService( "render.draw", latexStr );
             this.kfEditor.requestService( "control.reselect" );
 

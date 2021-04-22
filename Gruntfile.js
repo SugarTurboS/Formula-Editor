@@ -213,7 +213,7 @@ module.exports = function (grunt) {
     'less',
     'cssmin',
     'babel:dev',
-    'jshint',
+    // 'jshint',
     'dependence:replace',
     'concat:full',
     'uglify:minimize',

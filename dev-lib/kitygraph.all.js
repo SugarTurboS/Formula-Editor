@@ -6462,6 +6462,19 @@ _p[46] = {
             moveBy: function(dx, dy) {
                 return this.push("m", slice.call(arguments));
             },
+            /* 加入四个方法 */
+            horizontalLineTo: function(w) {
+                return this.push("H", slice.call(arguments));
+            },
+            horizontalLineBy: function(w) {
+                return this.push("h", slice.call(arguments));
+            },
+            verticalLineTo: function(w) {
+                return this.push("V", slice.call(arguments));
+            },
+            verticalLineBy: function(w) {
+                return this.push("v", slice.call(arguments));
+            },
             lineTo: function(x, y) {
                 return this.push("L", slice.call(arguments));
             },

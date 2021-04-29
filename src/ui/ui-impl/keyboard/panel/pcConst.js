@@ -7,7 +7,9 @@
 
 define(function (require) {
   const kity = require('kity'),
-    CHAR_POSITION = require('ui/ui-impl/keyboard/panel/position.data'),
+    data = require('ui/ui-impl/keyboard/panel/position.data'),
+    START_INDEX_POSITION = data.pcStartIndex,
+    url = data.pcSprite,
     Constant = [
       { type: 'common', title: '常用', index: 0, items: [] },
       { type: 'algebra', title: '代数', index: 1, items: [] },
@@ -56,7 +58,8 @@ define(function (require) {
 
     Constant[0].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
+      url,
+      START_INDEX_POSITION[Constant[0].type]
     );
   })();
   // 代数
@@ -85,6 +88,7 @@ define(function (require) {
       '\\iiint^\\placeholder_\\placeholder\\placeholder',
       '\\log\\placeholder',
       '\\ln\\placeholder',
+      '\\overrightarrow \\placeholder',
       '\\land',
       '\\lor',
       '\\neg',
@@ -106,7 +110,8 @@ define(function (require) {
 
     Constant[1].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
+      url,
+      START_INDEX_POSITION[Constant[1].type]
     );
   })();
   // 几何
@@ -136,7 +141,8 @@ define(function (require) {
 
     Constant[2].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
+      url,
+      START_INDEX_POSITION[Constant[2].type]
     );
   })();
   // 单位
@@ -172,7 +178,8 @@ define(function (require) {
 
     Constant[3].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
+      url,
+      START_INDEX_POSITION[Constant[3].type]
     );
   })();
   // 其他
@@ -205,15 +212,16 @@ define(function (require) {
 
     Constant[4].items = getIconContents(
       list,
-      'https://store-g1.seewo.com/easiclass-public/a7da75a0d13c427eb7299fac9f634783'
+      url,
+      START_INDEX_POSITION[Constant[4].type]
     );
   })();
 
-  function getIconContents(keySet, imgSrc) {
+  function getIconContents(keySet, imgSrc, startLineIndex) {
     const result = [];
 
-    kity.Utils.each(keySet, function (key) {
-      const point = CHAR_POSITION[key] || { x: 0, y: 0 };
+    kity.Utils.each(keySet, function (key, index) {
+      const point = { x: index % 8, y: Math.floor(index / 8) + startLineIndex };
       const pos = { x: point.x * 83, y: point.y * 65 };
       result.push({
         key: key,

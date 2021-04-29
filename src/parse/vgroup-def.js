@@ -15,8 +15,8 @@ define( function () {
         "superscript": true,
         "subscript": true,
         "brackets": true,
-        "function": true
-
+        "function": true,
+        "vector": true
     };
 
 } );

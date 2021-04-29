@@ -11,7 +11,7 @@ define( function ( require ) {
     function ext ( parser ) {
 
         kf.PlaceholderExpression = require( "kf-ext/expression/placeholder" );
-
+        kf.VectorExpression = require( "kf-ext/expression/vector" );
         kf.Expression.prototype.select = function () {
 
             this.box.fill( SELECT_COLOR );
@@ -43,6 +43,16 @@ define( function ( require ) {
 
                     },
                     sign: false
+                },
+                "overrightarrow": {
+                    name: "vector",
+                    handler: function ( info, processedStack, unprocessedStack ) {
+                        var radicand = unprocessedStack.shift();
+                        info.operand = [ radicand ];
+                        delete info.handler;
+                        return info;
+                    },
+                    sign: false
                 }
             },
 
@@ -52,6 +62,9 @@ define( function ( require ) {
 
                     return "\\placeholder ";
 
+                },
+                "vector": function(operands) {
+                    return "\\overrightarrow" + operands[0];
                 }
 
             }

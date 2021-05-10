@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>公式编辑器</title>
+    <meta charset="UTF-8" />
+    <meta name="renderer" content="webkit" />
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+    <!-- 开发环境配置 -->
+    <!-- <script src="dist/npmBundle.js"></script>
+    <script src="dev-lib/jquery-1.11.0.min.js"></script>
+    <script src="dev-lib/kitygraph.all.js"></script>
+    <script src="dev-lib/kity-formula-render.all.js"></script>
+    <script src="dev-lib/kity-formula-parser.all.js"></script>
+    <script src="dev-lib/dev-define.js"></script>
+    <script>
+      inc.config({
+        base: './src',
+      });
+    </script>
+    <script src="dev-lib/exports.js"></script>
+    <script src="dev-lib/start.js"></script>
+    <script src="dev-lib/dev-start.js"></script> -->
+    <!-- end -->
+    <!-- 生产环境配置 -->
+    <script src="./npmBundle.js"></script>
+    <script src="./jquery-1.11.0.min.js"></script>
+    <script src="./kitygraph.all.min.js"></script>
+    <script src="./kity-formula-render.all.min.js"></script>
+    <script src="./kity-formula-parser.all.min.js"></script>
+    <script src="./kityformula-editor.all.min.js"></script>
+    <!-- end -->
+    <script>
+      jQuery(function ($) {
+        var manager = (function () {
+          function getDevice() {
+            var device = /device=(android|pc)/.exec(location.search);
+            console.assert(device, '没有读取到设备类型');
+            return device ? device[1] : 'android';
+          }
+          function getWidth() {
+            var width = /width=(\d*)/.exec(location.search);
+            console.assert(width, '没有读取到设备宽度');
+            return width ? width[1] : window.innerWidth;
+          }
+          function getProtocol() {
+            var protocol = /protocol=(webview|iframe|documentEvent)/.exec(location.search);
+            console.assert(protocol, '没有读取到协议类型');
+            return protocol ? protocol[1] : '';
+          }
+          function generateParams() {
+            var deviceType = getDevice();
+            var width = getWidth();
+            var protocol = getProtocol();
+            return {
+              deviceType: deviceType,
+              width: width,
+              protocol: protocol,
+            };
+          }
+          return {
+            getDevice: getDevice,
+            getWidth: getWidth,
+            getProtocol: getProtocol,
+            generateParams: generateParams,
+          };
+        })();
+
+        var createConfig = pipe(manager.generateParams, createDefaultConfig);
+
+        var config = createConfig();
+        config.sideEffects();
+        console.log('最终配置：', config);
+        createEditor('kfEditorContainer', 'kf-loading', config);
+
+        function pipe() {
+          for (var _len = arguments.length, fns = new Array(_len), _key = 0; _key < _len; _key++) {
+            fns[_key] = arguments[_key];
+          }
+
+          return function (x) {
+            return fns.reduce(function (y, f) {
+              return f(y);
+            }, x);
+          };
+        }
+
+        function createDefaultConfig(params) {
+          switch (params.deviceType) {
+            case 'pc':
+              return createDefaultPcConfig(params);
+            case 'android':
+            default:
+              return createDefaultAndroidConfig(params);
+          }
+        }
+        function createDefaultPcConfig(params) {
+          return {
+            deviceType: 'pc',
+            protocol: params.protocol || 'documentEvent',
+            fontSize: 30,
+            scale: 1,
+            sideEffects: function () {},
+          };
+        }
+        function createDefaultAndroidConfig(params) {
+          var width = params.width || window.innerWidth;
+          return {
+            deviceType: 'android',
+            protocol: params.protocol || 'webview',
+            fontSize: (width / 1920).toFixed(3) * 50,
+            scale: (width / 1920).toFixed(3),
+            sideEffects: function () {},
+          };
+        }
+
+        function createEditor(anchorId, loadingId, config) {
+          var factory = kf.EditorFactory.create($('#' + anchorId)[0], {
+            render: {
+              fontsize: config.fontSize,
+            },
+            ui: {
+              device: config.deviceType,
+              scale: config.scale,
+              protocol: config.protocol,
+            },
+            resource: {
+              path: 'resource/',
+            },
+          });
+
+          factory.ready(function (KFEditor) {
+            // this指向KFEditor
+
+            this.execCommand('render', '\\placeholder');
+            this.execCommand('focus');
+            this.execCommand('ready');
+
+            document.getElementById(anchorId).style.visibility = 'visible';
+            document.getElementById(loadingId).style.visibility = 'hidden';
+            window.kfe = this;
+          });
+        }
+      });
+    </script>
+    <link rel="stylesheet" href="./index.min.css" />
+  </head>
+  <body>
+    <div id="kfEditorContainer" class="kf-editor" style="visibility: hidden;"></div>
+    <div id="kf-loading" class="kf-loading">加载中...</div>
+  </body>
+</html>

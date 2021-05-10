@@ -14,6 +14,7 @@ define(function (require) {
       this.prefix = parentProps.prefix + 'keyboard-panel';
       this.scrollHeight = parentProps.scrollHeight;
       this.rowHeight = parentProps.rowHeight;
+      this.assetsPath = (parentProps.kfEditor.options.assets && parentProps.kfEditor.options.assets.path) || '';
       // 初始化状态
       this.state = {
         type: this.props.type,
@@ -70,7 +71,7 @@ define(function (require) {
                   .map((x) =>
                     x
                       ? `<td class='${this.itemClassName}' style="background-image: url(${
-                          x.img
+                        x.img.indexOf('http') >= 0 ? x.img : this.assetsPath + x.img
                         });background-position: ${-x.pos.x}px ${-x.pos
                           .y}px" data-value="${x.key}" />`
                       : null

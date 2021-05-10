@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="23px" viewBox="0 0 31 23" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>up</title>
+    <desc>Created with Sketch.</desc>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="1-学科键盘" transform="translate(-1779.000000, -808.000000)">
+            <g id="输入框">
+                <g id="keyboard_light_landscape" transform="translate(0.000000, 585.000000)">
+                    <g id="编组" transform="translate(1698.750000, 26.250000)">
+                        <g id="上翻" transform="translate(50.625000, 163.125000)">
+                            <g>
+                                <rect id="key-boarder" fill="#313C42" opacity="0" x="0" y="0" width="90" height="90" rx="3.76"></rect>
+                                <path d="M48.0085956,35.2507117 L59.3110016,50.5843863 C60.4979164,52.1946422 60.1130426,54.4324199 58.4513618,55.5826026 C57.8242714,56.0166623 57.072896,56.25 56.3022624,56.25 L33.6974504,56.25 C31.6554049,56.25 30,54.6458257 30,52.6669764 C30,51.920192 30.2407896,51.1920698 30.6887113,50.5843863 L41.9911172,35.2507117 C43.1780321,33.6404558 45.4872751,33.2674929 47.1489558,34.4176757 C47.4809703,34.6474896 47.7714424,34.9289723 48.0085956,35.2507117 Z" id="矩形" fill="#7F8B8F"></path>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -20,7 +20,9 @@ define(function () {
       letter: 13,
       other: 17
     },
-    pcSprite: 'https://store-g1.seewo.com/easiclass-public/04a720937b4a4a149c9d611c14b3a5cc',
-    androidSprite: 'https://store-g1.seewo.com/easiclass-public/d9891f2931e84d79be9827e199fd91ad'
+    // pcSprite: 'https://store-g1.seewo.com/easiclass-public/04a720937b4a4a149c9d611c14b3a5cc',
+    // androidSprite: 'https://store-g1.seewo.com/easiclass-public/d9891f2931e84d79be9827e199fd91ad'
+    pcSprite: 'assets/images/sprite/pc.png',
+    androidSprite: 'assets/images/sprite/android.png'
   }
 });

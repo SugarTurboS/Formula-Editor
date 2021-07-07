@@ -164,6 +164,7 @@ define(function (require) {
               body: {
                 formulaSrc: data.img,
                 formula,
+                readFormulaId: this.kfEditor.readFormulaId,
               },
             },
           });

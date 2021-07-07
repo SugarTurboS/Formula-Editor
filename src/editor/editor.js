@@ -112,15 +112,17 @@ define( function ( require ) {
           } else if (this.options.ui.protocol === 'documentEvent'){
             this.eclassWebService = new CustomWebService({ messager: new Messager() });
           }
-          this.eclassWebService.on('common.readFormula', (msg) => {
+          this.eclassWebService.on('common.readFormula', (msg, ctx) => {
             if (msg.body.formula) {
               this.execCommand('render', msg.body.formula);
             }
+            this.readFormulaId = ctx.headers && ctx.headers.reqId ? ctx.headers.reqId : '';
             this.execCommand('focus', true);
           })
           this.eclassWebService.on('common.clearFormula', () => {
             this.execCommand('render', '\\placeholder');
             this.execCommand('menu.clearType');
+            this.readFormulaId = '';
           })
           this.registerCommand('ready', this, function () {
             this.eclassWebService.send({

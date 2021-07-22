@@ -119,6 +119,21 @@ define( function ( require ) {
             this.readFormulaId = ctx.headers && ctx.headers.reqId ? ctx.headers.reqId : '';
             this.execCommand('focus', true);
           })
+          this.eclassWebService.on('common.exportImage', () => {
+            this.execCommand('get.image.data', (data) => {
+                const formula = this.execCommand('get.source');
+                this.eclassWebService.send({
+                  type: 'common.setFormula',
+                  data: {
+                    body: {
+                      formulaSrc: data.img,
+                      formula,
+                      readFormulaId: this.readFormulaId,
+                    },
+                  },
+                });
+              });
+          })
           this.eclassWebService.on('common.clearFormula', () => {
             this.execCommand('render', '\\placeholder');
             this.execCommand('menu.clearType');
